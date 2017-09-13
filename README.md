@@ -107,3 +107,5 @@ published by others?
 [Irving2015]: http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1
 
 [Chavan2015]: https://arxiv.org/abs/1506.04815
+
+[XSEDE2014_repro]: https://www.xsede.org/documents/659353/d90df1cb-62b5-47c7-9936-2de11113a40f
