@@ -81,3 +81,29 @@ Culture:  Be confident to publish your code add data.
 
 Culture (cont.):  How to establish ethical / un-ethical use of code and data
 published by others?
+
+## References
+
+[Hinsen2015]: https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/
+
+[Hinsen2017]: http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/
+
+[MIAME]: http://fged.org/projects/miame/
+
+[Wilson2012]: https://arxiv.org/abs/1210.0530
+
+[Irving_carpentry]: http://damienirving.github.io/capstone-oceanography/03-data-provenance.html
+
+[Nature_CodeShare]: https://www.nature.com/news/code-share-1.16232
+
+[Sandve2013]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285
+
+[Stodden2010]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1550193
+
+[MPI_good_scientific_practice]: http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
+
+[Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
+
+[Irving2015]: http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1
+
+[Chavan2015]: https://arxiv.org/abs/1506.04815
