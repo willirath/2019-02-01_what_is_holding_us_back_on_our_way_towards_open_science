@@ -1,19 +1,20 @@
 # Towards Reproducible Science
 
-**Scenario:** *As a dummy project, we'll want to show global mean sea-level rise
-based on satellite-altimetry data.*
+**Scenario:** *As a dummy project, we'll look at the seasonal cycle of
+sea-level in the year 2016.  We expect that there is a phase shift of 1/2
+year between the northern and the southern hemisphere.*
 
-**Reproducibility:** *Let's say a paper presents reproducible science if for any
-reader it is in principle possible to completely understand all steps the
-authors took from their initial data to the final conclusions.*
+**Reproducibility:** *Let's say a paper presents reproducible science if for
+any reader it is in principle possible to completely understand and repeat all
+steps the authors took from their initial idea to the final conclusions.*
 
-This often means, that the following questions can be answered
-unanimously:
+This often means, that the following must be specified unambiguously:
 
 1. Which input data were used?
 
 2. How was the data treated to produce all figures and numbers given in the
    paper?
+
 3. For any non-obvious choice of treatment of the data: Why did the authors do
    what they did?
 
@@ -21,38 +22,39 @@ unanimously:
 
 ### The sloppy way
 
-> Figure 1: The solid line shows global mean SSH calculated from annual-mean
-> satellite-altimeter data.  The dashed line shows a trend of 2.9cm/decade.
+> Figure 1: The blue / green lines show standardized mean ADT for the northern
+> / southern tropics.
 
 This clearly is problematic:
 
 - Which data set and which variables from the data set were used?
 - Which data points / times / regions were included / excluded?
-- Was there any processing?
-- How was the trend estimated?
+- Was there any additional processing?
 
 ### A better way
 
-> Figure 1: The solid line shows global-mean SSH calculated from annual-means of
-> daily absolute dynamic topography fields provided by Copernicus (SLTAC L4).
-> The dashed line shows a linear regression with slope 2.9cm/decade.  As the
-> satellite-altimeter cannot determine sea-level under ice, all grid points that
-> are covered by ice at least once in the period from 1993 till 2016 are not
-> included in the global mean.
+> Figure 1: The blue / green line show standardized mean ADT for the northern /
+> southern tropics.  The lines represent spatial averages of daily absolute
+> dynamic topography from SLTAC between the Equator and 30N / 30S and the
+> Equator.
 
 We now know that
 
-- The Copernicus ADT fields were used.
-- Annual-means were derived from daily data.
-- The trend is from a linear regression.
-- Ice-covered grid points were excluded.
-- Data from 1993 to 2017 were included.
+- The SLTAC ADT fields were used.
+- The authors used daily data.
+- The data were spatially averaged.
+- Northern / southern tropics were defined as 0...30N, 30S...0.
 
 But still:
 
 - Can we be sure to find **exactly** the same data?
-- How did the authors treat leap-years?
-- How exactly did the authors do the linear regression?
+- How did the authors weight each grid point?
+- How did they standardize the data (common scale / different scales for North
+  / South, etc.)?
+
+### Towards full reproducibility
+
+
 
 ## Infrastructure at Geomar
 
