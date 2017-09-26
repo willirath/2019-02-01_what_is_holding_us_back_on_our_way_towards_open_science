@@ -7,7 +7,7 @@ sea-level.  We expect that there is a phase shift of 1/2 year between the
 northern and the southern hemisphere.*
 
 **Part two:** *We'll see which building blocks for a reproducible scientific
-workflow are available.*
+workflow are available at Geomar.*
 
 ## Part one:  Two simple time series
 
@@ -177,26 +177,69 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
+### One more thing
+
+How did this analysis develop in time?
+
+<https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
+
+This is a time line of every step towards the current version of this talk, and
+the dummy analysis presented here.  Suppose, we developed the analysis as part
+of a multi-author paper.  Then, it would be possible to return to any specific
+version of the scripts at any later point, compare scripts between revisions
+sent to the journal, or roll back any changes later found to be wrong.
+
 ## Part two: Infrastructure at Geomar
 
----
+### First, let's sumarize part one
 
-### Version controlled source
+Essential bits of reproducible science are
 
-#### Why?
+1. **data provenance** and a pointer to the full raw data used in the analysis,
+2. a **time-line** of the development of the analysis,
+3. an overview of all the **tools** used in the analysis and of their exact
+   versions,
+4. **documented steps** from the original data to the final presentation
+   (plots, tables, etc.),
+5. a small and easy-to-use data set containing **all the numbers** necessary to
+   re-plot and compare the data presented in the paper.
 
-Don't version-control backwards.  There always will be a next version.  So plan
-accordingly right at the beginning.
+Currently, journals are requiring authors to provide some or even all of the
+above.  (Today, you mostly get away with 5 or 4.  But expect to see
+requirements including all of the above!)
 
-### Self-documenting analysis
+Here, we'll look through 5. to 1.
 
-nb.geomar.de and Jupyter Notebooks provide a way of writing analyses where
-documentation is (almost) for free.
+### Provide the numbers (5.)
 
-### Version controlled (upstream) data
+There's <https://data.geomar.de> which is meant to serve as a stable point of
+first contact for anybody looking for a dataset from Geomar.  For now, this is
+a collection of links to data for papers etc.  Expect development with respect
+to how the different data sets are organized.
 
-Git LFS at git.geomar.de provide a way to version control own data and virtually
-all external / upstream data.
+### Self-documenting analysis (4.)
+
+<https://nb.geomar.de> and Jupyter Notebooks provide a way of writing analyses
+where documentation is (almost) for free.
+
+### Easy reproduction of the exact environment used in the analysis (3.)
+
+With Conda and, in particular, Conda-Forge, there's an easy way to explicitly
+manage a full environment.  There are standard environments that are provided
+on all the major analysis machines:
+<https://git.geomar.de/python/conda_environments/>
+
+### Keep a time line of all your steps (2.)
+
+With <https://git.geomar.de>, there's a full blown version control environment
+for Geomar members and for external collaborators.
+
+### Keep track of (large) data sets (1.)
+
+Git LFS at <https://git.geomar.de> provides a way to version control own data
+and virtually all external / upstream data.  In particular, there's a growing
+collection of regularly updated mirrors of external data sets:
+<https://git.geomar.de/data/docs/>
 
 ## Todo
 
