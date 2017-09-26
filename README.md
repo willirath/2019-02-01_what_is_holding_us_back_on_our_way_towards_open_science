@@ -193,9 +193,7 @@ be wrong.
 
 ---
 
-## Part two: Infrastructure at Geomar
-
-### First, let's sumarize part one
+## Summary of part one
 
 Essential bits of reproducible science are:
 
@@ -209,11 +207,15 @@ Essential bits of reproducible science are:
 5. a small and easy-to-use data set containing **all the numbers** necessary to
    re-plot and compare the data presented in the paper.
 
+---
+
+## Part two: Infrastructure at Geomar
+
 Currently, journals are requiring authors to provide some or even all of the
 above.  (Today, you mostly get away with 5 and / or 4.  But expect to see
 requirements including all of the above.)
 
-Here, we'll look through requirements 5. to 1. and to what extent, there are
+Here, we'll look through the requirements 5. to 1. and examine to what extent, there are
 (easy?) ways to fulfill them.
 
 ### Provide the final numbers (5.)
@@ -235,24 +237,24 @@ Alternatives:
 - https://zenodo.org provides storage and a DOI for data.
 
 (Note that the hard part is not providing a point of contact for those
-requesting the data.  The hard part is being able to provide it at any given
+requesting the data.  The hard part is being able to provide the data at any given
 time.)
 
 ### Self-documenting analysis (4.)
 
 Jupyter provides a way of writing analyses where (beautifully rendered)
-automatic documentation is documentation is coming (almost) for free.
+automatic documentation is (almost) for free.
 
 <https://nb.geomar.de> is a Jupyter frontend to virtually all the large
-(in-house and external) machines.  It is definitely possible (and done atm) to
-do all your analyses for your PhD thesis with Jupyter.
+(in-house and external) machines.  It is definitely possible (and currently done!) to
+perform all analyses for your PhD thesis with Jupyter.
 
 A bonus (related to 2. below):  The Geomar Git server renders Jupyter notebooks.
 
 ### Easy reproduction of the exact environment used in the analysis (3.)
 
 With Anaconda (Python and R) and Conda-Forge (far beyond), there's an easy way
-to explicitly explicitly manage a full environment.  There are standard
+to explicitly manage and document full working environments across different machines and through time.  There are standard
 environments that are available on all the major analysis machines (and via
 <https://nb.geomar.de>):
 
@@ -272,11 +274,30 @@ collection of regularly updated mirrors of external data sets:
 
 <https://git.geomar.de/data/docs/>
 
+To track large model data sets, at least have a transparent to store the data
+(or) pointers to where the actual data are found.
+
 ---
 
-## What to do now?
+## The (in my opinion) best part?
 
-First, note that even though the reproducibility debate circles around fraud
+Even though all of the tools and services detailed above are interacting via
+multiple links, none of these links are vital to the system or to your work.
+
+This way, you can profit from any service that suits your needs and remain fully
+independent from any of the others. For example, if you leave Geomar (or just go
+to sea for a month or three), it is very easy to take all your projects from
+<https://git.geomar.de>, all your data, all your notebooks, setup scripts for
+a conda environments identical to those available at Geomar, ...
+
+(Another benefit: Even if parts of the system become unavailable for some time or
+forever, it is very unlikely to really impact any of your work.)
+
+---
+
+## Who needs this?
+
+Note that even though the reproducibility debate circles around fraud
 prevention and facilitating communication within the scientific community, the
 first and foremost beneficiary of your reproducible work flow are you.  After
 all, it is far more common for your boss to ask you if you could re-do the
@@ -285,8 +306,18 @@ try to reproduce (or question) any of your work.
 
 The second biggest profit is for your current and future co-workers.  Imagine
 being able to get a PhD student started without sending them on a multi-week
-Google odysee before even being asble to start and "check that against
+Google odysee before even being able to start and "check that against
 satellite data".
+
+## What to do now?
+
+- [x] Have a mental framework for reproducibility.
+- [ ] Learn to use Git or any other version-control system.
+- [ ] Keep track of your data.
+- [ ] Script all your analyses.  Avoid (undocumented) interactive work whenever
+  possible.
+- [ ] Have a standard of numbering your versions.  (Always forward.  There
+should be no files called `.txt.old`!)
 
 ## Caveats and Todos
 
@@ -295,8 +326,8 @@ supplementary materials, in the paper?)
 
 Culture:  Be(come more) confident to publish your code add data.
 
-Culture (cont.):  How to establish ethics with respect to use of code and data
-published by others?
+Culture (cont.):  Establish ethics with respect to use of code and data
+published by others.
 
 ## References
 
