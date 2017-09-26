@@ -1,8 +1,8 @@
 # Towards Reproducible Science
 
 **Scenario:** *As a dummy project, we'll look at the seasonal cycle of
-sea-level in the year 2016.  We expect that there is a phase shift of 1/2
-year between the northern and the southern hemisphere.*
+sea-level.  We expect that there is a phase shift of 1/2 year between the
+northern and the southern hemisphere.*
 
 ## Challenge
 
@@ -13,7 +13,7 @@ the data otherwise.
 
 ![Figure 01. Tropical SSH indices](images/fig_01_tropical_ssh_index.png)
 
-*Figure 01.*  Standardized global-mean ADT for the northern (blue) and southern
+*Figure 01.*  Standardized mean SSH for the northern (blue) and southern
 (green) tropics.
 
 ## Reproducibility
@@ -36,8 +36,8 @@ This often means, that the following must be specified unambiguously:
 
 ### The sloppy way (see above)
 
-> *Figure 01.*  Standardized global-mean ADT for the northern (blue) and
-> southern (green) tropics.
+> *Figure 01.*  Standardized mean SSH for the northern (blue) and southern
+> (green) tropics.
 
 This clearly is problematic:
 
@@ -47,10 +47,10 @@ This clearly is problematic:
 
 ### A better way
 
-> *Figure 1.* The blue / green line show standardized mean ADT for the northern /
-> southern tropics.  The lines represent spatial averages of daily absolute
-> dynamic topography from SLTAC between the Equator and 30N / 30S and the
-> Equator.
+> *Figure 1.* The blue / green line show standardized mean SSH for the northern
+> / southern tropics.  The lines represent spatial averages of daily absolute
+> dynamic topography from SLTAC between the Equator and 23.43699°N / 23.43699°S
+> and the Equator.
 
 We now know that
 
@@ -61,18 +61,109 @@ We now know that
 
 But still:
 
-- Can we be sure to find **exactly** the same data?
+- Could we be sure to find **exactly** the same data?
 - How did the authors weight each grid point?
 - How did they standardize the data (common scale / different scales for North
   / South, etc.)?
 
 ### Towards full reproducibility
 
-> *Figure 1.* The blue / green line show standardized mean ADT for the northern /
-> southern tropics.  The lines represent spatial averages of daily absolute
-> dynamic topography from SLTAC between the Equator and 30N / 30S and the
-> Equator.  A notebook containing the full code to produce the figure is
-> included in the supplementary materials.
+> *Figure 1.* The blue / green line show standardized mean SSH for the northern
+> / southern tropics.  The lines represent spatial averages of daily absolute
+> dynamic topography from SLTAC between the Equator and 23.43699°N / 23.43699°S
+> and the Equator.  A script containing the full code to produce the figure
+> is included in the supplementary materials.
+
+### The (essential parts of the) notebook
+
+(This is where you should have a look at your notes.)
+
+```python
+from pathlib import Path
+import xarray as xr
+
+base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
+data_files = [str(fn) for fn in base_data_path.glob(
+    "SLTAC_GLO_PHY_L4_REP/v1.x.x/data/2016/dt*nc")]
+
+ssh = xr.open_mfdataset(data_files).adt
+
+def standardize_time_series(data):
+    """Return data with mean zero and std.-dev. one."""
+    return (data - data.mean(dim="time")) / data.std(dim="time")
+
+def spatial_average_between_latitudes(
+    data, lat_min=-90.0, lat_max=90.0, new_name=None):
+    """Return spatially averaged `data`.
+
+    The data are not weighted and missing data are excluded.
+    """
+    data = data.sel(latitude=slice(lat_min, lat_max))
+    data = data.mean(dim=["latitude", "longitude"])
+    data = data.rename(new_name)
+    return data
+
+ssh_index_north = standardize_time_series(spatial_average_between_latitudes(
+    ssh, lat_min=0.0, lat_max=23.43699, new_name="SSH index North"))
+ssh_index_south = standardize_time_series(spatial_average_between_latitudes(
+    ssh, lat_min=-23.43699, lat_max=0.0, new_name="SSH index South"))
+
+ssh_index_north.plot();
+ssh_index_south.plot();
+```
+
+#### Saving data for reference
+
+```bash
+output_dataset = xr.Dataset({'ssh_index_north': ssh_index_north,
+                             'ssh_index_south': ssh_index_south})
+output_dataset.to_netcdf("fig_01_tropical_ssh_index.nc")
+```
+
+#### Data provenance
+
+We use a data set from a [version controlled data repository](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/):
+
+```python
+base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
+data_files = [str(fn) for fn in base_data_path.glob(
+    "SLTAC_GLO_PHY_L4_REP/v1.x.x/data/2016/dt*nc")]
+```
+
+Moreover, the following tells us that we're using `v1.1.0` of the
+`SLTAC_GLO_PHY_L4_REP` data set:
+```bash
+cd /data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x/
+pwd -P
+/home/wrath/TM/software/miniconda3_latest/envs/git/bin/git describe
+```
+```
+/data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x
+v1.1.0
+```
+
+This provides a complete history of our mirror of the data set:
+> <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/commits/v1.1.0>
+
+#### Tools that were used
+
+```bash
+conda list
+```
+```
+# packages in environment at /home/wrath/TM/software/miniconda3_20170727/envs/py3_std:
+#
+alabaster                 0.7.10                   py35_1    conda-forge
+anaconda-client           1.6.5                      py_0    conda-forge
+aospy                     0.1.2                    py35_0    conda-forge
+[...]
+xarray                    0.9.6                    py35_0    conda-forge
+xz                        5.2.3                         0    conda-forge
+yaml                      0.1.6                         0    conda-forge
+zeromq                    4.2.1                         1    conda-forge
+zict                      0.1.3                      py_0    conda-forge
+zlib                      1.2.8                         3    conda-forge
+```
 
 ## Infrastructure at Geomar
 
