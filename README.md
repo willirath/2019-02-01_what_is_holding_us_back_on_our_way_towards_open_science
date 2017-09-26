@@ -3,11 +3,13 @@
 ## Two parts
 
 **Part one:** *As a dummy project, we'll look at the seasonal cycle of
-sea-level.  We expect that there is a phase shift of 1/2 year between the
-northern and the southern hemisphere.*
+sea-surface height (SSH).  We'll see that there is a phase shift of 1/2 year
+between the northern and the southern hemisphere.*
 
 **Part two:** *We'll see which building blocks for a reproducible scientific
-workflow are available at Geomar.*
+work flow are available at Geomar.*
+
+---
 
 ## Part one:  Two simple time series
 
@@ -23,9 +25,9 @@ modify the data otherwise.
 
 ## Reproducibility
 
-Let's say a paper presents reproducible science if for any reader it is **in
-principle** possible to **completely understand** and **repeat all steps** the
-authors took from their initial idea to the final conclusions.
+Let's say an analysis is reproducible, if for any sufficiently skilled reader it
+is **in principle** possible to **completely understand** and **repeat all
+steps** the authors took from their initial idea to the final conclusions.
 
 This often means, that the following must be specified:
 
@@ -44,12 +46,11 @@ This often means, that the following must be specified:
 > *Figure 01.*  Standardized mean SSH for the northern (blue) and southern
 > (green) tropics.
 
-This clearly is problematic:
+This quite obviously is problematic:
 
 - Which data set and which variables from the data set were used?
 - Which data points / times / regions were included / excluded?
-- What's standardized?
-- Was there any additional processing?
+- What's the definition of standardized?
 
 ### A better way
 
@@ -82,11 +83,11 @@ But still:
 > code to produce the figure and a data file containing the time series data
 > that are plotted here are included in the supplementary materials.
 
-### The (essential parts of the) script
+### The (essential parts of the) supplementary script
 
 This is where you should have a look at your notes and compare.  (Note that
 there's not necessarily a correct or best way to do this analysis.  But you
-might notice  that there are many ways that are fully compatible with a short
+might notice that there are many ways that are fully compatible with a short
 description of the figure.)
 
 ```python
@@ -187,67 +188,114 @@ This is a time line of every step towards the current version of this talk, and
 the dummy analysis presented here.  Suppose, we developed the analysis as part
 of a multi-author paper.  Then, it would be possible to return to any specific
 version of the scripts at any later point, compare scripts between revisions
-sent to the journal, or roll back any changes later found to be wrong.
+sent to the journal, or roll back any changes that are perhaps later found to
+be wrong.
+
+---
 
 ## Part two: Infrastructure at Geomar
 
 ### First, let's sumarize part one
 
-Essential bits of reproducible science are
+Essential bits of reproducible science are:
 
-1. **data provenance** and a pointer to the full raw data used in the analysis,
+1. a pointer to the full **raw data** used in the analysis (**data
+   provenance**),
 2. a **time-line** of the development of the analysis,
-3. an overview of all the **tools** used in the analysis and of their exact
-   versions,
-4. **documented steps** from the original data to the final presentation
+3. an overview of all the **tools** and **libraries** used in the analysis and
+   of their exact versions,
+4. fully **documented steps** from the original data to the final presentation
    (plots, tables, etc.),
 5. a small and easy-to-use data set containing **all the numbers** necessary to
    re-plot and compare the data presented in the paper.
 
 Currently, journals are requiring authors to provide some or even all of the
-above.  (Today, you mostly get away with 5 or 4.  But expect to see
-requirements including all of the above!)
+above.  (Today, you mostly get away with 5 and / or 4.  But expect to see
+requirements including all of the above.)
 
-Here, we'll look through 5. to 1.
+Here, we'll look through requirements 5. to 1. and to what extent, there are
+(easy?) ways to fulfill them.
 
-### Provide the numbers (5.)
+### Provide the final numbers (5.)
+
+#### https://data.geomar.de
 
 There's <https://data.geomar.de> which is meant to serve as a stable point of
-first contact for anybody looking for a dataset from Geomar.  For now, this is
-a collection of links to data for papers etc.  Expect development with respect
-to how the different data sets are organized.
+first contact for anybody looking for a dataset from Geomar.  If a journal
+requires you to provide a reference to the data, this might be the information
+to give.  (Talk to <datamanagement@geomar.de> before doing so.)
+
+For now, <https://data.geomar.de> is a collection of links to data for papers
+etc.  Expect development with respect to how the different data sets are
+organized.
+
+Alternatives:
+- At TM, we have <data-tm@geomar.de> which will be forwarded to whoever will be
+  in charge of data management.
+- https://zenodo.org provides storage and a DOI for data.
+
+(Note that the hard part is not providing a point of contact for those
+requesting the data.  The hard part is being able to provide it at any given
+time.)
 
 ### Self-documenting analysis (4.)
 
-<https://nb.geomar.de> and Jupyter Notebooks provide a way of writing analyses
-where documentation is (almost) for free.
+Jupyter provides a way of writing analyses where (beautifully rendered)
+automatic documentation is documentation is coming (almost) for free.
+
+<https://nb.geomar.de> is a Jupyter frontend to virtually all the large
+(in-house and external) machines.  It is definitely possible (and done atm) to
+do all your analyses for your PhD thesis with Jupyter.
+
+A bonus (related to 2. below):  The Geomar Git server renders Jupyter notebooks.
 
 ### Easy reproduction of the exact environment used in the analysis (3.)
 
-With Conda and, in particular, Conda-Forge, there's an easy way to explicitly
-manage a full environment.  There are standard environments that are provided
-on all the major analysis machines:
+With Anaconda (Python and R) and Conda-Forge (far beyond), there's an easy way
+to explicitly explicitly manage a full environment.  There are standard
+environments that are available on all the major analysis machines (and via
+<https://nb.geomar.de>):
+
 <https://git.geomar.de/python/conda_environments/>
 
 ### Keep a time line of all your steps (2.)
 
-With <https://git.geomar.de>, there's a full blown version control environment
+With <https://git.geomar.de>, there's a full-blown version control environment
 for Geomar members and for external collaborators.
 
 ### Keep track of (large) data sets (1.)
 
 Git LFS at <https://git.geomar.de> provides a way to version control own data
-and virtually all external / upstream data.  In particular, there's a growing
+and virtually all external / upstream data.  For the moment, tracking Terabytes
+(or more) of model output is beyond reach.  But there already is a growing
 collection of regularly updated mirrors of external data sets:
+
 <https://git.geomar.de/data/docs/>
 
-## Todo
+---
 
-Best practices:  How much to document?  And where?  (In a separate repository, supplementary materials, in the paper?)
+## What to do now?
 
-Culture:  Be confident to publish your code add data.
+First, note that even though the reproducibility debate circles around fraud
+prevention and facilitating communication within the scientific community, the
+first and foremost beneficiary of your reproducible work flow are you.  After
+all, it is far more common for your boss to ask you if you could re-do the
+"plot from our 2012 paper with more recent data" than for any collaborator to
+try to reproduce (or question) any of your work.
 
-Culture (cont.):  How to establish ethical / un-ethical use of code and data
+The second biggest profit is for your current and future co-workers.  Imagine
+being able to get a PhD student started without sending them on a multi-week
+Google odysee before even being asble to start and "check that against
+satellite data".
+
+## Caveats and Todos
+
+Best practices:  How much to document?  And where?  (In a separate repository,
+supplementary materials, in the paper?)
+
+Culture:  Be(come more) confident to publish your code add data.
+
+Culture (cont.):  How to establish ethics with respect to use of code and data
 published by others?
 
 ## References
