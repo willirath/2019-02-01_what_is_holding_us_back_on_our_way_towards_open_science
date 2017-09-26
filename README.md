@@ -4,7 +4,12 @@
 sea-level in the year 2016.  We expect that there is a phase shift of 1/2
 year between the northern and the southern hemisphere.*
 
-**Reproducibility:** *Let's say a paper presents reproducible science if for
+## Challenge
+
+![fig_01_tropical_adt_index](images/fig_01_tropical_adt_index.png
+
+## Reproducibility
+*Let's say a paper presents reproducible science if for
 any reader it is in principle possible to completely understand and repeat all
 steps the authors took from their initial idea to the final conclusions.*
 
