@@ -6,12 +6,21 @@ year between the northern and the southern hemisphere.*
 
 ## Challenge
 
-![fig_01_tropical_adt_index](images/fig_01_tropical_adt_index.png
+Those of you who have an idea what this plot shows, please do now take a note
+(in some form of pseudo-code or code) on how you would produce it.  Please be
+specific about when and how you select regions, calculate averages, and modify
+the data otherwise.
+
+![Figure 01. Tropical SSH indices](images/fig_01_tropical_ssh_index.png)
+
+*Figure 01.*  Standardized global-mean ADT for the northern (blue) and southern
+(green) tropics.
 
 ## Reproducibility
-*Let's say a paper presents reproducible science if for
-any reader it is in principle possible to completely understand and repeat all
-steps the authors took from their initial idea to the final conclusions.*
+
+Let's say a paper presents reproducible science if for any reader it is **in
+principle** possible to **completely understand** and **repeat all steps** the
+authors took from their initial idea to the final conclusions.
 
 This often means, that the following must be specified unambiguously:
 
@@ -20,15 +29,15 @@ This often means, that the following must be specified unambiguously:
 2. How was the data treated to produce all figures and numbers given in the
    paper?
 
-3. For any non-obvious choice of treatment of the data: Why did the authors do
-   what they did?
+3. (Bonus) For any non-obvious choice of treatment of the data:  Why did the
+   authors do what they did?
 
-## How to do this
+## How to achieve reproducibility for our figure?
 
-### The sloppy way
+### The sloppy way (see above)
 
-> Figure 1: The blue / green lines show standardized mean ADT for the northern
-> / southern tropics.
+> *Figure 01.*  Standardized global-mean ADT for the northern (blue) and
+> southern (green) tropics.
 
 This clearly is problematic:
 
@@ -38,7 +47,7 @@ This clearly is problematic:
 
 ### A better way
 
-> Figure 1: The blue / green line show standardized mean ADT for the northern /
+> *Figure 1.* The blue / green line show standardized mean ADT for the northern /
 > southern tropics.  The lines represent spatial averages of daily absolute
 > dynamic topography from SLTAC between the Equator and 30N / 30S and the
 > Equator.
@@ -59,7 +68,11 @@ But still:
 
 ### Towards full reproducibility
 
-
+> *Figure 1.* The blue / green line show standardized mean ADT for the northern /
+> southern tropics.  The lines represent spatial averages of daily absolute
+> dynamic topography from SLTAC between the Equator and 30N / 30S and the
+> Equator.  A notebook containing the full code to produce the figure is
+> included in the supplementary materials.
 
 ## Infrastructure at Geomar
 
