@@ -1,20 +1,25 @@
 # Towards Reproducible Science
 
-**Scenario:** *As a dummy project, we'll look at the seasonal cycle of
+## Two parts
+
+**Part one:** *As a dummy project, we'll look at the seasonal cycle of
 sea-level.  We expect that there is a phase shift of 1/2 year between the
 northern and the southern hemisphere.*
 
-## Challenge
+**Part two:** *We'll see which building blocks for a reproducible scientific
+workflow are available.*
 
-Those of you who have an idea what this plot shows, please do now take a note
-(in some form of pseudo-code or code) on how you would produce it.  Please be
-specific about when and how you select regions, calculate averages, and modify
-the data otherwise.
+## Part one:  Two simple time series
+
+**Challenge:** Those of you who have an idea what this plot shows, please do
+now take a note (in pseudo-code or code) on how you would produce it.  Please
+be specific about when and how you select regions, calculate averages, and
+modify the data otherwise.
 
 ![Figure 01. Tropical SSH indices](images/fig_01_tropical_ssh_index.png)
 
-*Figure 01.*  Standardized mean SSH for the northern (blue) and southern
-(green) tropics.
+**Figure 01.** *Standardized mean SSH for the northern (blue) and southern
+(green) tropics.*
 
 ## Reproducibility
 
@@ -22,7 +27,7 @@ Let's say a paper presents reproducible science if for any reader it is **in
 principle** possible to **completely understand** and **repeat all steps** the
 authors took from their initial idea to the final conclusions.
 
-This often means, that the following must be specified unambiguously:
+This often means, that the following must be specified:
 
 1. Which input data were used?
 
@@ -32,7 +37,7 @@ This often means, that the following must be specified unambiguously:
 3. (Bonus) For any non-obvious choice of treatment of the data:  Why did the
    authors do what they did?
 
-## How to achieve reproducibility for our figure?
+## How to adequately describe our figure?
 
 ### The sloppy way (see above)
 
@@ -43,40 +48,46 @@ This clearly is problematic:
 
 - Which data set and which variables from the data set were used?
 - Which data points / times / regions were included / excluded?
+- What's standardized?
 - Was there any additional processing?
 
 ### A better way
 
-> *Figure 1.* The blue / green line show standardized mean SSH for the northern
-> / southern tropics.  The lines represent spatial averages of daily absolute
-> dynamic topography from SLTAC between the Equator and 23.43699°N / 23.43699°S
-> and the Equator.
+> *Figure 1.* The blue / green line show standardized (`mean=0`, `std-dev=1`)
+> mean SSH for the northern / southern tropics.  The lines represent spatial
+> averages of daily absolute dynamic topography from SLTAC between the Equator
+> and 23.43699°N / 23.43699°S and the Equator.
 
 We now know that
 
-- The SLTAC ADT fields were used.
-- The authors used daily data.
-- The data were spatially averaged.
-- Northern / southern tropics were defined as 0...30N, 30S...0.
+- daily SLTAC ADT fields were used,
+- the data were spatially averaged,
+- the standardized data has `mean=0` and `std-dev=1`,
+- northern / southern tropics are defined as the regions between 0 and
+  23.43699°N / 23.43699°S and 0.
 
 But still:
 
 - Could we be sure to find **exactly** the same data?
 - How did the authors weight each grid point?
-- How did they standardize the data (common scale / different scales for North
-  / South, etc.)?
+- How exactly and at what point did the authors standardize the data?
+- Did they include missing data?  (And does it make a difference?)
 
 ### Towards full reproducibility
 
-> *Figure 1.* The blue / green line show standardized mean SSH for the northern
-> / southern tropics.  The lines represent spatial averages of daily absolute
-> dynamic topography from SLTAC between the Equator and 23.43699°N / 23.43699°S
-> and the Equator.  A script containing the full code to produce the figure
-> is included in the supplementary materials.
+> *Figure 1.* The blue / green line show standardized (`mean=0`, `std-dev=1`)
+> mean SSH for the northern / southern tropics.  The lines represent spatial
+> averages of daily absolute dynamic topography from SLTAC between the Equator
+> and 23.43699°N / 23.43699°S and the Equator.  A script containing the full
+> code to produce the figure and a data file containing the time series data
+> that are plotted here are included in the supplementary materials.
 
-### The (essential parts of the) notebook
+### The (essential parts of the) script
 
-(This is where you should have a look at your notes.)
+This is where you should have a look at your notes and compare.  (Note that
+there's not necessarily a correct or best way to do this analysis.  But you
+might notice  that there are many ways that are fully compatible with a short
+description of the figure.)
 
 ```python
 from pathlib import Path
@@ -103,6 +114,7 @@ def spatial_average_between_latitudes(
     data = data.rename(new_name)
     return data
 
+# first average (both, lat and lon, simultaneously), then standardize
 ssh_index_north = standardize_time_series(spatial_average_between_latitudes(
     ssh, lat_min=0.0, lat_max=23.43699, new_name="SSH index North"))
 ssh_index_south = standardize_time_series(spatial_average_between_latitudes(
@@ -165,7 +177,9 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
-## Infrastructure at Geomar
+## Part two: Infrastructure at Geomar
+
+---
 
 ### Version controlled source
 
