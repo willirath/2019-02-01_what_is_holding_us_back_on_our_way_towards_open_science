@@ -338,22 +338,22 @@ published by others.
 
 ## Reading list
 
-- [x] [ Barnes2010][Barnes2010]
-- [x] [ Bhadrwaj2014][Bhadrwaj2014]
-- [ ] [( Chavan2015 )][Chavan2015]
-- [x] [ Easterbrook2014][Easterbrook2014]
-- [x] [ Hinsen2015][Hinsen2015]
-- [x] [ Hinsen2017][Hinsen2017] http:// blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/
-- [x] [ Irving_carpentry][Irving_carpentry]
-- [x] [ Irving2015][Irving2015]
-- [x] [ Merali2010][Merali2010]
-- [x] [ MIAME][MIAME]
-- [x] [ MPI_good_scientific_practice][MPI_good_scientific_practice] http:// www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
-- [x] [ Nature_CodeShare][Nature_CodeShare]
-- [x] [ Sandve2013][Sandve2013]
-- [ ] [ Stodden2010][Stodden2010]
-- [x] [ Wilson2012][Wilson2012]
-- [ ] [ XSEDE2014_repro][XSEDE2014_repro]
+- [x] [ Barnes2010 ][Barnes2010]
+- [x] [ Bhadrwaj2014 ][Bhadrwaj2014]
+- [ ] [( Chavan2015 ) ][Chavan2015]
+- [x] [ Easterbrook2014 ][Easterbrook2014]
+- [x] [ Hinsen2015 ][Hinsen2015]
+- [x] [ Hinsen2017 ][Hinsen2017] http:// blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/
+- [x] [ Irving_carpentry ][Irving_carpentry]
+- [x] [ Irving2015 ][Irving2015]
+- [x] [ Merali2010 ][Merali2010]
+- [x] [ MIAME ][MIAME]
+- [x] [ MPI_good_scientific_practice ][MPI_good_scientific_practice] http:// www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
+- [x] [ Nature_CodeShare ][Nature_CodeShare]
+- [x] [ Sandve2013 ][Sandve2013]
+- [ ] [ Stodden2010 ][Stodden2010]
+- [x] [ Wilson2012 ][Wilson2012]
+- [ ] [ XSEDE2014_repro ][XSEDE2014_repro]
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
