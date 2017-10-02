@@ -340,6 +340,8 @@ published by others.
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
+[Bhadrwaj2014]: https://arxiv.org/abs/1409.0798
+
 [Chavan2015]: https://arxiv.org/abs/1506.04815
 
 [Hinsen2015]: https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/
