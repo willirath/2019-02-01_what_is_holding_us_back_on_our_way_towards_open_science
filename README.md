@@ -352,6 +352,8 @@ published by others.
 
 [Irving2015]: http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1
 
+[Merali2010]: https://www.nature.com/doifinder/10.1038/467775a
+
 [MIAME]: http://fged.org/projects/miame/
 
 [MPI_good_scientific_practice]: http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
