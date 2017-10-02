@@ -29,7 +29,7 @@
   - reapeatable and reproducible: Obtain same results with same code
   - all others
 
-  ![Venn diagram reproducibility vs. repeatability.](https://images.nature.com/full/nature-assets/ngeo/journal/v7/n11/images/ngeo2283-f1.jpg)
+  ![Venn diagram reproducibility vs. repeatability.](Easterbrook2014_ngeo2283-f1.jpg)
 
 - "Myth of many eyes"
   - Majority of published code will not be looked at / used at all.
