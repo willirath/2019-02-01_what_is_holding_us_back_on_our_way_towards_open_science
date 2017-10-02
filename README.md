@@ -25,8 +25,8 @@ modify the data otherwise.
 
 ## Definition: Repeatability
 
-Let's say an analysis is repeatable, if for any sufficiently skilled reader it
-is **in principle** possible to **completely understand** and **repeat all
+Let's say an analysis is **repeatable**, if for any sufficiently skilled reader
+it is **in principle** possible to **completely understand** and **repeat all
 steps** the authors took from their initial idea to the final conclusions.
 
 This often means, that the following must be specified:
