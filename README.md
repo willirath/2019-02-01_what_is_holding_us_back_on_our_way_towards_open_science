@@ -344,6 +344,8 @@ published by others.
 
 [Chavan2015]: https://arxiv.org/abs/1506.04815
 
+[Easterbrook2014]: http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html
+
 [Hinsen2015]: https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/
 
 [Hinsen2017]: http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/
