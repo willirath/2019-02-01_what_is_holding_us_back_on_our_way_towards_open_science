@@ -318,6 +318,10 @@ data".
 
 ## What to do now?
 
+- Skim [Sandve (2013)][Sandve2013] for the "Then Repeatability Commandments".
+- Read the [reference sheet of Wilson (2012)][Wilson2012] to be prepared for
+  coding.
+
 - [x] Have a mental framework for repeatability.
 - [ ] Learn to use Git or any other version-control system.
 - [ ] Keep track of your data.
