@@ -352,7 +352,7 @@ published by others.
 - [x] [ Nature_CodeShare][Nature_CodeShare]
 - [x] [ Sandve2013][Sandve2013]
 - [ ] [ Stodden2010][Stodden2010]
-- [ ] [ Wilson2012][Wilson2012]
+- [x] [ Wilson2012][Wilson2012]
 - [ ] [ XSEDE2014_repro][XSEDE2014_repro]
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
