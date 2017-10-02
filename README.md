@@ -1,4 +1,4 @@
-# Towards Reproducible Science
+# Towards ~~Reproducible~~ Repeatable Science
 
 ## Two parts
 
@@ -6,7 +6,7 @@
 sea-surface height (SSH).  We'll see that there is a phase shift of 1/2 year
 between the northern and the southern hemisphere.*
 
-**Part two:** *We'll see which building blocks for a reproducible scientific
+**Part two:** *We'll see which building blocks for a repeatable scientific
 work flow are available at Geomar.*
 
 ---
@@ -23,9 +23,9 @@ modify the data otherwise.
 **Figure 01.** *Standardized mean SSH for the northern (blue) and southern
 (green) tropics.*
 
-## Reproducibility
+## ~~Reproducibility~~ Repeatability
 
-Let's say an analysis is reproducible, if for any sufficiently skilled reader it
+Let's say an analysis is repeatable, if for any sufficiently skilled reader it
 is **in principle** possible to **completely understand** and **repeat all
 steps** the authors took from their initial idea to the final conclusions.
 
@@ -74,7 +74,7 @@ But still:
 - How exactly and at what point did the authors standardize the data?
 - Did they include missing data?  (And does it make a difference?)
 
-### Towards full reproducibility
+### Towards full repeatability
 
 > *Figure 1.* The blue / green line show standardized (`mean=0`, `std-dev=1`)
 > mean SSH for the northern / southern tropics.  The lines represent spatial
@@ -202,7 +202,7 @@ be wrong.
 
 ## Summary of part one
 
-Essential bits of reproducible science are:
+Essential bits of repeatable science are:
 
 1. a pointer to the full **raw data** used in the analysis (**data
    provenance**),
@@ -212,7 +212,7 @@ Essential bits of reproducible science are:
 4. fully **documented steps** from the original data to the final presentation
    (plots, tables, etc.),
 5. a small and easy-to-use data set containing **all the numbers** necessary to
-   re-plot and compare the data presented in the paper.
+   re-plot and compare the data presented in the analysis.
 
 ---
 
@@ -304,27 +304,27 @@ forever, it is very unlikely to really impact any of your work.)
 
 ## Who needs this?
 
-Note that even though the reproducibility debate circles around fraud
-prevention and facilitating communication within the scientific community, the
-first and foremost beneficiary of your reproducible work flow are you.  After
-all, it is far more common for your boss to ask you if you could re-do the
-"plot from our 2012 paper with more recent data" than for any collaborator to
-try to reproduce (or question) any of your work.
+Note that even though the reproducibility and repeatability debate circles
+around fraud prevention and facilitating communication within the scientific
+community, the first and foremost beneficiary of your repeatable work flow are
+you.  After all, it is far more common for your boss to ask you if you could
+re-do the "plot from our 2012 paper with more recent data" than for any
+collaborator to try to reproduce (or question) any of your work.
 
 The second biggest profit is for your current and future co-workers.  Imagine
 being able to get a PhD student started without sending them on a multi-week
-Google odysee before even being able to start and "check that against
-satellite data".
+Google odysee before even being able to start and "check that against satellite
+data".
 
 ## What to do now?
 
-- [x] Have a mental framework for reproducibility.
+- [x] Have a mental framework for repeatability.
 - [ ] Learn to use Git or any other version-control system.
 - [ ] Keep track of your data.
 - [ ] Script all your analyses.  Avoid (undocumented) interactive work whenever
   possible.
 - [ ] Have a standard of numbering your versions.  (Always forward.  There
-should be no files called `.txt.old`!)
+  should be no files called `.txt.old`!)
 
 ## Caveats and Todos
 
