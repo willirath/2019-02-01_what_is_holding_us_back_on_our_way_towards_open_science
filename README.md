@@ -116,10 +116,14 @@ def spatial_average_between_latitudes(
     return data
 
 # first average (both, lat and lon, simultaneously), then standardize
-ssh_index_north = standardize_time_series(spatial_average_between_latitudes(
-    ssh, lat_min=0.0, lat_max=23.43699, new_name="SSH index North"))
-ssh_index_south = standardize_time_series(spatial_average_between_latitudes(
-    ssh, lat_min=-23.43699, lat_max=0.0, new_name="SSH index South"))
+ssh_index_north = standardize_time_series(
+    spatial_average_between_latitudes(
+        ssh, lat_min=0.0, lat_max=23.43699,
+        new_name="SSH index North"))
+ssh_index_south = standardize_time_series(
+    spatial_average_between_latitudes(
+        ssh, lat_min=-23.43699, lat_max=0.0,
+        new_name="SSH index South"))
 
 ssh_index_north.plot();
 ssh_index_south.plot();
@@ -135,7 +139,7 @@ output_dataset.to_netcdf("fig_01_tropical_ssh_index.nc")
 
 #### Data provenance
 
-We use a data set from a [version controlled data repository](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/):
+We use a data set from a [fully version-controlled data repository](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/):
 
 ```python
 base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
@@ -146,19 +150,22 @@ data_files = [str(fn) for fn in base_data_path.glob(
 Moreover, the following tells us that we're using `v1.1.0` of the
 `SLTAC_GLO_PHY_L4_REP` data set:
 ```bash
-cd /data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x/
-pwd -P
-/home/wrath/TM/software/miniconda3_latest/envs/git/bin/git describe
+git --work-tree="/data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x/" describe
 ```
 ```
 /data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x
 v1.1.0
 ```
 
-This provides a complete history of our mirror of the data set:
-> <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/commits/v1.1.0>
+To learn more about the data set, check:
+
+- <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/commits/v1.1.0> for a complete history of the our mirror of the data set,
+- <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP> for a general overview, a README of the current version, etc.
 
 #### Tools that were used
+
+The following lists the complete Python environment that was used in the
+analysis:
 
 ```bash
 conda list
@@ -178,9 +185,9 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
-### One more thing
+### Evolution of the analysis
 
-How did this analysis develop in time?
+To tell how this analysis developed in time, check:
 
 <https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
 
@@ -331,15 +338,21 @@ published by others.
 
 ## References
 
+[Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
+
+[Chavan2015]: https://arxiv.org/abs/1506.04815
+
 [Hinsen2015]: https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/
 
 [Hinsen2017]: http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/
 
+[Irving_carpentry]: http://damienirving.github.io/capstone-oceanography/03-data-provenance.html
+
+[Irving2015]: http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1
+
 [MIAME]: http://fged.org/projects/miame/
 
-[Wilson2012]: https://arxiv.org/abs/1210.0530
-
-[Irving_carpentry]: http://damienirving.github.io/capstone-oceanography/03-data-provenance.html
+[MPI_good_scientific_practice]: http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
 
 [Nature_CodeShare]: https://www.nature.com/news/code-share-1.16232
 
@@ -347,12 +360,6 @@ published by others.
 
 [Stodden2010]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1550193
 
-[MPI_good_scientific_practice]: http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
-
-[Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
-
-[Irving2015]: http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1
-
-[Chavan2015]: https://arxiv.org/abs/1506.04815
+[Wilson2012]: https://arxiv.org/abs/1210.0530
 
 [XSEDE2014_repro]: https://www.xsede.org/documents/659353/d90df1cb-62b5-47c7-9936-2de11113a40f
