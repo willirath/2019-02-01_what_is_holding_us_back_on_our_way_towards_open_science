@@ -336,7 +336,7 @@ Culture:  Be(come more) confident to publish your code add data.
 Culture (cont.):  Establish ethics with respect to use of code and data
 published by others.
 
-## Reading list
+## References / Reading list
 
 - [x] [ Barnes2010 ][Barnes2010]
 - [x] [ Bhadrwaj2014 ][Bhadrwaj2014]
