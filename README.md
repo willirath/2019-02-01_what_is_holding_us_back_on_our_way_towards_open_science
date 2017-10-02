@@ -350,7 +350,7 @@ published by others.
 - [x] [ MIAME][MIAME]
 - [x] [ MPI_good_scientific_practice][MPI_good_scientific_practice] http:// www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
 - [x] [ Nature_CodeShare][Nature_CodeShare]
-- [ ] [ Sandve2013][Sandve2013]
+- [x] [ Sandve2013][Sandve2013]
 - [ ] [ Stodden2010][Stodden2010]
 - [ ] [ Wilson2012][Wilson2012]
 - [ ] [ XSEDE2014_repro][XSEDE2014_repro]
