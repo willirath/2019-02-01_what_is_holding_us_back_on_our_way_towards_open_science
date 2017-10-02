@@ -23,7 +23,7 @@ modify the data otherwise.
 **Figure 01.** *Standardized mean SSH for the northern (blue) and southern
 (green) tropics.*
 
-## ~~Reproducibility~~ Repeatability
+## Definition: Repeatability
 
 Let's say an analysis is repeatable, if for any sufficiently skilled reader it
 is **in principle** possible to **completely understand** and **repeat all
