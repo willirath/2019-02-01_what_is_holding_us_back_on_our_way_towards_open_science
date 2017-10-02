@@ -347,7 +347,7 @@ published by others.
 - [x] [ Irving_carpentry][Irving_carpentry]
 - [x] [ Irving2015][Irving2015]
 - [x] [ Merali2010][Merali2010]
-- [ ] [ MIAME][MIAME]
+- [x] [ MIAME][MIAME]
 - [x] [ MPI_good_scientific_practice][MPI_good_scientific_practice] http:// www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html
 - [x] [ Nature_CodeShare][Nature_CodeShare]
 - [ ] [ Sandve2013][Sandve2013]
