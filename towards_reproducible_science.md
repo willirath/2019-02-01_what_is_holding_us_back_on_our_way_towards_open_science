@@ -67,8 +67,8 @@ class: middle
 2. **How** was the data treated to produce all figures and numbers given in the
    paper?
 
-3. **Why** did the authors do what they did? ((Bonus) For any non-obvious
-   choice of treatment of the data:)
+3. **Why** did the authors do what they did? (For any non-obvious
+   choice of treatment of the data.  More of a bonus.)
 
 ---
 
@@ -257,6 +257,7 @@ v1.1.0
 To learn more about the data set, check:
 
 - <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/commits/v1.1.0> for a complete history of the our mirror of the data set,
+
 - <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP> for a general overview, a README of the current version, etc.
 
 ---
@@ -367,11 +368,11 @@ class: middle
 - meant to serve as a **stable** point of **first contact** for anybody looking
   for a dataset from Geomar
 
-  .medium[If a journal requires you to provide a reference to the data, this
-  might be the information to give.  (Talk to <datamanagement@geomar.de> before
-  doing so.)]
-
 - today: **collection of links** to data for papers etc.
+
+.medium[If a journal requires you to provide a reference to the data, this
+might be the information to give.  (Talk to <datamanagement@geomar.de> before
+doing so.)]
 
 --
 
@@ -603,6 +604,8 @@ But the first and foremost beneficiary of your repeatable work flow are **you**.
 
 **Student:** (all set up for two weeks of googling satellite data sets) *"Sure..."*
 
+--
+
 **You:** *[Here's a
 script](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
 where I did a similar thing with the [old AVISO
@@ -610,13 +613,11 @@ data](https://git.geomar.de/data/AVISO). Maybe it's good to start there.
 When you're familiar with this one, adapt it to the new [SLTAC
 product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP).*
 
-**Student:** (realizes they'll be able to start right away)
-
 ---
 
 ## What to do now?
 
-- Skim [Sandve (2013)][Sandve2013] for the "Then Repeatability Commandments".
+- Skim [Sandve (2013)][Sandve2013] for the "The Repeatability Commandments".
 - Read the [reference sheet of Wilson (2012)][Wilson2012] to be prepared for
   coding.
 
