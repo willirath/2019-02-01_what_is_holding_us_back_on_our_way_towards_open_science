@@ -1,30 +1,26 @@
 class: middle, center
 
-# Towards ~~Reproducible~~ Repeatable Science
+# ~~Reproducible~~ Repeatable Work Flows
 
 Willi Rath (wrath@geomar.de)
 
 .medium[**Thanks:** *Martin Claus, Christina Roth, Carsten Schirnick, Claas
-Faber, Kai Grunau, Klaus Getzlaff, Torge Martin*]
+Faber, Kai Grunau, Klaus Getzlaff, Torge Martin, ...*]
 
 ---
 
-class: top, left
+class: middle, left
 
-## Two parts
+## Part One — A (Repeatable?) Analysis
 
---
+*As an example project, we'll look at the seasonal cycle of sea-level. We'll
+see that there is a phase shift of 1/2 year between the northern and the
+southern hemisphere.*
 
-### Part One -- A (Repeatable?) Example
+## Part Two — Repeatable Workflows at Geomar
 
-*As a dummy project, we'll look at the seasonal cycle of
-sea-surface height (SSH).  We'll see that there is a phase shift of 1/2 year
-between the northern and the southern hemisphere.*
-
-### Part Two -- Repeatable Workflows at Geomar
-
-*We'll see which building blocks for a repeatable scientific
-work flow are available at Geomar.*
+*We'll go through building blocks for a repeatable work flow are available at
+Geomar.*
 
 ---
 
@@ -32,10 +28,11 @@ class: middle, left
 
 ## Challenge
 
-Those of you who have an idea what this plot shows, please do
-now **take a note** (in pseudo-code or code) on how you would produce the
-following figure.  Please be specific about when and how you select
-regions, calculate averages, and modify the data otherwise.
+Those of you who have an idea what this plot shows, please do now **take a
+note** (in pseudo-code or code) on how you would produce the following figure.
+
+Please be specific about **when** and **how** you select regions, calculate
+averages, and modify the data otherwise.
 
 ---
 
@@ -64,17 +61,16 @@ class: middle
 
 1. Which **input data** were used?
 
-2. **How** was the data treated to produce all figures and numbers given in the
-   paper?
+2. **How** was the data treated to produce all **figures** and **numbers**
+   given in the paper?
 
-3. **Why** did the authors do what they did? (For any non-obvious
-   choice of treatment of the data.  More of a bonus.)
+3. **Why** did the authors do what they did? ← *a bonus?*
 
 ---
 
 class: middle, center
 
-## Back to our figure
+## Back to the Figure
 
 ---
 
@@ -87,7 +83,7 @@ class: left, middle
 
 ---
 
-## The sloppy way
+## The Sloppy Way
 
 **Figure 01.**  Standardized mean SSH for the northern (blue) and southern
 (green) tropics.
@@ -96,7 +92,7 @@ class: left, middle
 
 --------
 
-This quite obviously is **problematic**:
+(Quite obvious) **problems**:
 
 - Which **data set** and which **variables** from the data set were used?
 
@@ -106,7 +102,7 @@ This quite obviously is **problematic**:
 
 ---
 
-## Better
+## Giving More Details
 
 **Figure 1.** The blue / green line show standardized (`mean=0`, `std-dev=1`)
 mean SSH for the northern / southern Tropics.  The lines represent spatial
@@ -123,7 +119,7 @@ We now know that
 
 - the data were **spatially averaged**,
 
-- the standardized data has **`mean=0`** and **`std-dev=1`**,
+- the **standardized** data have `mean=0` and `std-dev=1`,
 
 - northern / southern Tropics are defined as the regions between 0 and
   **23.43699°N / 23.43699°S** and 0.
