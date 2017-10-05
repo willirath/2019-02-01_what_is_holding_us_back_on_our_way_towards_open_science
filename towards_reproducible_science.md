@@ -147,7 +147,7 @@ class: middle
 
 **Figure 01.** * **Standardized** (`mean=0`, `std-dev=1`) **northern-hemisphere**
 mean of monthly-mean **HadISST** sea-surface temperature (**SST**). There are
-a Jupyter notebook and a data file with all the details in the **supllementary
+a Jupyter notebook and a data file with all the details in the **supplementary
 materials**. *
 
 ---
@@ -156,7 +156,8 @@ class: middle
 
 ## The (essential parts of the) Supplementary Script
 
-This is where you should have a look at your notes and compare.
+(Let's first walk through it.  We'll compare with your version of the analysis
+later.)
 
 ---
 
@@ -194,6 +195,8 @@ sst_index_north = standardize_time_series(spatial_average_between_latitudes(
 sst_index_north.plot()
 ```
 
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
+
 ---
 
 class: middle
@@ -204,6 +207,8 @@ class: middle
 output_dataset = xr.Dataset({'sst_index_north': sst_index_north})
 output_dataset.to_netcdf("fig_01_sst_index.nc")
 ```
+
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
 
 ---
 
@@ -216,6 +221,8 @@ repository](https://git.geomar.de/data/HadISST/):
 base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
 data_file = base_data_path / "HadISST/v1.x.x/data/HadISST_sst.nc"
 ```
+
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
 
 --
 
@@ -268,6 +275,8 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
+
 ---
 
 ## Evolution of the Analysis
@@ -311,6 +320,19 @@ Possible aspects of repeatability are
 
 ---
 
+# Interlude
+
+Let's compare how you'd calculate an SST index for the northern hemisphere.
+
+--
+
+(Mine was wrong.  [This notebook details (a few)
+subtleties.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_sst_index_averaging_subtleties.ipynb))
+
+<img src="images/fig_02_sst_index_averaging_subtleties.png" width="95%">
+
+---
+
 class: middle, center
 
 ## Part Two — Repeatable Workflows at Geomar
@@ -330,11 +352,14 @@ class: middle, center
 
 5. **raw data** and **data provenance**
 
-Currently, many journals are requiring authors to provide some form of *1* and /
-or *2*.  But expect so see more and more requests for *3* to *5*.
+--------
 
-Here, we'll look through the requirements 1. to 5. and examine to what extent,
-there are (easy?) ways to fulfill them.
+Currently, many journals are requiring authors to provide some form of **1.**
+and / or **2.**.  But expect so see more and more requests for **3.** to
+**5.**.
+
+Here, we'll look through the requirements **1.** to **5.** and examine to what
+extent, there are (easy?) ways to fulfill them.
 
 ---
 
@@ -373,8 +398,8 @@ doing so.)]
 
 Some alternatives:
 
-- At TM, we have <data-tm@geomar.de> which will be forwarded to whoever will be
-  in charge of data management.
+- At TM, we have <data-tm@geomar.de> which is forwarded to whoever is / will be
+  in charge of data management within the group.
 
 - https://zenodo.org provides storage and a DOI for data.
 
@@ -406,14 +431,14 @@ class: middle
 
 ## "Documented steps" (2.) ← <https://nb.geomar.de>
 
-- Jupyter **frontend** to virtually all the **large machines** (in-house and
-  external)
+- [Jupyter](https://github.com/jupyter/jupyter) **frontend** to virtually all
+  the **large machines** (in-house and external)
 
 - **beautifully rendered** analyses
 
 - automatic **documentation** is (almost) **for free**
 
-- bonus:  The Geomar **Git** server renders Jupyter notebooks!
+- Most **Git** servers render Jupyter notebooks!
 
 --
 
@@ -442,17 +467,18 @@ class: middle
 
 ## "Tools and Libraries" (3.) ← [Conda environments](https://git.geomar.de/python/conda_environments/)
 
-- use Anaconda (**Python** and **R**) and Conda-Forge (far beyond)
+- use [Anaconda](https://www.anaconda.com/distribution/) (**Python** and **R**)
+  and [Conda-Forge](https://conda-forge.org/) (far beyond)
 
 - explicitly **manage** and **document** full working **environments**
 
 - across **different machines**
 
-- standard environments
+- standard environments at Geomar:
 
   - <https://git.geomar.de/python/conda_environments/>
 
-  - on all the major analysis machines ← <https://nb.geomar.de>
+  - **already installed** on our analysis machines ←<https://nb.geomar.de>
 
 ---
 
@@ -479,15 +505,17 @@ class: middle
 
 - for **Geomar members** and for **external collaborators**.
 
-- hosted at Geomar
+- **hosted here** (at Geomar)
+
+- **easy** project management and **collaboration**
 
 - continuous integration
 
-- unlimited projects
-
-- project management
+- unlimited number of projects
 
 - …
+
+Introductory material: https://git.geomar.de/edu/git-intro
 
 ---
 
@@ -509,9 +537,7 @@ class: middle
 
 ## "Data" (5.) ← <https://git.geomar.de/data/>
 
-- version control own and external data with Git LFS
-
-- available at <https://git.geomar.de>
+- **version controlled** own and external **data** with Git LFS
 
 - tracking Terabytes (or more) of model output is beyond reach for now
 
@@ -530,17 +556,19 @@ class: middle
 
 --------
 
-Transparently store large model data sets:
+Current alternative for very large data sets:
 
-- clear hierarchical directory structure
+- Work towards a **"single source of truth"**.
 
-- "single source of truth"
+- Make sure to have **clear** (central?!) storage **structure**.
+
+- ...
 
 ---
 
 class: middle
 
-## Summary
+## Building a Repeatable Workflow at Geomar
 
 1. **all the numbers** ← <https://data.geomar.de>
 
@@ -554,17 +582,17 @@ class: middle
 
 ---
 
-## The (in my opinion) Best Part?
+## The (in my opinion) Best Part
 
-- only weak links between components
+- **only weak links** between components
 
-- "plumbing" relies on standard sysadmin skills
+- "plumbing" relies on **standard** sysadmin **skills**
 
-    - ⇒ limited effects of failure / unavailability
+    - ⇒ **limited effects** of failure / unavailability
 
-    - ⇒ profit only from what you need
+    - ⇒ profit **only** from what you **need**
 
-    - ⇒ remain fully independent from all other components
+    - ⇒ **remain** fully **independent** from all other components
 
 --
 
@@ -585,11 +613,13 @@ class: middle
 
 ## But Do You Need This?
 
-**Public debate** focused on:
+--
+
+The **public debate** is focused on
 
 - **fraud** prevention
 
-- **facilitating** communication **within the community**
+- and facilitating communication **within the community**.
 
 So we're fine.
 
@@ -603,7 +633,8 @@ class: top
 
 --
 
-**Your boss:** *"Can you update the plot from our 2012 paper with the latest data?"*
+**Your boss:** *"Can you send me an update of the plot from our 2012 paper with
+the latest data?"*
 
 --
 
@@ -636,17 +667,20 @@ class: middle, center
 
 --
 
-- Script all your analyses.  Avoid (undocumented) interactive work whenever
+- **Script** all your analyses.  Avoid (undocumented) interactive work whenever
   possible.
 
 - Keep track of your data.
 
 - Have a standard of numbering your versions.  (Always forward.  There
-  should be no files called `.txt.old`!)
+  should be no files called `.txt.old`!)  ([Semantic
+  Versioning](http://semver.org/#summary) is a good start.)
 
 ----
 
 - Learn to use Git or any other version-control system.
+
+----
 
 - Skim [Sandve (2013)][Sandve2013] for the **"10 Repeatability Commandments"**.
 
@@ -657,16 +691,16 @@ class: middle, center
 
 class: middle
 
-## What Do We Do Now?
+## What Do *We* Do Now?
 
-**Culture:**
+Develop our **Culture:**
 
 - Be(come more) **confident to publish** your code and data.
 
 - Establish **ethics** with respect to use of code and data published by
   others.
 
-Develop **Best practices:**
+Develop **Best Practices:**
 
 - **How much** to document?
 
