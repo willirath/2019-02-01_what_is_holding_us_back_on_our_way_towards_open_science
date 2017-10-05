@@ -13,9 +13,8 @@ class: middle, left
 
 ## Part One — A (Repeatable?) Analysis
 
-*As an example project, we'll look at the seasonal cycle of sea-level. We'll
-see that there is a phase shift of 1/2 year between the northern and the
-southern hemisphere.*
+*As an example project, we'll look at the seasonal cycle of sea-surface
+temperature (SST) on the northern hemisphere.*
 
 ## Part Two — Repeatable Workflows at Geomar
 
@@ -38,10 +37,9 @@ averages, and modify the data otherwise.
 
 ## Part one:  Two simple time series
 
-<img src="images/fig_01_tropical_ssh_index.png" width="700">
+<img src="images/fig_01_sst_index.png" width="95%">
 
-**Figure 01.** *Standardized mean SSH for the northern (blue) and southern
-(green) tropics.*
+**Figure 01.** *Standardized mean SST for the northern hemisphere.*
 
 ---
 
@@ -76,17 +74,15 @@ class: middle, center
 
 class: left, middle
 
-<img src="images/fig_01_tropical_ssh_index.png" width="95%">
+<img src="images/fig_01_sst_index.png" width="95%">
 
-**Figure 01.**  Standardized mean SSH for the northern (blue) and southern
-(green) tropics.
+**Figure 01.** *Standardized mean SST for the northern hemisphere.*
 
 ---
 
 ## The Sloppy Way
 
-**Figure 01.**  Standardized mean SSH for the northern (blue) and southern
-(green) tropics.
+**Figure 01.** *Standardized mean SST for the northern hemisphere.*
 
 --
 
@@ -104,10 +100,8 @@ class: left, middle
 
 ## Giving More Details
 
-**Figure 1.** The blue / green line show standardized (`mean=0`, `std-dev=1`)
-mean SSH for the northern / southern Tropics.  The lines represent spatial
-averages of daily absolute dynamic topography from SLTAC between the Equator
-and 23.43699°N / 23.43699°S and the Equator.
+**Figure 01.** *Standardized (`mean=0`, `std-dev=1`) northern-hemisphere mean
+of monthly-mean HadISST sea-surface temperature (SST).*
 
 --
 
@@ -115,23 +109,21 @@ and 23.43699°N / 23.43699°S and the Equator.
 
 We now know that
 
-- daily **SLTAC** **ADT** fields were used,
+- monthly **HadISST** **SST** fields were used,
 
 - the data were **spatially averaged**,
 
 - the **standardized** data have `mean=0` and `std-dev=1`,
 
-- northern / southern Tropics are defined as the regions between 0 and
-  **23.43699°N / 23.43699°S** and 0.
+- the data have been averaged over the **northen hemisphere**.
 
 ---
 
-## Better
+## Giving More Details
 
-**Figure 1.** The blue / green line show **standardized** (`mean=0`, `std-dev=1`)
-mean SSH for the northern / southern Tropics.  The lines represent **spatial
-averages** of **daily absolute dynamic topography** from **SLTAC** between the Equator
-and **23.43699°N** / **23.43699°S** and the Equator.
+**Figure 01.** * **Standardized** (`mean=0`, `std-dev=1`)
+**northern-hemisphere** mean of monthly-mean **HadISST** sea-surface
+temperature (**SST**). *
 
 --------
 
@@ -151,99 +143,92 @@ But **still**:
 
 class: middle
 
-## Towards full repeatability
+## Towards Full Repeatability
 
-**Figure 1.** The blue / green line show **standardized** (`mean=0`, `std-dev=1`)
-mean SSH for the northern / southern tropics.  The lines represent spatial
-averages of **daily absolute dynamic topography** from **SLTAC** between the Equator
-and **23.43699°N** / **23.43699°S** and the Equator.  A script containing the full
-code to produce the figure and a data file containing the time series data
-that are plotted here are included in the **supplementary materials**.
+**Figure 01.** * **Standardized** (`mean=0`, `std-dev=1`) **northern-hemisphere**
+mean of monthly-mean **HadISST** sea-surface temperature (**SST**). There are
+a Jupyter notebook and a data file with all the details in the **supllementary
+materials**. *
 
 ---
 
 class: middle
 
-## The (essential parts of the) supplementary script
+## The (essential parts of the) Supplementary Script
 
 This is where you should have a look at your notes and compare.
 
 ---
 
-#### The main part
+### Calculating and Plotting the SST Index
 
 ```python
 from pathlib import Path
 import xarray as xr
 
 base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
-data_files = [str(fn) for fn in base_data_path.glob(
-    "SLTAC_GLO_PHY_L4_REP/v1.x.x/data/2016/dt*nc")]
+data_file = base_data_path / "HadISST/v1.x.x/data/HadISST_sst.nc"
 
-ssh = xr.open_mfdataset(data_files).adt
+sst = xr.open_dataset(data_file).sst
+sst = sst.sel(time=slice("2001-01-01", "2002-01-01"))
+
 
 def standardize_time_series(data):
     """Return data with mean zero and std.-dev. one."""
     return (data - data.mean(dim="time")) / data.std(dim="time")
 
-def spatial_average_between_latitudes(
-    data, lat_min=-90.0, lat_max=90.0, new_name=None):
+
+def spatial_average_between_latitudes(data, lat_min=-90.0, lat_max=90.0, new_name=None):
     """Return spatially averaged `data`.
 
-    The data are not weighted and missing data are excluded.
+    The data are not weighted.  Missing data are excluded.
     """
     data = data.sel(latitude=slice(lat_min, lat_max))
-    data = data.mean(dim=["latitude", "longitude"])
+    data = data.mean(dim="latitude").mean(dim="longitude")
     data = data.rename(new_name)
     return data
 
-ssh_index_north = standardize_time_series(
-    spatial_average_between_latitudes(ssh, lat_min=0.0, lat_max=23.43699,
-                                      new_name="SSH index North"))
-ssh_index_south = standardize_time_series(
-    spatial_average_between_latitudes(ssh, lat_min=-23.43699, lat_max=0.0,
-                                      new_name="SSH index South"))
+sst_index_north = standardize_time_series(spatial_average_between_latitudes(
+    sst, lat_max=0.0, lat_min=90.0))
 
-ssh_index_north.plot(); ssh_index_south.plot();
+sst_index_north.plot()
 ```
 
 ---
 
 class: middle
 
-## Saving data for reference
+### Saving Data for Reference
 
 ```python
-output_dataset = xr.Dataset({'ssh_index_north': ssh_index_north,
-                             'ssh_index_south': ssh_index_south})
-
-output_dataset.to_netcdf("fig_01_tropical_ssh_index.nc")
+output_dataset = xr.Dataset({'sst_index_north': sst_index_north})
+output_dataset.to_netcdf("fig_01_sst_index.nc")
 ```
 
 ---
 
-## Data provenance
+## Data Provenance
 
-We use a data set from a [fully version-controlled data repository](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/):
+We use a data set from a [fully version-controlled data
+repository](https://git.geomar.de/data/HadISST/):
 
 ```python
 base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
-data_files = [str(fn) for fn in base_data_path.glob(
-    "SLTAC_GLO_PHY_L4_REP/v1.x.x/data/2016/dt*nc")]
+data_file = base_data_path / "HadISST/v1.x.x/data/HadISST_sst.nc"
 ```
 
 --
 
 --------
 
-Moreover, the following tells us that we're using `v1.1.0` of the
-`SLTAC_GLO_PHY_L4_REP` data set:
+Moreover, the following tells us that we're using `v1.3.0` of the
+`HadISST` data set:
 ```bash
-git --work-tree="/data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x/" describe
+git --work-tree="/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/" describe
 ```
 ```
-/data/c2/TMdata/git_geomar_de_data/SLTAC_GLO_PHY_L4_REP/v1.x.x
-v1.1.0
+/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x
+v1.3.0
 ```
 
 --
@@ -252,13 +237,15 @@ v1.1.0
 
 To learn more about the data set, check:
 
-- <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP/commits/v1.1.0> for a complete history of the our mirror of the data set,
+- <https://git.geomar.de/data/HadISST/commits/v1.3.0> for a complete history of
+  the our mirror of the data set,
 
-- <https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP> for a general overview, a README of the current version, etc.
+- <https://git.geomar.de/data/HadISST> for a general overview, a README of the
+  current version, etc.
 
 ---
 
-## Tools that were used
+## Tools and Libraries
 
 The following lists the complete Python environment that was used in the
 analysis:
@@ -271,11 +258,9 @@ conda list
 #
 alabaster                 0.7.10                   py35_1    conda-forge
 anaconda-client           1.6.5                      py_0    conda-forge
-aospy                     0.1.2                    py35_0    conda-forge
-
 [...]
-
 xarray                    0.9.6                    py35_0    conda-forge
+xarray-0.9.6-51           g25d1855                  <pip>
 xz                        5.2.3                         0    conda-forge
 yaml                      0.1.6                         0    conda-forge
 zeromq                    4.2.1                         1    conda-forge
@@ -285,7 +270,7 @@ zlib                      1.2.8                         3    conda-forge
 
 ---
 
-## Evolution of the analysis
+## Evolution of the Analysis
 
 To tell how this analysis developed in time, check:
 
@@ -304,60 +289,72 @@ found to be wrong.
 
 ---
 
-## Summary of part one
+class: middle
 
-Essential bits of repeatable science are
+## Summary of Part One
 
-1. a pointer to the full **raw data** used in the analysis (**data
-   provenance**),
+Possible aspects of repeatability are
 
-2. a **time-line** of the development of the analysis,
+1. a small and easy-to-use data set containing **all the numbers** necessary to
+   re-plot and compare the data presented in the analysis,
+
+2. fully **documented steps** from the original data to the final presentation
+   (plots, tables, etc.),
 
 3. an overview of all the **tools** and **libraries** used in the analysis and
    of their exact versions,
 
-4. fully **documented steps** from the original data to the final presentation
-   (plots, tables, etc.),
+4. a **time-line** of the development of the analysis,
 
-5. a small and easy-to-use data set containing **all the numbers** necessary to
-   re-plot and compare the data presented in the analysis.
+5. and a pointer to the full **raw data** used in the analysis (**data
+   provenance**).
 
 ---
 
 class: middle, center
 
-## Part two: Infrastructure at Geomar
+## Part Two — Repeatable Workflows at Geomar
 
 ---
 
-## Part two: Infrastructure at Geomar
+## Part Two — Repeatable Workflows at Geomar
 
-Currently, journals are requiring authors to provide some or even all of the
-above.  (Today, you mostly get away with 5 and / or 4.  But expect to see
-requirements including all of the above.)
 
-Here, we'll look through the requirements 5. to 1. and examine to what extent, there are
-(easy?) ways to fulfill them.
+1. **all the numbers**
+
+2. **documented steps**
+
+3. **tools** and **libraries**
+
+4. **time-line**
+
+5. **raw data** and **data provenance**
+
+Currently, many journals are requiring authors to provide some form of *1* and /
+or *2*.  But expect so see more and more requests for *3* to *5*.
+
+Here, we'll look through the requirements 1. to 5. and examine to what extent,
+there are (easy?) ways to fulfill them.
 
 ---
 
 class: middle
 
-## "All The Numbers" (5.)
+## "All The Numbers" (1.)
 
-1. **raw data** and **data provenance**
+1. **all the numbers**
 
-2. **time-line**
+2. **documented steps**
 
 3. **tools** and **libraries**
 
-4. **documented steps**
+4. **time-line**
 
-5. **all the numbers**
+5. **raw data** and **data provenance**
 
 ---
 
-## "All The Numbers" (5.) ← <https://data.geomar.de>
+## "All The Numbers" (1.) ← <https://data.geomar.de>
 
 --
 
@@ -393,21 +390,21 @@ any given time.*
 
 class: middle
 
-## "Documented steps" (4.)
+## "Documented steps" (2.)
 
-1. **raw data** and **data provenance**
+1. **all the numbers** ← <https://data.geomar.de>
 
-2. **time-line**
+2. **documented steps**
 
 3. **tools** and **libraries**
 
-4. **documented steps**
+4. **time-line**
 
-5. **all the numbers** ← <https://data.geomar.de>
+5. **raw data** and **data provenance**
 
 ---
 
-## "Documented steps" (4.) ← <https://nb.geomar.de>
+## "Documented steps" (2.) ← <https://nb.geomar.de>
 
 - Jupyter **frontend** to virtually all the **large machines** (in-house and
   external)
@@ -431,15 +428,15 @@ class: middle
 
 ## "Tools and Libraries" (3.)
 
-1. **raw data** and **data provenance**
+1. **all the numbers** ← <https://data.geomar.de>
 
-2. **time-line**
+2. **documented steps** ← <https://nb.geomar.de>
 
 3. **tools** and **libraries**
 
-4. **documented steps** ← <https://nb.geomar.de>
+4. **time-line**
 
-5. **all the numbers** ← <https://data.geomar.de>
+5. **raw data** and **data provenance**
 
 ---
 
@@ -461,21 +458,22 @@ class: middle
 
 class: middle
 
-## "Time Line" (2.)
+## "Time Line" (4.)
 
-1. **raw data** and **data provenance**
+1. **all the numbers** ← <https://data.geomar.de>
 
-2. **time-line**
+2. **documented steps** ← <https://nb.geomar.de>
 
 3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
 
-4. **documented steps** ← <https://nb.geomar.de>
+4. **time-line**
 
-5. **all the numbers** ← <https://data.geomar.de>
+5. **raw data** and **data provenance**
+
 
 ---
 
-## "Time Line" (2.) ← <http://git.geomar.de>
+## "Time Line" (4.) ← <http://git.geomar.de>
 
 - **full-blown** version control environment
 
@@ -495,21 +493,21 @@ class: middle
 
 class: middle
 
-## "Data Provenance" (1.)
+## "Data Provenance" (5.)
 
-1. **raw data** and **data provenance**
+1. **all the numbers** ← <https://data.geomar.de>
 
-2. **time-line** ← <https://git.geomar.de>
+2. **documented steps** ← <https://nb.geomar.de>
 
 3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
 
-4. **documented steps** ← <https://nb.geomar.de>
+4. **time-line** ← <https://git.geomar.de>
 
-5. **all the numbers** ← <https://data.geomar.de>
+5. **raw data** and **data provenance**
 
 ---
 
-## "Data" (1.) ← <https://git.geomar.de/data/>
+## "Data" (5.) ← <https://git.geomar.de/data/>
 
 - version control own and external data with Git LFS
 
@@ -544,105 +542,135 @@ class: middle
 
 ## Summary
 
-1. **raw data** and **data provenance** ← <https://git.geomar.de/data/>
+1. **all the numbers** ← <https://data.geomar.de>
 
-2. **time-line** ← <https://git.geomar.de>
+2. **documented steps** ← <https://nb.geomar.de>
 
 3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
 
-4. **documented steps** ← <https://nb.geomar.de>
+4. **time-line** ← <https://git.geomar.de>
 
-5. **all the numbers** ← <https://data.geomar.de>
+5. **raw data** and **data provenance** ← <https://git.geomar.de/data/>
 
 ---
 
-## The (in my opinion) best part?
+## The (in my opinion) Best Part?
 
 - only weak links between components
 
-    - "plumbing" relies on standard sysadmin skills
+- "plumbing" relies on standard sysadmin skills
 
     - ⇒ limited effects of failure / unavailability
 
-- profit only from what you need
+    - ⇒ profit only from what you need
 
-- remain fully independent from all other components
+    - ⇒ remain fully independent from all other components
 
 --
 
 --------
 
-For example, if you leave Geomar (or just go to sea for a month or three), it
-is very easy to take all your projects from <https://git.geomar.de>, all your
-data, all your notebooks, setup scripts for a conda environments identical to
-those available at Geomar, ...
+If you **leave** Geomar, it is very easy to **take**
+
+- all your **projects** from <https://git.geomar.de>,
+- all your **data**,
+- all your **notebooks**,
+- setup scripts for conda **environments identical** to those available at
+  Geomar,
+- ...
 
 ---
 
-## Who needs this?
+class: middle
 
+## But Do You Need This?
 
-**Public Debate:**
+**Public debate** focused on:
 
 - **fraud** prevention
 
 - **facilitating** communication **within the community**
 
-But the first and foremost beneficiary of your repeatable work flow are **you**.
+So we're fine.
 
-----
+... but are we?
+
+---
+
+class: top
+
+## But Do You Need This?
+
+--
 
 **Your boss:** *"Can you update the plot from our 2012 paper with the latest data?"*
 
+--
+
 ----
 
-**You:** *Can you check that against satellite data?"*
+**You:** *Can you check this sea-level trend against satellite data?"*
 
 **Student:** (all set up for two weeks of googling satellite data sets) *"Sure..."*
 
 --
 
-**You:** *[Here's a
+**You:** *"[Here's a
 script](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
 where I did a similar thing with the [old AVISO
 data](https://git.geomar.de/data/AVISO). Maybe it's good to start there.
 When you're familiar with this one, adapt it to the new [SLTAC
-product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP).*
+product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP)."*
 
 ---
 
-## What to do now?
+class: middle, center
 
-- Skim [Sandve (2013)][Sandve2013] for the "The Repeatability Commandments".
-- Read the [reference sheet of Wilson (2012)][Wilson2012] to be prepared for
-  coding.
+# ~~But Do~~ You Need This !
 
-- Have a mental framework for repeatability. **← This talk ...**
+---
 
-- Learn to use Git or any other version-control system.
+## What Do You Do Now?
 
-- Keep track of your data.
+- Have a **mental framework** to think about repeatability. ← This talk ...
+
+--
 
 - Script all your analyses.  Avoid (undocumented) interactive work whenever
   possible.
 
+- Keep track of your data.
+
 - Have a standard of numbering your versions.  (Always forward.  There
   should be no files called `.txt.old`!)
 
+----
+
+- Learn to use Git or any other version-control system.
+
+- Skim [Sandve (2013)][Sandve2013] for the **"10 Repeatability Commandments"**.
+
+- Read the [reference sheet of Wilson (2012)][Wilson2012] to **be prepared for
+  coding**.
+
 ---
 
-## Caveats and Todos
+class: middle
 
-**Culture:**  Be(come more) confident to **publish** your **code and data**.
+## What Do We Do Now?
 
-**Culture (cont.):**  Establish **ethics** with respect to use of code and data
-published by others.
+**Culture:**
 
-**Best practices:**
+- Be(come more) **confident to publish** your code and data.
+
+- Establish **ethics** with respect to use of code and data published by
+  others.
+
+Develop **Best practices:**
 
 - **How much** to document?
 
-- And **where**?
+- **Where** to document?
 
 ---
 
