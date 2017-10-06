@@ -637,7 +637,7 @@ class: left, middle
 
 **You:** *"Can you check this sea-level trend against satellite data?"*
 
-**Student:** *"... sure ..."* (about to leave for two weeks of googling)
+**Student:** *"... sure ..."* (about to leave for two weeks of googling for data)
 
 **You:** *"Hey wait, [here's a
 script](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
