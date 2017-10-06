@@ -1,11 +1,12 @@
-class: middle, center
+class: middle, left
 
 # ~~Reproducible~~ Repeatable Work Flows
 
-Willi Rath (wrath@geomar.de)
+Willi Rath (<wrath@geomar.de>)
 
-.medium[**Thanks:** *Martin Claus, Christina Roth, Carsten Schirnick, Claas
-Faber, Kai Grunau, Klaus Getzlaff, Torge Martin, ...*]
+.medium[**Thanks:** *Martin Claus, Claus Böning, Torge Martin, Markus
+Scheinert, Klaus Getzlaff, Christina Roth, Geomar Data Management Team, Geomar
+IT Department, ...*]
 
 ---
 
@@ -13,32 +14,11 @@ class: middle, left
 
 ## Part One — A (Repeatable?) Analysis
 
-*As an example project, we'll look at a global-mean sea-surface temperature.*
+Example project: *global-mean sea-surface-temperature time series*
 
 ## Part Two — Repeatable Workflows at Geomar
 
-*We'll go through building blocks for a repeatable work flow are available at
-Geomar.*
-
----
-
-class: middle, left
-
-## Challenge
-
-Those of you who have an idea what this plot shows, please do now **take a
-note** (in pseudo-code or code) on how you would produce the following figure.
-
-Please be specific about **when** and **how** you select regions, calculate
-averages, and modify the data otherwise.
-
----
-
-## Part One:  A Simple Time Series
-
-.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="90%">]
-
-.center[**Figure 01.** *Annual-mean HadISST anomalies.*]
+*building blocks for a repeatable work flow at Geomar*
 
 ---
 
@@ -65,17 +45,23 @@ class: middle
 
 ---
 
-class: middle, center
+class: middle, left
 
-## Back to the Figure
+## Challenge
+
+Those of you who have an idea what the following plot shows, please  **take a
+note** (in pseudo-code or code) on how you would produce it.
+
+Please be specific about **when** and **how** you select regions, calculate
+averages, and modify the data otherwise.
 
 ---
 
-class: center, middle
+## Part One:  A Simple Time Series
 
-<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="90%">
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="90%">]
 
-**Figure 01.** *Annual-mean HadISST anomalies.*
+.center[**Figure 01.** *Annual-mean HadISST anomalies.*]
 
 ---
 
@@ -122,7 +108,7 @@ But **still**:
 
 - Are those **weighted or arithmetic** spatial averages?
 
-- How exactly and **at what point** did the authors calculate the temporal
+- How exactly and **in which order** did the authors calculate the temporal
   means / spatial means / temporal anomalies?
 
 - …
@@ -151,10 +137,10 @@ later.)
 ### Calculating and Plotting the SST Anomalies
 
 ```python
-from pathlib import Path
+import numpy as np
 import xarray as xr
 
-data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc")
+data_file = "/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc"
 
 sst = xr.open_dataset(data_file).sst.sel(time=slice("1900-01-01", "2011-01-01"))
 sst = sst.where(sst != -1000.0)
@@ -187,12 +173,11 @@ sst_anomalies.plot()
 
 class: middle
 
-### Saving Data for Reference
+### Saving the Plotted Data for Reference
 
 ```python
-xr.Dataset({
-   "global_and_annual_mean_SST_anomalies": sst_anomalies
-}).to_netcdf("{}.nc".format(figure_num_and_caption))
+output_data_set = xr.Dataset({"global_and_annual_mean_SST_anomalies": sst_anomalies})
+output_data_set.to_netcdf(file_name)
 ```
 
 [The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
@@ -275,17 +260,28 @@ To see how this analysis developed in time, check:
 --------
 
 This is a **time line** of every step towards the current version of this talk,
-and the example analysis presented here.  Suppose, we developed the analysis as
-part of a multi-author paper.  Then, it would be possible to return to any
-specific version of the scripts at any later point, compare scripts between
-revisions sent to the journal, or roll back any changes that are perhaps later
-found to be wrong.
+and the example analysis presented here.
+
+Suppose, we developed the analysis as part of a multi-author paper.  Then, it
+would be possible
+
+- to **return to any earlier version** of the scripts at any later point,
+
+- to **compare** scripts between **revisions** sent to the journal,
+
+- to **roll back any changes** that are perhaps later found to be wrong,
+
+but also
+
+- to **merge** changes provided by collaborator,
+
+- or to **discuss** proposed **changes before merging** them.
 
 ---
 
 class: middle
 
-## Summary of Part One
+## The Essence of Part One
 
 Possible aspects of repeatability are
 
@@ -298,7 +294,7 @@ Possible aspects of repeatability are
 3. an overview of all the **tools** and **libraries** used in the analysis and
    of their exact versions,
 
-4. a **time-line** of the development of the analysis,
+4. a full **time-line** of the development of the analysis,
 
 5. and a pointer to the full **raw data** used in the analysis (**data
    provenance**).
@@ -307,7 +303,7 @@ Possible aspects of repeatability are
 
 # Interlude
 
-Let's compare how you'd calculate a SST anomalies.
+Let's now compare how you'd calculate a SST anomalies.
 
 --
 
@@ -639,11 +635,11 @@ class: left, middle
 
 ## But Do You Need This?
 
-**You:** *Can you check this sea-level trend against satellite data?"*
+**You:** *"Can you check this sea-level trend against satellite data?"*
 
-**Student:** (all set up for two weeks of googling) *"Sure..."*
+**Student:** *"... sure ..."* (about to leave for two weeks of googling)
 
-**You:** *"[Here's a
+**You:** *"Hey wait, [here's a
 script](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
 where I did a similar thing with the [old AVISO
 data](https://git.geomar.de/data/AVISO). Maybe it's good to start there.
@@ -660,7 +656,7 @@ class: middle, center
 
 ## What Can *You* Do Now?
 
-- Have a **mental framework** to think about repeatability. ← This talk
+- Have a **mental framework** to think about repeatability. ← this talk
 
 --
 
@@ -676,9 +672,11 @@ class: middle, center
 
 - Learn to use **Git** or any other version-control system.
 
-- Use version control in your **daily routine** work.
+- And use it in your **daily routine** work.
 
 ----
+
+Cheat-Sheets:
 
 - Skim [Sandve (2013)][Sandve2013] for the **"10 Repeatability Commandments"**.
 
@@ -697,11 +695,15 @@ Develop our **Culture:**
 
 - Develop **ethics** of using code and data published by others.
 
+- ...
+
 Develop **Best Practices:**
 
 - **How much** to document?
 
 - **Where** to document?
+
+- ...
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
