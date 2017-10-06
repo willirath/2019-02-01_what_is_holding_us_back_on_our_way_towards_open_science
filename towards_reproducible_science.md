@@ -348,11 +348,10 @@ class: middle, left
 --------
 
 Currently, many journals are requiring authors to provide some form of **1.**
-and / or **2.**.  But expect so see more and more requests for **3.** to
+and / or **2.**.  But expect so see more and more requests for **3.** through
 **5.**.
 
-Here, we'll look through the requirements **1.** to **5.** and examine to what
-extent, there are (easy?) ways to fulfill them.
+Here, we'll see how to **fullfill all** of **1.** through **5.** at Geomar.
 
 ---
 
@@ -381,9 +380,8 @@ class: middle
 
 - today: **collection of links** to data for papers etc.
 
-.medium[If a journal requires you to provide a reference to the data, this
-might be the information to give.  (Talk to <datamanagement@geomar.de> before
-doing so.)]
+.medium[This is the place to put supplementary data and scripts!
+←<datamanagement@geomar.de>]
 
 --
 
@@ -534,9 +532,10 @@ class: middle
 
 ## "Data" (5.) ← <https://git.geomar.de/data/>
 
-- **version controlled** own and external **data** with Git LFS
+- **version controlled** external **data** with Git LFS
 
-- tracking Terabytes (or more) of model output is beyond reach for now
+- tracking tens / hundreds of Terabytes (or more) of model output is beyond
+  reach for now
 
 --
 
@@ -548,7 +547,7 @@ class: middle
 
 - [Also available on the thredds
   server](https://data.geomar.de/thredds/catalog/tmdata/git_geomar_de_data/catalog.html)
-
+  .small[← If you only klick on one link.  This is the one!]
 --
 
 --------
@@ -585,11 +584,15 @@ class: middle
 
 - "plumbing" relies on **standard** sysadmin **skills**
 
-    - ⇒ **limited effects** of failure / unavailability
+--
 
-    - ⇒ profit **only** from what you **need**
+--------
 
-    - ⇒ **remain** fully **independent** from all other components
+- ⇒ **limited effects** of failure / unavailability
+
+- ⇒ profit **only** from what you **need**
+
+- ⇒ **remain** fully **independent** from all other components
 
 --
 
@@ -624,24 +627,21 @@ So we're fine.
 
 ---
 
+class: left, middle
+
 ## But Do You Need This?
 
---------
+.center[<img src="images/sms_your_boss_airport.png" width="80%">]
 
-### Updating your own work
+---
 
-**Your boss:** *"Can you send me an update of the plot from our 2016 paper with
-the latest data?"*
+class: left, middle
 
---------
-
-### Getting others started
+## But Do You Need This?
 
 **You:** *Can you check this sea-level trend against satellite data?"*
 
-**Student:** (all set up for two weeks of googling satellite data sets) *"Sure..."*
-
---
+**Student:** (all set up for two weeks of googling) *"Sure..."*
 
 **You:** *"[Here's a
 script](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
@@ -702,8 +702,6 @@ Develop **Best Practices:**
 - **How much** to document?
 
 - **Where** to document?
-
----
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
