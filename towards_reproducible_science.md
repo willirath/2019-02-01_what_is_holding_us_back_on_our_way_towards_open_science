@@ -13,8 +13,7 @@ class: middle, left
 
 ## Part One — A (Repeatable?) Analysis
 
-*As an example project, we'll look at the seasonal cycle of sea-surface
-temperature (SST) on the northern hemisphere.*
+*As an example project, we'll look at a global-mean sea-surface temperature.*
 
 ## Part Two — Repeatable Workflows at Geomar
 
@@ -35,11 +34,11 @@ averages, and modify the data otherwise.
 
 ---
 
-## Part one:  Two simple time series
+## Part One:  A Simple Time Series
 
-<img src="images/fig_01_sst_index.png" width="95%">
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="90%">]
 
-**Figure 01.** *Standardized mean SST for the northern hemisphere.*
+.center[**Figure 01.** *Annual-mean HadISST anomalies.*]
 
 ---
 
@@ -49,7 +48,7 @@ class: middle
 
 Let's say an analysis is **repeatable**, if for any sufficiently skilled reader
 it is **in principle** possible to **completely understand** and **repeat all
-steps** the authors took from their initial idea to the final conclusions.
+steps** the author took from their initial idea to the final conclusions.
 
 ---
 
@@ -72,36 +71,36 @@ class: middle, center
 
 ---
 
-class: left, middle
+class: center, middle
 
-<img src="images/fig_01_sst_index.png" width="95%">
+<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="90%">
 
-**Figure 01.** *Standardized mean SST for the northern hemisphere.*
+**Figure 01.** *Annual-mean HadISST anomalies.*
 
 ---
 
+class: middle
+
 ## The Sloppy Way
 
-**Figure 01.** *Standardized mean SST for the northern hemisphere.*
-
---
+**Figure 01.** *Annual-mean HadISST anomalies.*
 
 --------
 
 (Quite obvious) **problems**:
 
-- Which **data set** and which **variables** from the data set were used?
-
 - Which **locations / times / regions** were included / excluded?
 
-- What's the definition of **standardized**?
+- What is the **reference period** for the anomalies?
+
+- ...
 
 ---
 
 ## Giving More Details
 
-**Figure 01.** *Standardized (`mean=0`, `std-dev=1`) northern-hemisphere mean
-of monthly-mean HadISST sea-surface temperature (SST).*
+**Figure 01.** *Global-mean and annual-mean HadISST anomalies relative to the
+full period from 1900 to 2010.*
 
 --
 
@@ -109,21 +108,11 @@ of monthly-mean HadISST sea-surface temperature (SST).*
 
 We now know that
 
-- monthly **HadISST** **SST** fields were used,
+- the time series represents **global means**,
 
-- the data were **spatially averaged**,
+- the anomalies were calculated **relative to the complete time series**.
 
-- the **standardized** data have `mean=0` and `std-dev=1`,
-
-- the data have been averaged over the **northen hemisphere**.
-
----
-
-## Giving More Details
-
-**Figure 01.** * **Standardized** (`mean=0`, `std-dev=1`)
-**northern-hemisphere** mean of monthly-mean **HadISST** sea-surface
-temperature (**SST**). *
+--
 
 --------
 
@@ -131,11 +120,10 @@ But **still**:
 
 - Could we be sure to find **exactly** the same data?
 
-- How did the authors **weight** each grid point?
+- Are those **weighted or arithmetic** spatial averages?
 
-- How exactly and **at what point** did the authors **standardize** the data?
-
-- Did they include **missing data**?  (And does it make a difference?)
+- How exactly and **at what point** did the authors calculate the temporal
+  means / spatial means / temporal anomalies?
 
 - …
 
@@ -145,10 +133,9 @@ class: middle
 
 ## Towards Full Repeatability
 
-**Figure 01.** * **Standardized** (`mean=0`, `std-dev=1`) **northern-hemisphere**
-mean of monthly-mean **HadISST** sea-surface temperature (**SST**). There are
-a Jupyter notebook and a data file with all the details in the **supplementary
-materials**. *
+**Figure 01.** *Global-mean and annual-mean HadISST anomalies relative to the
+full period from 1900 to 2010.  There are a Jupyter notebook and a data file
+with all the details in the **supplementary materials**. *
 
 ---
 
@@ -161,41 +148,40 @@ later.)
 
 ---
 
-### Calculating and Plotting the SST Index
+### Calculating and Plotting the SST Anomalies
 
 ```python
 from pathlib import Path
 import xarray as xr
 
-base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
-data_file = base_data_path / "HadISST/v1.x.x/data/HadISST_sst.nc"
+data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc")
 
-sst = xr.open_dataset(data_file).sst
-sst = sst.sel(time=slice("2001-01-01", "2002-01-01"))
-
-
-def standardize_time_series(data):
-    """Return data with mean zero and std.-dev. one."""
-    return (data - data.mean(dim="time")) / data.std(dim="time")
+sst = xr.open_dataset(data_file).sst.sel(time=slice("1900-01-01", "2011-01-01"))
+sst = sst.where(sst != -1000.0)
 
 
-def spatial_average_between_latitudes(data, lat_min=-90.0, lat_max=90.0, new_name=None):
-    """Return spatially averaged `data`.
-
-    The data are not weighted.  Missing data are excluded.
-    """
-    data = data.sel(latitude=slice(lat_min, lat_max))
-    data = data.mean(dim="latitude").mean(dim="longitude")
-    data = data.rename(new_name)
+def wgt_glob_mean(data):
+    cosine_latitude = np.cos(np.pi / 180.0 * data.coords["latitude"])
+    data = ((cosine_latitude * data).sum(dim=["latitude", "longitude"])
+            / (cosine_latitude + 0 * data).sum(dim=["latitude", "longitude"]))
     return data
 
-sst_index_north = standardize_time_series(spatial_average_between_latitudes(
-    sst, lat_max=0.0, lat_min=90.0))
 
-sst_index_north.plot()
+def ann_mean(data):
+    data = data.resample(time="12M").mean(dim="time")
+    return data
+
+
+def tmp_anom(data):
+   data = data - data.mean("time")
+   return data
+
+sst_anomalies = tmp_anom(wgt_glob_mean(ann_mean(sst)))
+
+sst_anomalies.plot()
 ```
 
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
 
 ---
 
@@ -204,11 +190,12 @@ class: middle
 ### Saving Data for Reference
 
 ```python
-output_dataset = xr.Dataset({'sst_index_north': sst_index_north})
-output_dataset.to_netcdf("fig_01_sst_index.nc")
+xr.Dataset({
+   "global_and_annual_mean_SST_anomalies": sst_anomalies
+}).to_netcdf("{}.nc".format(figure_num_and_caption))
 ```
 
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
 
 ---
 
@@ -218,11 +205,8 @@ We use a data set from a [fully version-controlled data
 repository](https://git.geomar.de/data/HadISST/):
 
 ```python
-base_data_path = Path("/data/c2/TMdata/git_geomar_de_data/")
-data_file = base_data_path / "HadISST/v1.x.x/data/HadISST_sst.nc"
+data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc")
 ```
-
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
 
 --
 
@@ -234,7 +218,6 @@ Moreover, the following tells us that we're using `v1.3.0` of the
 git --work-tree="/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/" describe
 ```
 ```
-/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x
 v1.3.0
 ```
 
@@ -251,6 +234,8 @@ To learn more about the data set, check:
   current version, etc.
 
 ---
+
+class: middle
 
 ## Tools and Libraries
 
@@ -275,13 +260,13 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_sst_index.ipynb)
+[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
 
 ---
 
 ## Evolution of the Analysis
 
-To tell how this analysis developed in time, check:
+To see how this analysis developed in time, check:
 
 <https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
 
@@ -290,7 +275,7 @@ To tell how this analysis developed in time, check:
 --------
 
 This is a **time line** of every step towards the current version of this talk,
-and the dummy analysis presented here.  Suppose, we developed the analysis as
+and the example analysis presented here.  Suppose, we developed the analysis as
 part of a multi-author paper.  Then, it would be possible to return to any
 specific version of the scripts at any later point, compare scripts between
 revisions sent to the journal, or roll back any changes that are perhaps later
@@ -322,25 +307,33 @@ Possible aspects of repeatability are
 
 # Interlude
 
-Let's compare how you'd calculate an SST index for the northern hemisphere.
+Let's compare how you'd calculate a SST anomalies.
 
 --
 
-(Mine was wrong.  [This notebook details (a few)
-subtleties.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_sst_index_averaging_subtleties.ipynb))
+<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">
 
-<img src="images/fig_02_sst_index_averaging_subtleties.png" width="95%">
-
----
-
-class: middle, center
-
-## Part Two — Repeatable Workflows at Geomar
+[This notebook details a
+subtlety with the order of averaging.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb)
 
 ---
 
+# Interlude
+
+Let's see how many variants there are.
+
+<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">
+
+[This notebook shows 12 variants ...](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb)
+
+
+---
+
+class: middle, left
+
 ## Part Two — Repeatable Workflows at Geomar
 
+--
 
 1. **all the numbers**
 
@@ -408,8 +401,8 @@ Some alternatives:
 --------
 
 *Note that the **hard part** is not providing a point of contact for those
-requesting the data.  The hard part is **being able to provide the data** at
-any given time.*
+requesting the data.  The hard part is **being able to provide the data** any
+given time.*
 
 ---
 
@@ -429,6 +422,8 @@ class: middle
 
 ---
 
+class: middle
+
 ## "Documented steps" (2.) ← <https://nb.geomar.de>
 
 - [Jupyter](https://github.com/jupyter/jupyter) **frontend** to virtually all
@@ -438,9 +433,7 @@ class: middle
 
 - automatic **documentation** is (almost) **for free**
 
-- Most **Git** servers render Jupyter notebooks!
-
---
+- most **Git** servers render Jupyter notebooks
 
 --------
 
@@ -464,6 +457,8 @@ class: middle
 5. **raw data** and **data provenance**
 
 ---
+
+class: middle
 
 ## "Tools and Libraries" (3.) ← [Conda environments](https://git.geomar.de/python/conda_environments/)
 
@@ -498,6 +493,8 @@ class: middle
 
 
 ---
+
+class: middle
 
 ## "Time Line" (4.) ← <http://git.geomar.de>
 
@@ -627,18 +624,18 @@ So we're fine.
 
 ---
 
-class: top
-
 ## But Do You Need This?
 
---
+--------
 
-**Your boss:** *"Can you send me an update of the plot from our 2012 paper with
+### Updating your own work
+
+**Your boss:** *"Can you send me an update of the plot from our 2016 paper with
 the latest data?"*
 
---
+--------
 
-----
+### Getting others started
 
 **You:** *Can you check this sea-level trend against satellite data?"*
 
@@ -661,24 +658,25 @@ class: middle, center
 
 ---
 
-## What Do You Do Now?
+## What Can *You* Do Now?
 
-- Have a **mental framework** to think about repeatability. ← This talk ...
+- Have a **mental framework** to think about repeatability. ← This talk
 
 --
 
-- **Script** all your analyses.  Avoid (undocumented) interactive work whenever
-  possible.
+- **Script** all your analyses.  **Avoid interactive** work whenever possible.
 
-- Keep track of your data.
+- Keep **track** of **your data**.
 
-- Have a standard of numbering your versions.  (Always forward.  There
-  should be no files called `.txt.old`!)  ([Semantic
-  Versioning](http://semver.org/#summary) is a good start.)
+- Have a standard of **numbering your versions**.  (Always forward.  There
+  should be no files called `.txt.old`!)  ← [Semantic
+  Versioning is a good start](http://semver.org/#summary)
 
 ----
 
-- Learn to use Git or any other version-control system.
+- Learn to use **Git** or any other version-control system.
+
+- Use version control in your **daily routine** work.
 
 ----
 
@@ -697,8 +695,7 @@ Develop our **Culture:**
 
 - Be(come more) **confident to publish** your code and data.
 
-- Establish **ethics** with respect to use of code and data published by
-  others.
+- Develop **ethics** of using code and data published by others.
 
 Develop **Best Practices:**
 
@@ -707,10 +704,6 @@ Develop **Best Practices:**
 - **Where** to document?
 
 ---
-
-class: middle, center
-
-# Thanks!
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
