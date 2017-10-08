@@ -626,8 +626,8 @@ product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP)."*
 class: middle, center
 
 # ~~But Do~~ You Need This !
-
 ---
+
 
 class: middle, left
 
@@ -669,12 +669,76 @@ Develop **Best Practices:**
 
 ---
 
-# Reading List
+class: medium, middle
+
+### Resources for repeatable work flows
+
+Cheat Sheets:
 
 - [Sandve (2013)][Sandve2013] has the **"10 Repeatability Commandments"**.
-
 - [Wilson (2012)][Wilson2012] has a reference sheet to **be prepared for
   coding**.
+
+Resources at Geomar:
+
+- Geomar Git server: [https://git.geomar.de][git_geomar_de]
+- central Jupyter notebook server:
+  - [https://nb.geomar.de][nb_geomar_de]
+  - [https://git.geomar.de/python/doc/blob/master/nb_user_guide.md][nb_user_guide]
+- central data repository:
+  - start here: [https://git.geomar.de/data/docs/][git_geomar_de_data_docs]
+  - and: [https://data.geomar.de/thredds/catalog/tmdata/git_geomar_de_data/catalog.html][git_data_on_thredds]
+- conda environments:
+  - our standard envs: [https://git.geomar.de/python/conda_environments/][git_geomar_de_python_conda_environments]
+  - Conda Forge: [https://conda-forge.org/][conda_forge]
+  - Anaconda: [https://www.anaconda.com/distribution/][anaconda]
+- publish data on: [https://data.geomar.de][data_geomar_de]
+- how to number versions:
+  - for data: [https://git.geomar.de/data/docs/blob/master/versioning.md][semver_for_data_on_git]
+  - semantic versioning (the meaning behing `v12.14.7` et al.): http://semver.org
+
+Nice tools and software:
+
+- Anaconda's Python distribution: [https://www.anaconda.com/distribution/][anaconda]
+- Conda Forge: [https://conda-forge.org/][conda_forge]
+- Jupyter notebooks: [https://github.com/jupyter/jupyter][jupyter_github]
+
+---
+
+class: medium
+
+### Figures from this talk
+
+- Notebook for Figure 01: [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_git]
+- Data for Figure 01: [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_git]
+- Notebook for Figure 02:<br> [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_git]
+- Data for Figure 02:<br> <https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.nc>
+- Notebook for Figure 03:<br> [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb][fig_03_notebook_on_git]
+- Data for Figure 03:<br> <https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
+- HadISST data set: [https://git.geomar.de/data/HadISST/][HadISST_on_git]
+
+### Reading list
+
+- _"Publish your computer code: it is good enough"_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]
+
+- _"Open code for open science?"_ : [http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html][Easterbrook2014]
+
+- _"Why bitwise reproducibility matters"_ : [https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/][Hinsen2015]
+
+- _"Which mistakes do we actually make in scientific code?"_ : [http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/][Hinsen2017]
+
+- _"A Minimum Standard for Publishing Computational Results in the
+Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1][Irving2015]
+
+- _"Good Scientific Practice at MPI-M"_ : [http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html][MPI_good_scientific_practice]
+
+- _"Nature - Code share"_ : [https://www.nature.com/news/code-share-1.16232][Nature_CodeShare]
+
+- _"Ten Simple Rules for Reproducible Computational Research"_ : [http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285][Sandve2013]
+
+- _"Best Practices for Scientific Computing"_ : [https://arxiv.org/abs/1210.0530][Wilson2012]
+
+
 
 [anaconda]: https://www.anaconda.com/distribution/
 
@@ -705,6 +769,8 @@ Develop **Best Practices:**
 [jupyter_github]: https://github.com/jupyter/jupyter
 
 [nb_geomar_de]: https://nb.geomar.de
+
+[nb_user_guide]: https://git.geomar.de/python/doc/blob/master/nb_user_guide.md
 
 [semver_for_data_on_git]: https://git.geomar.de/data/docs/blob/master/versioning.md
 
