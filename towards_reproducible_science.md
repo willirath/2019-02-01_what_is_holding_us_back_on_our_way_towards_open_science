@@ -612,9 +612,10 @@ class: middle
 
 # But Do You Need This?
 
-The **public debate** is often focused on **fraud** prevention. — So we're fine!
+The **public debate** is often focused on **fraud prevention** in the medical
+sciences.
 
-.right[ _ ... but are we? _ ]
+.right[ So we're fine! _ ... but are we? _ ]
 
 ---
 
