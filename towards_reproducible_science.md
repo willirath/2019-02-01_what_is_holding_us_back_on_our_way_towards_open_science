@@ -1,8 +1,8 @@
 class: middle, left
 
-# ~~Reproducible~~ Repeatable Work Flows
+# Repeatable Work Flows
 
-Willi Rath (<wrath@geomar.de>)
+_Willi Rath_ (<wrath@geomar.de>)
 
 .medium[**Thanks:** *Martin Claus, Claus Böning, Torge Martin, Markus
 Scheinert, Klaus Getzlaff, Christina Roth, Geomar Data Management Team, Geomar
@@ -10,38 +10,42 @@ IT Department, ...*]
 
 ---
 
+class: middle, center
+
+<img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="90%">
+
+.small[.right[From [Easterbrook (2014)][Easterbrook2014]]]
+
+---
+
 class: middle, left
 
-## Part One — A (Repeatable?) Analysis
+## ~~Reproducible~~ Repeatable Work Flows
 
-Example project: *global-mean sea-surface-temperature time series*
+_ Let's say an analysis is **repeatable**, if for any **sufficiently skilled**
+reader it is **in principle** possible to **completely understand** and
+**repeat all steps** the author took from their initial idea to the final
+conclusions. _
 
-## Part Two — Repeatable Workflows at Geomar
+⇒ Which **input data** were used?
 
-*building blocks for a repeatable work flow at Geomar*
+⇒ What are the **steps** from the initial data to the **final numbers** and figures?
 
----
+⇒ **Why** did the authors do what they did?
 
-class: middle
-
-## Repeatability
-
-Let's say an analysis is **repeatable**, if for any sufficiently skilled reader
-it is **in principle** possible to **completely understand** and **repeat all
-steps** the author took from their initial idea to the final conclusions.
+⇒ …
 
 ---
 
-class: middle
+class: middle, left
 
-## "completely understand and reapeat all steps"
+## Part One — An Example Analysis
 
-1. Which **input data** were used?
+*A time series of global-mean sea-surface-temperature anomalies*
 
-2. **How** was the data treated to produce all **figures** and **numbers**
-   given in the paper?
+## Part Two — Repeatable Workflows
 
-3. **Why** did the authors do what they did? ← *a bonus?*
+*We **do** have all the building blocks for a repeatable work flow at Geomar !*
 
 ---
 
@@ -687,7 +691,7 @@ Cheat-Sheets:
 
 class: middle
 
-## What Do *We* Do Now?
+## What Do **We** Do Now?
 
 Develop our **Culture:**
 
