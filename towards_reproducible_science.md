@@ -276,25 +276,22 @@ server][git_geomar_de].  To see how it developed in time, check:
 
 This is a **time line** of every step towards the latest version of this talk.
 
-Suppose, we developed the analysis as part of a multi-author paper.  Then, it
-would be possible
+Suppose, this was a multi-author paper.  Then, it would be easy to
 
-- to **return to any earlier version** of the scripts at any later point,
-- to **compare** scripts between **revisions** sent to the journal,
-- to **roll back** any **changes** that are perhaps later found to be wrong,
+- **return to any earlier version** of the scripts at any later point,
+- **compare** scripts between **revisions** sent to the journal,
+- **roll back** any **changes** that are perhaps later found to be wrong,
 
-but also
+but also to
 
-- to **merge** changes provided by a collaborator,
-- or to **discuss** proposed **changes before merging** them.
+- **merge** changes provided by a collaborator,
+- or **discuss** proposed **changes before merging** them.
 
 ---
 
 class: middle
 
 ## The Essence of Part One
-
-Possible aspects of repeatability are
 
 1. a small and easy-to-use data set containing **all the numbers** necessary to
    re-plot and compare the data presented in the analysis,
@@ -305,42 +302,51 @@ Possible aspects of repeatability are
 3. an overview of all the **tools** and **libraries** used in the analysis and
    of their exact versions,
 
-4. a full **time-line** of the development of the analysis,
+4. a pointer to the full **raw data** used in the analysis, and
 
-5. and a pointer to the full **raw data** used in the analysis (**data
-   provenance**).
-
----
-
-# Interlude
-
-Let's now compare how you'd calculate a SST anomalies.
-
---
-
-<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">
-
-[This notebook details a
-subtlety with the order of averaging.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb)
-
----
-
-# Interlude
-
-Let's see how many variants there are.
-
-<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">
-
-[This notebook shows 12 variants ...](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb)
-
+5. a full **time-line** of the development of the analysis.
 
 ---
 
 class: middle, left
 
-## Part Two — Repeatable Workflows at Geomar
+# Interlude
+
+Let's compare different ways to calculate the SST anomalies.
+.right[*... take out your notes.*]
+
+---
+
+# Interlude
+
+[This notebook][fig_02_notebook_on_git] details a subtlety with the order of
+averaging:
 
 --
+
+<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">
+
+
+---
+
+# Interlude
+
+[This notebook][fig_03_notebook_on_git] also considers arithmetic averages and
+shows all 12 variants:
+
+<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">
+
+---
+
+class: middle, center
+
+# Part Two
+
+---
+
+class: middle, left
+
+## Repeatable Workflows at Geomar
 
 1. **all the numbers**
 
@@ -348,23 +354,22 @@ class: middle, left
 
 3. **tools** and **libraries**
 
-4. **time-line**
+4. **raw data** and **data provenance**
 
-5. **raw data** and **data provenance**
+5. **time-line**
 
 --------
 
-Currently, many journals are requiring authors to provide some form of **1.**
-and / or **2.**.  But expect so see more and more requests for **3.** through
-**5.**.
+Currently, many journals are requiring authors to provide some form of **steps 1**
+and **2**.
 
-Here, we'll see how to **fullfill all** of **1.** through **5.** at Geomar.
+But be prepared to see requests for **step 3** through **5**!
 
 ---
 
 class: middle
 
-## "All The Numbers" (1.)
+## "All The Numbers"
 
 1. **all the numbers**
 
@@ -372,84 +377,72 @@ class: middle
 
 3. **tools** and **libraries**
 
-4. **time-line**
+4. **raw data** and **data provenance**
 
-5. **raw data** and **data provenance**
+5. **time-line**
 
 ---
 
-## "All The Numbers" (1.) ← <https://data.geomar.de>
+## "All the Numbers" ← [data.geomar.de][data_geomar_de]
 
---
+_ To publish your data and supplementaries, contact <datamanagement@geomar.de>. _
 
-- meant to serve as a **stable** point of **first contact** for anybody looking
-  for a dataset from Geomar
+- **Stable** point of **first contact** for anybody looking for a dataset from
+  Geomar
 
-- today: **collection of links** to data for papers etc.
+- Today: **collection of links** to data for papers etc.
 
-.medium[This is the place to put supplementary data and scripts!
-←<datamanagement@geomar.de>]
 
 --
 
 --------
-
-Some alternatives:
 
 - At TM, we have <data-tm@geomar.de> which is forwarded to whoever is / will be
   in charge of data management within the group.
 
 - https://zenodo.org provides storage and a DOI for data.
 
---
-
---------
-
-*Note that the **hard part** is not providing a point of contact for those
-requesting the data.  The hard part is **being able to provide the data** any
-given time.*
-
 ---
 
 class: middle
 
-## "Documented steps" (2.)
+## "Documented steps"
 
-1. **all the numbers** ← <https://data.geomar.de>
+1. **all the numbers** ← [https://data.geomar.de][data_geomar_de]
 
 2. **documented steps**
 
 3. **tools** and **libraries**
 
-4. **time-line**
+4. **raw data** and **data provenance**
 
-5. **raw data** and **data provenance**
+5. **time-line**
 
 ---
 
 class: middle
 
-## "Documented steps" (2.) ← <https://nb.geomar.de>
+## "Documented steps" ← [nb.geomar.de][nb_geomar_de]
 
-- [Jupyter](https://github.com/jupyter/jupyter) **frontend** to virtually all
+- [Jupyter][jupyter_github] **frontend** to virtually all
   the **large machines** (in-house and external)
 
 - **beautifully rendered** analyses
 
 - automatic **documentation** is (almost) **for free**
 
-- most **Git** servers render Jupyter notebooks
+- **Git** servers render Jupyter notebooks
 
 --------
 
 It is definitely possible (and currently done) to do *all* analyses in your PhD
-project with Jupyter and on <https://nb.geomar.de>.
+project with Jupyter and on [https://nb.geomar.de][nb_geomar_de].
 
 ---
 
 class: middle
 
-## "Tools and Libraries" (3.)
+## "Tools and Libraries"
 
 1. **all the numbers** ← <https://data.geomar.de>
 
@@ -457,18 +450,18 @@ class: middle
 
 3. **tools** and **libraries**
 
-4. **time-line**
+4. **raw data** and **data provenance**
 
-5. **raw data** and **data provenance**
+5. **time-line**
 
 ---
 
 class: middle
 
-## "Tools and Libraries" (3.) ← [Conda environments](https://git.geomar.de/python/conda_environments/)
+## "Tools and Libraries" ← [Conda Envs][git_geomar_de_python_conda_environments]
 
-- use [Anaconda](https://www.anaconda.com/distribution/) (**Python** and **R**)
-  and [Conda-Forge](https://conda-forge.org/) (far beyond)
+- use [Anaconda][anaconda] (**Python** and **R**)
+  and [Conda-Forge][conda_forge] (far beyond)
 
 - explicitly **manage** and **document** full working **environments**
 
@@ -484,7 +477,7 @@ class: middle
 
 class: middle
 
-## "Time Line" (4.)
+## "Raw Data"
 
 1. **all the numbers** ← <https://data.geomar.de>
 
@@ -492,16 +485,66 @@ class: middle
 
 3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
 
-4. **time-line**
+4. **raw data** and **data provenance**
 
-5. **raw data** and **data provenance**
+5. **time-line**
 
+---
+
+## "Raw Data" ← [git.geomar.de/data/][git_geomar_de_data_docs]
+
+- fully **version controlled** external **data** Git LFS
+
+- for now, tracking tens / hundreds of Terabytes of model output is beyond reach
+
+--
+
+--------
+
+To learn more, check: <https://git.geomar.de/data/docs/>
+
+- **Growing** collection of external data sets.
+
+- [Also available on the thredds
+  server][git_data_on_thredds]
+  .small[← If you only klick on one link.  This is the one!]
+
+---
+
+## Thoughts on Very Large Data Sets
+
+- Work towards a **"single source of truth"**!
+
+- Make sure to have **clear** (central?!) storage **structure**!
+
+- **Plan for evolution** of each data set right from the start!
+
+- Think about how number versions.  [This might be a good starting point.][semver_for_data_on_git]
+
+- ...
 
 ---
 
 class: middle
 
-## "Time Line" (4.) ← <http://git.geomar.de>
+## "Time Line"
+
+1. **all the numbers** ← <https://data.geomar.de>
+
+2. **documented steps** ← <https://nb.geomar.de>
+
+3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
+
+4. **raw data** and **data provenance** ← <https://git.geomar.de/data/docs>
+
+5. **time-line**
+
+---
+
+class: middle
+
+## "Time Line" ← [git.geomar.de][git_geomar_de]
+
 
 - **full-blown** version control environment
 
@@ -517,13 +560,13 @@ class: middle
 
 - …
 
-Introductory material: https://git.geomar.de/edu/git-intro
+Introductory materials: <https://git.geomar.de/edu/git-intro>
 
 ---
 
 class: middle
 
-## "Data Provenance" (5.)
+## Repeatable Workflows at Geomar
 
 1. **all the numbers** ← <https://data.geomar.de>
 
@@ -531,74 +574,23 @@ class: middle
 
 3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
 
-4. **time-line** ← <https://git.geomar.de>
+4. **raw data** and **data provenance** ← <https://git.geomar.de/data/docs>
 
-5. **raw data** and **data provenance**
-
----
-
-## "Data" (5.) ← <https://git.geomar.de/data/>
-
-- **version controlled** external **data** with Git LFS
-
-- tracking tens / hundreds of Terabytes (or more) of model output is beyond
-  reach for now
-
---
-
---------
-
-<https://git.geomar.de/data/docs/>
-
-- Growing collection of external data sets.
-
-- [Also available on the thredds
-  server](https://data.geomar.de/thredds/catalog/tmdata/git_geomar_de_data/catalog.html)
-  .small[← If you only klick on one link.  This is the one!]
---
-
---------
-
-Current alternative for very large data sets:
-
-- Work towards a **"single source of truth"**.
-
-- Make sure to have **clear** (central?!) storage **structure**.
-
-- ...
-
----
-
-class: middle
-
-## Building a Repeatable Workflow at Geomar
-
-1. **all the numbers** ← <https://data.geomar.de>
-
-2. **documented steps** ← <https://nb.geomar.de>
-
-3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
-
-4. **time-line** ← <https://git.geomar.de>
-
-5. **raw data** and **data provenance** ← <https://git.geomar.de/data/>
+5. **time-line** ← <https://git.geomar.de>
 
 ---
 
 ## The (in my opinion) Best Part
 
 - **only weak links** between components
-
 - "plumbing" relies on **standard** sysadmin **skills**
 
 --
 
 --------
 
-- ⇒ **limited effects** of failure / unavailability
-
+- ⇒ **limited effects** of failure / unavailability of a component
 - ⇒ profit **only** from what you **need**
-
 - ⇒ **remain** fully **independent** from all other components
 
 --
@@ -618,25 +610,17 @@ If you **leave** Geomar, it is very easy to **take**
 
 class: middle
 
-## But Do You Need This?
+# But Do You Need This?
 
---
+The **public debate** is often focused on **fraud** prevention. — So we're fine!
 
-The **public debate** is focused on
-
-- **fraud** prevention
-
-- and facilitating communication **within the community**.
-
-So we're fine.
-
-... but are we?
+.right[ _ ... but are we? _ ]
 
 ---
 
 class: left, middle
 
-## But Do You Need This?
+# But Do You Need This?
 
 .center[<img src="images/sms_your_boss_airport.png" width="80%">]
 
@@ -644,7 +628,7 @@ class: left, middle
 
 class: left, middle
 
-## But Do You Need This?
+# But Do You Need This?
 
 **You:** *"Can you check this sea-level trend against satellite data?"*
 
@@ -665,34 +649,21 @@ class: middle, center
 
 ---
 
-## What Can *You* Do Now?
+class: middle, left
+
+## What Do **You** Do Now?
 
 - Have a **mental framework** to think about repeatability. ← this talk
-
---
 
 - **Script** all your analyses.  **Avoid interactive** work whenever possible.
 
 - Keep **track** of **your data**.
-
-- Have a standard of **numbering your versions**.  (Always forward.  There
-  should be no files called `.txt.old`!)  ← [Semantic
-  Versioning is a good start](http://semver.org/#summary)
 
 ----
 
 - Learn to use **Git** or any other version-control system.
 
 - And use it in your **daily routine** work.
-
-----
-
-Cheat-Sheets:
-
-- Skim [Sandve (2013)][Sandve2013] for the **"10 Repeatability Commandments"**.
-
-- Read the [reference sheet of Wilson (2012)][Wilson2012] to **be prepared for
-  coding**.
 
 ---
 
@@ -702,7 +673,7 @@ class: middle
 
 Develop our **Culture:**
 
-- Be(come more) **confident to publish** your code and data.
+- Be **confident to publish** your code and data.
 
 - Develop **ethics** of using code and data published by others.
 
@@ -716,11 +687,30 @@ Develop **Best Practices:**
 
 - ...
 
+---
 
+# Reading List
+
+- [Sandve (2013)][Sandve2013] has the **"10 Repeatability Commandments"**.
+
+- [Wilson (2012)][Wilson2012] has a reference sheet to **be prepared for
+  coding**.
+
+[anaconda]: https://www.anaconda.com/distribution/
+
+[conda_forge]: https://conda-forge.org/
+
+[data_geomar_de]: https://data.geomar.de
 
 [fig_01_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb
 
 [fig_01_data_file_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc
+
+[fig_02_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb
+
+[fig_03_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb
+
+[git_data_on_thredds]: https://data.geomar.de/thredds/catalog/tmdata/git_geomar_de_data/catalog.html
 
 [git_geomar_de]: https://git.geomar.de
 
@@ -728,7 +718,16 @@ Develop **Best Practices:**
 
 [git_geomar_de_data_docs]: https://git.geomar.de/data/docs/
 
+[git_geomar_de_python_conda_environments]: https://git.geomar.de/python/conda_environments/
+
 [HadISST_on_git]: https://git.geomar.de/data/HadISST/
+
+[jupyter_github]: https://github.com/jupyter/jupyter
+
+[nb_geomar_de]: https://nb.geomar.de
+
+[semver_for_data_on_git]: https://git.geomar.de/data/docs/blob/master/versioning.md
+
 
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
