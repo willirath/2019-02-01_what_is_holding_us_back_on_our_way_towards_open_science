@@ -53,11 +53,13 @@ class: middle, left
 
 ## Challenge
 
-Those of you who have an idea what the following plot shows, please  **take a
-note** (in pseudo-code or code) on how you would produce it.
+Those of you who have an idea what the following plot shows:
 
-Please be specific about **when** and **how** you select regions, calculate
-averages, and modify the data otherwise.
+- _ Please  **take a note** (in pseudo-code or code) on how you would produce
+  it. _
+
+- _ Please be **specific** about **when** and **how** you select regions,
+  calculate averages, and modify the data otherwise. _
 
 ---
 
@@ -99,22 +101,18 @@ full period from 1900 to 2010.*
 We now know that
 
 - the time series represents **global means**,
-
-- the anomalies were calculated **relative to the complete time series**.
+- the anomalies were calculated **relative to** the **complete time series**.
 
 --
 
 --------
 
-But **still**:
+But still:
 
 - Could we be sure to find **exactly** the same data?
-
 - Are those **weighted or arithmetic** spatial averages?
-
 - How exactly and **in which order** did the authors calculate the temporal
   means / spatial means / temporal anomalies?
-
 - …
 
 ---
@@ -131,14 +129,18 @@ with all the details in the **supplementary materials**. *
 
 class: middle
 
-## The (essential parts of the) Supplementary Script
+## The Supplementary Material
 
-(Let's first walk through it.  We'll compare with your version of the analysis
-later.)
+- There is a [Jupyter notebook][fig_01_notebook_on_git] that contains the full
+  analysis from the initial HadISST fields to the final plot.
+
+- There is a [data file][fig_01_data_file_on_git] that contains all numbers used
+  to produce the figure.
+
 
 ---
 
-### Calculating and Plotting the SST Anomalies
+### The Jupyter Notebook
 
 ```python
 import numpy as np
@@ -171,7 +173,7 @@ sst_anomalies = tmp_anom(wgt_glob_mean(ann_mean(sst)))
 sst_anomalies.plot()
 ```
 
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
+_ .right[This code shows the essential parts of the analysis. [The full notebook is here.][fig_01_notebook_on_git]] _
 
 ---
 
@@ -180,47 +182,57 @@ class: middle
 ### Saving the Plotted Data for Reference
 
 ```python
+[...]
 output_data_set = xr.Dataset({"global_and_annual_mean_SST_anomalies": sst_anomalies})
 output_data_set.to_netcdf(file_name)
+[...]
 ```
 
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
+_ .right[[Click here for the full notebook][fig_01_notebook_on_git] and [here for the data file.][fig_01_data_file_on_git]] _
 
 ---
 
-## Data Provenance
+## Raw Data
 
-We use a data set from a [fully version-controlled data
-repository](https://git.geomar.de/data/HadISST/):
+We use the [HadISST data set][HadISST_on_git] from a
+[repository][git_geomar_de_data_docs] of fully version-controlled data sets:
 
 ```python
+[...]
 data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc")
+[...]
 ```
 
 --
 
 --------
 
-Moreover, the following tells us that we're using `v1.3.0` of the
-`HadISST` data set:
+From within the notebook, we find out that at the time of the analysis,
+`HadISST` `v1.3.0` was the latest of the `v1.x.x` versions:
 ```bash
 git --work-tree="/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/" describe
 ```
-```
+```bash
 v1.3.0
 ```
 
---
+---
+
+class: left, middle
+
+## Raw Data
+
+_ "We used v1.3.0 of the HadISST data set from our [internal mirror][git_geomar_de_data]." _
 
 --------
 
-To learn more about the data set, check:
+This **completely defines** the raw data:
 
-- <https://git.geomar.de/data/HadISST/commits/v1.3.0> for a complete history of
-  the our mirror of the data set,
+- Genral information: <https://git.geomar.de/data/HadISST>
 
-- <https://git.geomar.de/data/HadISST> for a general overview, a README of the
-  current version, etc.
+- Full history of our HadISST mirror up to v1.3.0: <https://git.geomar.de/data/HadISST/commits/v1.3.0>
+
+- Other data sets: <https://git.geomar.de/data/docs/>
 
 ---
 
@@ -228,13 +240,13 @@ class: middle
 
 ## Tools and Libraries
 
-The following lists the complete Python environment that was used in the
-analysis:
+Within the [Jupyter notebook][fig_01_notebook_on_git], we list the complete
+Python environment that was activated during the analysis:
 
 ```bash
 conda list
 ```
-```
+```bash
 # packages in environment at /home/wrath/TM/software/miniconda3_20170727/envs/py3_std:
 #
 alabaster                 0.7.10                   py35_1    conda-forge
@@ -249,13 +261,12 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
-[The full script is here.](https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb)
-
 ---
 
 ## Evolution of the Analysis
 
-To see how this analysis developed in time, check:
+The development of the analysis (and of this talk) was done on [the Geomar Git
+server][git_geomar_de].  To see how it developed in time, check:
 
 <https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
 
@@ -263,22 +274,18 @@ To see how this analysis developed in time, check:
 
 --------
 
-This is a **time line** of every step towards the current version of this talk,
-and the example analysis presented here.
+This is a **time line** of every step towards the latest version of this talk.
 
 Suppose, we developed the analysis as part of a multi-author paper.  Then, it
 would be possible
 
 - to **return to any earlier version** of the scripts at any later point,
-
 - to **compare** scripts between **revisions** sent to the journal,
-
-- to **roll back any changes** that are perhaps later found to be wrong,
+- to **roll back** any **changes** that are perhaps later found to be wrong,
 
 but also
 
-- to **merge** changes provided by collaborator,
-
+- to **merge** changes provided by a collaborator,
 - or to **discuss** proposed **changes before merging** them.
 
 ---
@@ -708,6 +715,21 @@ Develop **Best Practices:**
 - **Where** to document?
 
 - ...
+
+
+
+[fig_01_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb
+
+[fig_01_data_file_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc
+
+[git_geomar_de]: https://git.geomar.de
+
+[git_geomar_de_data]: https://git.geomar.de/data/
+
+[git_geomar_de_data_docs]: https://git.geomar.de/data/docs/
+
+[HadISST_on_git]: https://git.geomar.de/data/HadISST/
+
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
