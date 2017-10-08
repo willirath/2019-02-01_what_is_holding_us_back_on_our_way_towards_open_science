@@ -94,8 +94,6 @@ class: middle
 **Figure 01.** *Global-mean and annual-mean HadISST anomalies relative to the
 full period from 1900 to 2010.*
 
---
-
 --------
 
 We now know that
@@ -192,6 +190,8 @@ _ .right[[Click here for the full notebook][fig_01_notebook_on_git] and [here fo
 
 ---
 
+class: left, middle
+
 ## Raw Data
 
 We use the [HadISST data set][HadISST_on_git] from a
@@ -202,8 +202,6 @@ We use the [HadISST data set][HadISST_on_git] from a
 data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc")
 [...]
 ```
-
---
 
 --------
 
@@ -228,11 +226,11 @@ _ "We used v1.3.0 of the HadISST data set from our [internal mirror][git_geomar_
 
 This **completely defines** the raw data:
 
-- Genral information: <https://git.geomar.de/data/HadISST>
+- General information: <https://git.geomar.de/data/HadISST>
 
-- Full history of our HadISST mirror up to v1.3.0: <https://git.geomar.de/data/HadISST/commits/v1.3.0>
+- Full history up to version v1.3.0: <https://git.geomar.de/data/HadISST/commits/v1.3.0>
 
-- Other data sets: <https://git.geomar.de/data/docs/>
+- Other data sets, examples, download requests: <https://git.geomar.de/data/docs/>
 
 ---
 
@@ -263,14 +261,14 @@ zlib                      1.2.8                         3    conda-forge
 
 ---
 
+class: left, middle
+
 ## Evolution of the Analysis
 
-The development of the analysis (and of this talk) was done on [the Geomar Git
-server][git_geomar_de].  To see how it developed in time, check:
+The development of the analysis (and of this talk) was tracked on [the Geomar
+Git server][git_geomar_de].
 
-<https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
-
---
+To see how it developed in time, check:<br><https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
 
 --------
 
@@ -286,20 +284,21 @@ Suppose, this was a multi-author paper.  Then, it would be easy to
 
 class: middle
 
-## The Essence of Part One
+# The Essence of Part One
 
-1. a small and easy-to-use data set containing **all the numbers** necessary to
-   re-plot and compare the data presented in the analysis,
+Break repeatability by skipping at least one of:
+
+1. a data set containing **all the numbers** necessary to re-plot and compare
+   the data **presented in the analysis**
 
 2. fully **documented steps** from the original data to the final presentation
-   (plots, tables, etc.),
 
 3. an overview of all the **tools** and **libraries** used in the analysis and
-   of their exact versions,
+   of their exact versions
 
-4. a pointer to the full **raw data** used in the analysis, and
+4. a pointer to the full **raw data** used in the analysis
 
-5. a full **time-line** of the development of the analysis.
+5. a full **time-line** of the development of the analysis _← that's more of a bonus_
 
 ---
 
@@ -308,7 +307,7 @@ class: middle, left
 # Interlude
 
 Let's compare different ways to calculate the SST anomalies.
-.right[*... take out your notes.*]
+.right[*... need your notes*]
 
 ---
 
@@ -362,21 +361,7 @@ But be prepared to see requests for **step 3** through **5**!
 
 ---
 
-class: middle
-
-## "All The Numbers"
-
-1. **all the numbers**
-
-2. **documented steps**
-
-3. **tools** and **libraries**
-
-4. **raw data** and **data provenance**
-
-5. **time-line**
-
----
+class: left, middle
 
 ## "All the Numbers" ← [data.geomar.de][data_geomar_de]
 
@@ -386,9 +371,6 @@ _ To publish your data and supplementaries, contact <datamanagement@geomar.de>. 
   Geomar
 
 - Today: **collection of links** to data for papers etc.
-
-
---
 
 --------
 
@@ -486,13 +468,13 @@ class: middle
 
 ---
 
+class: middle, left
+
 ## "Raw Data" ← [git.geomar.de/data/][git_geomar_de_data_docs]
 
 - fully **version controlled** external **data** Git LFS
 
 - for now, tracking tens / hundreds of Terabytes of model output is beyond reach
-
---
 
 --------
 
@@ -505,6 +487,8 @@ To learn more, check: <https://git.geomar.de/data/docs/>
   .small[← If you only klick on one link.  This is the one!]
 
 ---
+
+class: middle
 
 ## Thoughts on Very Large Data Sets
 
@@ -575,6 +559,8 @@ class: middle
 
 ---
 
+class: middle, left
+
 ## The (in my opinion) Best Part
 
 - **only weak links** between components
@@ -587,8 +573,6 @@ class: middle
 - ⇒ **limited effects** of failure / unavailability of a component
 - ⇒ profit **only** from what you **need**
 - ⇒ **remain** fully **independent** from all other components
-
---
 
 --------
 
