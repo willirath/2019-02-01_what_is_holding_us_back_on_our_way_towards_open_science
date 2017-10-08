@@ -274,18 +274,13 @@ server][git_geomar_de].  To see how it developed in time, check:
 
 --------
 
-This is a **time line** of every step towards the latest version of this talk.
-
 Suppose, this was a multi-author paper.  Then, it would be easy to
 
 - **return to any earlier version** of the scripts at any later point,
-- **compare** scripts between **revisions** sent to the journal,
-- **roll back** any **changes** that are perhaps later found to be wrong,
 
-but also to
+- **compare** scripts between **revisions** sent to the journal, or
 
-- **merge** changes provided by a collaborator,
-- or **discuss** proposed **changes before merging** them.
+- **roll back** any **changes** that are perhaps later found to be wrong.
 
 ---
 
@@ -322,8 +317,6 @@ Let's compare different ways to calculate the SST anomalies.
 [This notebook][fig_02_notebook_on_git] details a subtlety with the order of
 averaging:
 
---
-
 <img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">
 
 
@@ -334,7 +327,9 @@ averaging:
 [This notebook][fig_03_notebook_on_git] also considers arithmetic averages and
 shows all 12 variants:
 
-<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">
+<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="75%">
+
+_ .medium[.right[... note that we're still weighting all months equally.]] _
 
 ---
 
