@@ -17,10 +17,10 @@
 - [x] [ Wilson2012 ][Wilson2012]
 - [ ] [ XSEDE2014_repro ][XSEDE2014_repro]
 - [ ] [ Hutton2016 ][Hutton2016]
-- [ ] [ Anel2016 ][Anel2016]
-- [ ] [ Hutton2017a ][Hutton2017a]
-- [ ] [ Melsen2017 ][Melsen2017]
-- [ ] [ Hutton2017b ][Hutton2017b]
+    - [ ] [ Anel2016 ][Anel2016]
+    - [ ] [ Hutton2017a ][Hutton2017a]
+    - [ ] [ Melsen2017 ][Melsen2017]
+    - [ ] [ Hutton2017b ][Hutton2017b]
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
