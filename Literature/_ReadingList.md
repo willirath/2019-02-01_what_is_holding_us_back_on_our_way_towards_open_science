@@ -21,6 +21,7 @@
     - [ ] [ Hutton2017a ][Hutton2017a]
     - [ ] [ Melsen2017 ][Melsen2017]
     - [ ] [ Hutton2017b ][Hutton2017b]
+- [ ] [ Atmanspacher2016 ][Atmanspacher2016]
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
@@ -63,5 +64,7 @@
 [Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208/full
 
 [Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476/full
+
+
 
 ---
