@@ -722,24 +722,20 @@ class: medium
 ### Reading list
 
 - _"Publish your computer code: it is good enough"_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]
-
 - _"Open code for open science?"_ : [http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html][Easterbrook2014]
-
 - _"Why bitwise reproducibility matters"_ : [https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/][Hinsen2015]
-
 - _"Which mistakes do we actually make in scientific code?"_ : [http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/][Hinsen2017]
-
 - _"A Minimum Standard for Publishing Computational Results in the
 Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1][Irving2015]
-
 - _"Good Scientific Practice at MPI-M"_ : [http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html][MPI_good_scientific_practice]
-
 - _"Nature - Code share"_ : [https://www.nature.com/news/code-share-1.16232][Nature_CodeShare]
-
 - _"Ten Simple Rules for Reproducible Computational Research"_ : [http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285][Sandve2013]
-
 - _"Best Practices for Scientific Computing"_ : [https://arxiv.org/abs/1210.0530][Wilson2012]
-
+- _"Most computational hydrology is not reproducible, so is it really science?"_: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285][Hutton2016]
+    - first comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190][Anel2016]
+    - first reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480][Hutton2017a]
+    - second comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208][Melsen2017]
+    - second reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476][Hutton2017b]
 
 
 [anaconda]: https://www.anaconda.com/distribution/
@@ -809,3 +805,13 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 [Wilson2012]: https://arxiv.org/abs/1210.0530
 
 [XSEDE2014_repro]: https://www.xsede.org/documents/659353/d90df1cb-62b5-47c7-9936-2de11113a40f
+
+[Hutton2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285
+
+[Anel2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190
+
+[Hutton2017a]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480
+
+[Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208
+
+[Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476

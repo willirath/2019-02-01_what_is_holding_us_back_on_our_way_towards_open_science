@@ -16,6 +16,11 @@
 - [ ] [ Stodden2010 ][Stodden2010]
 - [x] [ Wilson2012 ][Wilson2012]
 - [ ] [ XSEDE2014_repro ][XSEDE2014_repro]
+- [ ] [Hutton2016][Hutton2016]
+- [ ] [Anel2016][Anel2016]
+- [ ] [Hutton2017a][Hutton2017a]
+- [ ] [Melsen2017][Melsen2017]
+- [ ] [Hutton2017b][Hutton2017b]
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
@@ -48,5 +53,15 @@
 [Wilson2012]: https://arxiv.org/abs/1210.0530
 
 [XSEDE2014_repro]: https://www.xsede.org/documents/659353/d90df1cb-62b5-47c7-9936-2de11113a40f
+
+[Hutton2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285
+
+[Anel2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190
+
+[Hutton2017a]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480
+
+[Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208
+
+[Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476
 
 ---
