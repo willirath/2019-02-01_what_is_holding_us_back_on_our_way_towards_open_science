@@ -54,14 +54,14 @@
 
 [XSEDE2014_repro]: https://www.xsede.org/documents/659353/d90df1cb-62b5-47c7-9936-2de11113a40f
 
-[Hutton2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285
+[Hutton2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285/full
 
-[Anel2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190
+[Anel2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190/full
 
-[Hutton2017a]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480
+[Hutton2017a]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480/full
 
-[Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208
+[Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208/full
 
-[Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476
+[Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476/full
 
 ---

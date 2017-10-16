@@ -732,10 +732,10 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 - _"Ten Simple Rules for Reproducible Computational Research"_ : [http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285][Sandve2013]
 - _"Best Practices for Scientific Computing"_ : [https://arxiv.org/abs/1210.0530][Wilson2012]
 - _"Most computational hydrology is not reproducible, so is it really science?"_: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285][Hutton2016]
-    - first comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190][Anel2016]
-    - first reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480][Hutton2017a]
-    - second comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208][Melsen2017]
-    - second reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476][Hutton2017b]
+    - first comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190/full][Anel2016]
+    - first reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480/full][Hutton2017a]
+    - second comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208/full][Melsen2017]
+    - second reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476/full][Hutton2017b]
 
 
 [anaconda]: https://www.anaconda.com/distribution/
@@ -806,12 +806,12 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 
 [XSEDE2014_repro]: https://www.xsede.org/documents/659353/d90df1cb-62b5-47c7-9936-2de11113a40f
 
-[Hutton2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285
+[Hutton2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285/full
 
-[Anel2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190
+[Anel2016]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190/full
 
-[Hutton2017a]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480
+[Hutton2017a]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480/full
 
-[Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208
+[Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208/full
 
-[Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476
+[Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476/full
