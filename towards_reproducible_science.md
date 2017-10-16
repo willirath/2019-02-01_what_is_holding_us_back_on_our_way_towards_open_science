@@ -12,7 +12,7 @@ IT Department, ...*]
 
 class: middle, center
 
-<img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="90%">
+<img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
 
 .small[.right[From [Easterbrook (2014)][Easterbrook2014]]]
 
@@ -65,7 +65,7 @@ Those of you who have an idea what the following plot shows:
 
 ## Part One:  A Simple Time Series
 
-.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="90%">]
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="95%">]
 
 .center[**Figure 01.** *Annual-mean HadISST anomalies.*]
 
@@ -307,28 +307,30 @@ class: middle, left
 # Interlude
 
 Let's compare different ways to calculate the SST anomalies.
-.right[*... need your notes*]
+
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="80%">]
+
+.right[.medium[*... need your notes*]]
 
 ---
 
-# Interlude
+# Interlude - Two Lines
 
 [This notebook][fig_02_notebook_on_git] details a subtlety with the order of
 averaging:
 
-<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">
-
+.center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="80%">]
 
 ---
 
-# Interlude
+# Interlude - Twelve Lines
 
 [This notebook][fig_03_notebook_on_git] also considers arithmetic averages and
 shows all 12 variants:
 
-<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="75%">
+.center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="80%">]
 
-_ .medium[.right[... note that we're still weighting all months equally.]] _
+.right[.medium[*... note that we're still weighting all months equally.*]]
 
 ---
 
