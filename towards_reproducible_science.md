@@ -129,10 +129,10 @@ class: middle
 
 ## The Supplementary Material
 
-- There is a [Jupyter notebook][fig_01_notebook_on_git] that contains the full
+- There is a [Jupyter notebook][fig_01_notebook_on_nbviewer] that contains the full
   analysis from the initial HadISST fields to the final plot.
 
-- There is a [data file][fig_01_data_file_on_git] that contains all numbers used
+- There is a [data file][fig_01_data_file_on_pages] that contains all numbers used
   to produce the figure.
 
 
@@ -171,7 +171,7 @@ sst_anomalies = tmp_anom(wgt_glob_mean(ann_mean(sst)))
 sst_anomalies.plot()
 ```
 
-_ .right[This code shows the essential parts of the analysis. [The full notebook is here.][fig_01_notebook_on_git]] _
+_ .right[This code shows the essential parts of the analysis. [The full notebook is here.][fig_01_notebook_on_nbviewer]] _
 
 ---
 
@@ -186,7 +186,7 @@ output_data_set.to_netcdf(file_name)
 [...]
 ```
 
-_ .right[[Click here for the full notebook][fig_01_notebook_on_git] and [here for the data file.][fig_01_data_file_on_git]] _
+_ .right[[Click here for the full notebook][fig_01_notebook_on_nbviewer] and [here for the data file.][fig_01_data_file_on_pages]] _
 
 ---
 
@@ -238,7 +238,7 @@ class: middle
 
 ## Tools and Libraries
 
-Within the [Jupyter notebook][fig_01_notebook_on_git], we list the complete
+Within the [Jupyter notebook][fig_01_notebook_on_nbviewer], we list the complete
 Python environment that was activated during the analysis:
 
 ```bash
@@ -316,7 +316,7 @@ Let's compare different ways to calculate the SST anomalies.
 
 # Interlude - Two Lines
 
-[This notebook][fig_02_notebook_on_git] details a subtlety with the order of
+[This notebook][fig_02_notebook_on_nbviewer] details a subtlety with the order of
 averaging:
 
 .center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="80%">]
@@ -325,7 +325,7 @@ averaging:
 
 # Interlude - Twelve Lines
 
-[This notebook][fig_03_notebook_on_git] also considers arithmetic averages and
+[This notebook][fig_03_notebook_on_nbviewer] also considers arithmetic averages and
 shows all 12 variants:
 
 .center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="80%">]
@@ -711,12 +711,12 @@ class: medium
 
 ### Figures from this talk
 
-- Notebook for Figure 01: [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_git]
-- Data for Figure 01: [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_git]
-- Notebook for Figure 02:<br> [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_git]
-- Data for Figure 02:<br> <https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.nc>
-- Notebook for Figure 03:<br> [https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb][fig_03_notebook_on_git]
-- Data for Figure 03:<br> <https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
+- Notebook for Figure 01: [http://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_nbviewer]
+- Data for Figure 01: [http://willirath.gitlab.io/towards_reproducible_science/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_pages]
+- Notebook for Figure 02:<br> [http://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_nbviewer]
+- Data for Figure 02:<br> <http://willirath.gitlab.io/towards_reproducible_science/data/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.nc>
+- Notebook for Figure 03:<br> [http://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb][fig_03_notebook_on_nbviewer]
+- Data for Figure 03:<br> <http://willirath.gitlab.io/towards_reproducible_science/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
 - HadISST data set: [https://git.geomar.de/data/HadISST/][HadISST_on_git]
 
 ### Reading list
@@ -744,13 +744,13 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 
 [data_geomar_de]: https://data.geomar.de
 
-[fig_01_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb
+[fig_01_notebook_on_nbviewer]: http://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb
 
-[fig_01_data_file_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc
+[fig_01_data_file_on_pages]: http://willirath.gitlab.io/towards_reproducible_science/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc
 
-[fig_02_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb
+[fig_02_notebook_on_nbviewer]: http://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb
 
-[fig_03_notebook_on_git]: https://git.geomar.de/willi-rath/towards_reproducible_science/blob/master/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb
+[fig_03_notebook_on_nbviewer]: http://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb
 
 [git_data_on_thredds]: https://data.geomar.de/thredds/catalog/tmdata/git_geomar_de_data/catalog.html
 
