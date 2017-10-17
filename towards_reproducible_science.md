@@ -730,7 +730,8 @@ class: medium
 
 ### Figures from this talk
 
-- Notebook for the Google-Trends Figure: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb][fig_00_notebook_on_nbviewer]
+- Notebook for the Google-Trends Figure 00: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb][fig_00_notebook_on_nbviewer]
+- Data for the Google-Trends Figure 00: [https://willirath.gitlab.io/towards_reproducible_science/data/fig_00_google_trends.csv][fig_00_data_file_one_pages]
 - Notebook for Figure 01: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_nbviewer]
 - Data for Figure 01: [https://willirath.gitlab.io/towards_reproducible_science/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_pages]
 - Notebook for Figure 02:<br> [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_nbviewer]
@@ -766,6 +767,8 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 [data_geomar_de]: https://data.geomar.de
 
 [fig_00_notebook_on_nbviewer]: https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb
+
+[fig_00_data_file_one_pages]: https://willirath.gitlab.io/towards_reproducible_science/data/fig_00_google_trends.csv
 
 [fig_01_notebook_on_nbviewer]: https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb
 
