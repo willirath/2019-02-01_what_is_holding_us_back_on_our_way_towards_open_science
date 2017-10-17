@@ -386,7 +386,7 @@ class: left, middle
 
 ## "All the Numbers" ← [data.geomar.de][data_geomar_de]
 
-_ To publish your data and supplementaries, contact <datamanagement@geomar.de>. _
+_ To publish your data and supplementaries, contact [datamanagement(at)geomar.de](mailto:datamanagement-AT-geomar.de). _
 
 - **Stable** point of **first contact** for anybody looking for a dataset from
   Geomar
@@ -395,7 +395,7 @@ _ To publish your data and supplementaries, contact <datamanagement@geomar.de>. 
 
 --------
 
-- At TM, we have <data-tm@geomar.de> which is forwarded to whoever is / will be
+- At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de)> which is forwarded to whoever is / will be
   in charge of data management within the group.
 
 - https://zenodo.org provides storage and a DOI for data.
