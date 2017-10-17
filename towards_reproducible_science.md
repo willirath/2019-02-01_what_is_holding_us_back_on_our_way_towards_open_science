@@ -8,6 +8,8 @@ _Willi Rath_ (<wrath@geomar.de>)
 Scheinert, Klaus Getzlaff, Christina Roth, Geomar Data Management Team, Geomar
 IT Department, ...*]
 
+.medium[.right[[There is a Git repository for this talk][talk_git_repo]]
+
 ---
 
 class: middle, center
@@ -798,6 +800,7 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 
 [semver_for_data_on_git]: https://git.geomar.de/data/docs/blob/master/versioning.md
 
+[talk_git_repo]: https://gitlab.com/willirath/towards_reproducible_science
 
 
 [Baker2016]: https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970
