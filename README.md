@@ -1,7 +1,6 @@
 # Towards ~~Reproducible~~ Repeatable Science
 
-This is a talk on repeatable science and on how to establish a repeatable work
-flow at Geomar.
+[![pipeline status](https://gitlab.com/willirath/towards_reproducible_science/badges/master/pipeline.svg)](https://gitlab.com/willirath/towards_reproducible_science/commits/master)
 
-The latest version is here:
-<https://willirath.gitlab.io/towards_reproducible_science/>
+Check <https://willirath.gitlab.io/towards_reproducible_science/> for the
+latest version of the slides.
