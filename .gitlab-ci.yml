@@ -1,0 +1,12 @@
+pages:
+  stage: deploy
+  script:
+  - mkdir public
+  - cp towards_reproducible_science.html public/index.html
+  - cp towards_reproducible_science.md public/
+  - cp -r images/ public/.
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
