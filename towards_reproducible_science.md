@@ -8,7 +8,7 @@ _Willi Rath_ (<wrath@geomar.de>)
 Scheinert, Klaus Getzlaff, Christina Roth, Geomar Data Management Team, Geomar
 IT Department, ...*]
 
-.medium[.right[[There is a Git repository for this talk][talk_git_repo]]
+.medium[.right[There is a [Git repository for this talk.][talk_git_repo]]]
 
 ---
 
@@ -397,7 +397,7 @@ _ To publish your data and supplementaries, contact [datamanagement(at)geomar.de
 
 --------
 
-- At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de)> which is forwarded to whoever is / will be
+- At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de) which is forwarded to whoever is / will be
   in charge of data management within the group.
 
 - https://zenodo.org provides storage and a DOI for data.
