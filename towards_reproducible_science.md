@@ -1,6 +1,6 @@
 class: middle, left
 
-# Repeatable Work Flows
+# Reproducible Work Flows
 
 _Willi Rath_ (<wrath@geomar.de>)
 
@@ -11,6 +11,25 @@ IT Department, ...*]
 ---
 
 class: middle, center
+
+<img src="images/fig_00_google_trends.svg" width="99%">
+
+.left[ **rep…** crisis ← ( **rep**roducibility | **rep**lication | **rep**licability ) crisis ]
+.medium[.right[ [This notebook][fig_00_notebook_on_nbviewer] has details.]]
+
+---
+
+class: middle, center
+
+<img src="images/Baker2016_doi_10.1038_533452a_fig_01.jpeg" width="90%">
+
+.small[.right[From [Baker (2016)][Baker2016]]]
+
+---
+
+class: middle
+
+## ~~Reproducible~~ Repeatable Work Flows
 
 <img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
 
@@ -711,6 +730,7 @@ class: medium
 
 ### Figures from this talk
 
+- Notebook for the Google-Trends Figure: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb][fig_00_notebook_on_nbviewer]
 - Notebook for Figure 01: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_nbviewer]
 - Data for Figure 01: [https://willirath.gitlab.io/towards_reproducible_science/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_pages]
 - Notebook for Figure 02:<br> [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_nbviewer]
@@ -721,6 +741,7 @@ class: medium
 
 ### Reading list
 
+- _"1,500 scientists lift the lid on reproducibility"_: [https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970][Baker2016]
 - _"Publish your computer code: it is good enough"_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]
 - _"Open code for open science?"_ : [http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html][Easterbrook2014]
 - _"Why bitwise reproducibility matters"_ : [https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/][Hinsen2015]
@@ -743,6 +764,8 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 [conda_forge]: https://conda-forge.org/
 
 [data_geomar_de]: https://data.geomar.de
+
+[fig_00_notebook_on_nbviewer]: https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb
 
 [fig_01_notebook_on_nbviewer]: https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb
 
@@ -773,6 +796,8 @@ Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/B
 [semver_for_data_on_git]: https://git.geomar.de/data/docs/blob/master/versioning.md
 
 
+
+[Baker2016]: https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970
 
 [Barnes2010]: https://www.nature.com/news/2010/101013/full/467753a.html
 
