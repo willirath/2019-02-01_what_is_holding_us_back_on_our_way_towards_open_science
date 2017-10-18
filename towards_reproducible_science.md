@@ -5,10 +5,13 @@ class: middle, left
 Willi Rath | <wrath@geomar.de>
 
 Thanks to _ Martin Claus, Claus Böning, Torge Martin, Markus
-Scheinert, Klaus Getzlaff, Christina Roth, Geomar Data Management Team, Geomar
-IT Department, … _
+Scheinert, Klaus Getzlaff, Franziska Schwarzkopf, Christina Roth, Julia
+Getzlaff, Geomar Data Management Team, Geomar IT Department, … _
 
-.right[(There is a [Git repository for this talk][talk_git_repo].)]
+.right[... there's a [Git repository for this talk][talk_git_repo].]
+
+.right[... slides: [https://willirath.gitlab.io/towards_reproducible_science/
+](https://willirath.gitlab.io/towards_reproducible_science/)]
 
 ---
 
@@ -46,14 +49,6 @@ class: middle, left
 > reader it is _in principle_ possible to _completely understand_ and
 > _repeat all steps_ the authors took from their initial idea to the final
 > conclusions.
-
-⇒ Which _**input data**_ were used?
-
-⇒ What are the _**steps**_ from the initial data to the _**final numbers**_ and figures?
-
-⇒ _**Why**_ did the authors do what they did?
-
-⇒ …
 
 ---
 
@@ -110,7 +105,7 @@ class: middle
 
 We now know that:
 
-- the time series represents _global means_,
+- the time series represents _global_ and _annual means_,
 - the anomalies were calculated _relative to_ the _complete time series_.
 
 --
@@ -270,6 +265,9 @@ zict                      0.1.3                      py_0    conda-forge
 zlib                      1.2.8                         3    conda-forge
 ```
 
+.right[.smaller[... reproduce the env by feeding this list back to
+`conda`.]]
+
 ---
 
 class: left, middle
@@ -290,28 +288,6 @@ Suppose, this was a multi-author paper.  Then, it would be easy to
 - _compare_ scripts between _revisions_ sent to the journal, or
 
 - _roll back_ any _changes_ that are perhaps later found to be wrong.
-
----
-
-class: middle
-
-## The Essence of Part One
-
-_ How to break repeatability? _ — Skip at least one of the following:
-
-1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
-   compare the data _**presented in the analysis**_.
-
-2. Provide fully _**documented steps**_ from the original data to the final
-   presentation.
-
-3. Provide an overview of all the _**tools**_ and _**libraries**_ used in the
-   analysis and of their exact versions.
-
-4. Provide a pointer to the full _**raw data**_ used in the analysis.
-
-5. Provide a full _**time line**_ of the development of the analysis.
-   _← that's more of a bonus_
 
 ---
 
@@ -355,6 +331,28 @@ class: middle, center
 
 ---
 
+class: middle
+
+## The Essence of Part One
+
+_ How to break repeatability? _ — Skip at least one of the following:
+
+1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
+   compare the data _**presented in the analysis**_.
+
+2. Provide fully _**documented steps**_ from the original data to the final
+   presentation.
+
+3. Provide an overview of all the _**tools**_ and _**libraries**_ used in the
+   analysis and of their exact versions.
+
+4. Provide a pointer to the full _**raw data**_ used in the analysis.
+
+5. Provide a full _**time line**_ of the development of the analysis.
+   _← that's more of a bonus_
+
+---
+
 class: middle, center
 
 ## Part Two
@@ -363,7 +361,7 @@ class: middle, center
 
 class: middle, left
 
-## Repeatable Workflows at Geomar
+## Repeatable Workflows
 
 1. _all the numbers_
 
@@ -379,7 +377,7 @@ class: middle, left
 
 class: middle, left
 
-## Repeatable Workflows at Geomar
+## Repeatable Workflows
 
 1. _all the numbers_ ← already required by many journals
 
@@ -395,7 +393,7 @@ class: middle, left
 
 class: middle, left
 
-## Repeatable Workflows at Geomar
+## Repeatable Workflows
 
 1. _all the numbers_ ← already required by many journals
 
@@ -437,20 +435,6 @@ Alernatives:
 
 ---
 
-class: middle
-
-1. _all the numbers_ ← [https://data.geomar.de][data_geomar_de]
-
-2. _documented steps_
-
-3. _tools & libraries_
-
-4. _raw data_
-
-5. _time line_
-
----
-
 class: center, middle
 
 .center[<img src="images/stepping_stones_geograph-5134739-by-David-Purchase.jpg" width="100%">]
@@ -472,20 +456,6 @@ class: middle
 
 > It is definitely possible (and currently done) to do _all_ analyses in your
 > PhD project with Jupyter and on [https://nb.geomar.de][nb_geomar_de].
-
----
-
-class: middle
-
-1. _all the numbers_ ← <https://data.geomar.de>
-
-2. _documented steps_ ← <https://nb.geomar.de>
-
-3. _tools & libraries_
-
-4. _raw data_
-
-5. _time line_
 
 ---
 
@@ -511,20 +481,6 @@ class: middle
   - <https://git.geomar.de/python/conda_environments/>
 
   - _already installed_ on our analysis machines ←<https://nb.geomar.de>
-
----
-
-class: middle
-
-1. _all the numbers_ ← <https://data.geomar.de>
-
-2. _documented steps_ ← <https://nb.geomar.de>
-
-3. _tools & libraries_ ← <https://git.geomar.de/python/conda_environments/>
-
-4. _raw data_
-
-5. _time line_
 
 ---
 
@@ -568,20 +524,6 @@ class: middle
 
 ---
 
-class: middle
-
-1. _all the numbers_ ← <https://data.geomar.de>
-
-2. _documented steps_ ← <https://nb.geomar.de>
-
-3. _tools & libraries_ ← <https://git.geomar.de/python/conda_environments/>
-
-4. _raw data_ ← <https://git.geomar.de/data/docs>
-
-5. _time line_
-
----
-
 class: center, middle
 
 .center[<img src="images/time-line-wintry-2068298_1280.jpg" width="100%">]
@@ -608,7 +550,7 @@ class: middle
 
 class: middle
 
-### Repeatable Workflows at Geomar
+### Repeatable Workflows ← at Geomar
 
 1. _all the numbers_ ← <https://data.geomar.de>
 
@@ -691,15 +633,14 @@ class: left, middle
 
 class: middle
 
-## ~~But Do~~ You Need This !
+## ~~But Do~~ _You_ Need This
 
-Adapting repeatable workflows is not about fulfilling author guidelines for
+Adapting repeatable workflows is _not_ about fulfilling author guidelines for
 journals.
 
-The _primary_ benefits are yours!
+.right[It's _you_ who benefits the most!]
 
 ---
-
 
 class: middle, left
 
