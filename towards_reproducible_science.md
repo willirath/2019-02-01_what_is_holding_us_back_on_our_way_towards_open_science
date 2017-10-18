@@ -14,9 +14,8 @@ IT Department, ...*]
 
 class: middle, center
 
-<img src="images/fig_00_google_trends.svg" width="99%">
+<img src="images/fig_00_google_trends.svg" width="100%">
 
-.left[ **rep…** crisis ← ( **rep**roducibility | **rep**lication | **rep**licability ) crisis ]
 .medium[.right[ [This notebook][fig_00_notebook_on_nbviewer] has details.]]
 
 ---
