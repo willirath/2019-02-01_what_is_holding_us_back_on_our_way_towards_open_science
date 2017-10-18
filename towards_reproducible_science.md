@@ -286,10 +286,10 @@ class: left, middle
 
 ## Evolution of the Analysis
 
-The development of the analysis (and of this talk) was tracked on [the Geomar
-Git server][git_geomar_de].
+The development of the analysis (and of this talk) was tracked on [Gitlab.com](https://gitlab.com).
 
-To see how it developed in time, check:<br><https://git.geomar.de/willi-rath/towards_reproducible_science/commits/master>
+To see how it developed in time, check:<br>
+<https://gitlab.com/willirath/towards_reproducible_science/commits/master>
 
 --------
 
