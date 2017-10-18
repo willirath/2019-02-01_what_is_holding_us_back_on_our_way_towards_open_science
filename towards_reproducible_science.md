@@ -743,6 +743,23 @@ Develop _**Best Practices:**_
 
 ---
 
+class: middle, center
+
+<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="27%">
+<img src="images/fig_00_google_trends.svg" width="27%">
+<img src="images/all-the-numbers-checkout-590358_1280.jpg" width="27%">
+<img src="images/Baker2016_doi_10.1038_533452a_fig_01.jpeg" width="27%">
+<img src="images/stepping_stones_geograph-5134739-by-David-Purchase.jpg" width="27%">
+<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="27%">
+<img src="images/tools-blacksmith-tools-shop-rustic-162631.jpeg" width="27%">
+<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="27%">
+<img src="images/raw-data-cooking-1013455_1280.jpg" width="27%">
+<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="27%">
+<img src="images/time-line-wintry-2068298_1280.jpg" width="27%">
+<img src="images/sms_your_boss_airport.png" width="27%">
+
+---
+
 class: middle, smaller
 
 ### Resources for Repeatable Work Flows
@@ -776,23 +793,6 @@ Nice tools and software:
 - Anaconda's Python distribution: [https://www.anaconda.com/distribution/][anaconda]
 - Conda Forge: [https://conda-forge.org/][conda_forge]
 - Jupyter notebooks: [https://github.com/jupyter/jupyter][jupyter_github]
-
----
-
-class: middle, center
-
-<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="27%">
-<img src="images/fig_00_google_trends.svg" width="27%">
-<img src="images/all-the-numbers-checkout-590358_1280.jpg" width="27%">
-<img src="images/Baker2016_doi_10.1038_533452a_fig_01.jpeg" width="27%">
-<img src="images/stepping_stones_geograph-5134739-by-David-Purchase.jpg" width="27%">
-<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="27%">
-<img src="images/tools-blacksmith-tools-shop-rustic-162631.jpeg" width="27%">
-<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="27%">
-<img src="images/raw-data-cooking-1013455_1280.jpg" width="27%">
-<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="27%">
-<img src="images/time-line-wintry-2068298_1280.jpg" width="27%">
-<img src="images/sms_your_boss_airport.png" width="27%">
 
 ---
 
