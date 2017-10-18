@@ -310,7 +310,7 @@ _ How to break repeatability? _ — Skip at least one of the following:
 
 4. Provide a pointer to the full _**raw data**_ used in the analysis.
 
-5. Provide a full _**time-line**_ of the development of the analysis.
+5. Provide a full _**time line**_ of the development of the analysis.
    _← that's more of a bonus_
 
 ---
@@ -365,7 +365,7 @@ class: middle, left
 
 4. _raw data_
 
-5. _time-line_
+5. _time line_
 
 ---
 
@@ -381,7 +381,7 @@ class: middle, left
 
 4. _raw data_
 
-5. _time-line_
+5. _time line_
 
 ---
 
@@ -397,7 +397,7 @@ class: middle, left
 
 4. _raw data_ ← be prepared for those !
 
-5. _time-line_ ← be prepared for those !
+5. _time line_ ← be prepared for those !
 
 ---
 
@@ -433,7 +433,7 @@ class: middle
 
 4. _raw data_
 
-5. _time-line_
+5. _time line_
 
 ---
 
@@ -467,7 +467,7 @@ class: middle
 
 4. _raw data_
 
-5. _time-line_
+5. _time line_
 
 ---
 
@@ -500,7 +500,7 @@ class: middle
 
 4. _raw data_
 
-5. _time-line_
+5. _time line_
 
 ---
 
@@ -530,7 +530,7 @@ class: middle
 
 - _Plan for evolution_ of each data set right from the start!
 
-- Think about how _number versions_ ← [_Semantic Versioning_ for data?][semver_for_data_on_git]
+- Think about how to _number versions_ ← [_Semantic Versioning_ for data?][semver_for_data_on_git]
 
 - …
 
@@ -548,7 +548,7 @@ class: middle
 
 4. _raw data_ ← <https://git.geomar.de/data/docs>
 
-5. _time-line_
+5. _time line_
 
 ---
 
@@ -581,7 +581,7 @@ class: middle
 
 4. _raw data_ ← <https://git.geomar.de/data/docs>
 
-5. _time-line_ ← <https://git.geomar.de>
+5. _time line_ ← <https://git.geomar.de>
 
 ---
 
@@ -668,17 +668,19 @@ class: middle, left
 
 ## What Can _You_ Do Now?
 
-- Have a _mental framework_ for repeatability. ← this talk
+.center[Have a _mental framework_ for repeatability. ← this talk]
 
-- _Script_ all your analyses.  _Avoid undocumented interactive_ work whenever possible.
+Do's & Dont's:
+
+- _Script_ all your analyses. / _Avoid undocumented interactive_ work.
 
 - Keep _track_ of _your data_.
-
-----
 
 - _Learn_ to use Git or any other _version-control system_.
 
 - And use it in your _daily routine_ work.
+
+- …
 
 ---
 
