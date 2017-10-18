@@ -28,9 +28,9 @@ class: middle, center
 
 ---
 
-class: middle
+class: middle, center
 
-## ~~Reproducible~~ Repeatable Work Flows
+## _~~Reproducibility~~_ _Repeatability_
 
 <img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
 
@@ -40,7 +40,7 @@ class: middle
 
 class: middle, left
 
-## ~~Reproducible~~ Repeatable Work Flows
+## Repeatability
 
 > Let's say an analysis is _repeatable_, if for any _sufficiently skilled_
 > reader it is _in principle_ possible to _completely understand_ and
