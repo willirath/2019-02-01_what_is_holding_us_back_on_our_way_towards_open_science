@@ -1,14 +1,14 @@
 class: middle, left
 
-# Reproducible Work Flows
+# How to do<br>_Efficient & Reproducible_ Science?
 
-_Willi Rath_ (<wrath@geomar.de>)
+Willi Rath | <wrath@geomar.de>
 
-.medium[**Thanks:** *Martin Claus, Claus Böning, Torge Martin, Markus
+Thanks to _ Martin Claus, Claus Böning, Torge Martin, Markus
 Scheinert, Klaus Getzlaff, Christina Roth, Geomar Data Management Team, Geomar
-IT Department, ...*]
+IT Department, … _
 
-.medium[.right[There is a [Git repository for this talk.][talk_git_repo]]]
+.right[(There is a [Git repository for this talk][talk_git_repo].)]
 
 ---
 
@@ -16,7 +16,7 @@ class: middle, center
 
 <img src="images/fig_00_google_trends.svg" width="100%">
 
-.medium[.right[ [This notebook][fig_00_notebook_on_nbviewer] has details.]]
+.smaller[.right[ [This notebook][fig_00_notebook_on_nbviewer] has details.]]
 
 ---
 
@@ -24,7 +24,7 @@ class: middle, center
 
 <img src="images/Baker2016_doi_10.1038_533452a_fig_01.jpeg" width="90%">
 
-.small[.right[From [Baker (2016)][Baker2016]]]
+.smaller[.right[From [Baker (2016)][Baker2016]]]
 
 ---
 
@@ -34,7 +34,7 @@ class: middle
 
 <img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
 
-.small[.right[From [Easterbrook (2014)][Easterbrook2014]]]
+.smaller[.right[From [Easterbrook (2014)][Easterbrook2014]]]
 
 ---
 
@@ -42,16 +42,16 @@ class: middle, left
 
 ## ~~Reproducible~~ Repeatable Work Flows
 
-_ Let's say an analysis is **repeatable**, if for any **sufficiently skilled**
-reader it is **in principle** possible to **completely understand** and
-**repeat all steps** the author took from their initial idea to the final
-conclusions. _
+> Let's say an analysis is _repeatable_, if for any _sufficiently skilled_
+> reader it is _in principle_ possible to _completely understand_ and
+> _repeat all steps_ the authors took from their initial idea to the final
+> conclusions.
 
-⇒ Which **input data** were used?
+⇒ Which _**input data**_ were used?
 
-⇒ What are the **steps** from the initial data to the **final numbers** and figures?
+⇒ What are the _**steps**_ from the initial data to the _**final numbers**_ and figures?
 
-⇒ **Why** did the authors do what they did?
+⇒ _**Why**_ did the authors do what they did?
 
 ⇒ …
 
@@ -59,27 +59,23 @@ conclusions. _
 
 class: middle, left
 
-## Part One — An Example Analysis
+## Part One — An Example
 
-*A time series of global-mean sea-surface-temperature anomalies*
+A time series of global-mean sea-surface-temperature anomalies
 
 ## Part Two — Repeatable Workflows
 
-*We **do** have all the building blocks for a repeatable work flow at Geomar !*
+We _**do**_ have all the building blocks for a repeatable work flow at Geomar !
 
 ---
 
 class: middle, left
 
-## Challenge
+### Challenge
 
-Those of you who have an idea what the following plot shows:
-
-- _ Please  **take a note** (in pseudo-code or code) on how you would produce
-  it. _
-
-- _ Please be **specific** about **when** and **how** you select regions,
-  calculate averages, and modify the data otherwise. _
+> Please  _take a note_ (in pseudo-code or code) on how you'd produce the following plot.
+> Try to be _specific_ about _when_ and _how_ you select regions, calculate
+> averages, and modify the data otherwise.
 
 ---
 
@@ -87,49 +83,43 @@ Those of you who have an idea what the following plot shows:
 
 .center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="95%">]
 
-.center[**Figure 01.** *Annual-mean HadISST anomalies.*]
+.center[_**Figure 01.**_ Annual-mean HadISST anomalies.]
 
 ---
 
 class: middle
 
-## The Sloppy Way
+### The Sloppy Way
 
-**Figure 01.** *Annual-mean HadISST anomalies.*
+> _**Figure 01.**_ Annual-mean HadISST anomalies.
 
---------
+**Problems**:
 
-(Quite obvious) **problems**:
+- Which _locations_ / _times_ / _regions_ were included / excluded?
 
-- Which **locations / times / regions** were included / excluded?
+- What is the _reference period_ for the anomalies?
 
-- What is the **reference period** for the anomalies?
-
-- ...
+- …
 
 ---
 
-## Giving More Details
+### Giving More Details
 
-**Figure 01.** *Global-mean and annual-mean HadISST anomalies relative to the
-full period from 1900 to 2010.*
+> _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
+> the full period from 1900 to 2010.
 
---------
+We now know that:
 
-We now know that
-
-- the time series represents **global means**,
-- the anomalies were calculated **relative to** the **complete time series**.
+- the time series represents _global means_,
+- the anomalies were calculated _relative to_ the _complete time series_.
 
 --
 
---------
-
 But still:
 
-- Could we be sure to find **exactly** the same data?
-- Are those **weighted or arithmetic** spatial averages?
-- How exactly and **in which order** did the authors calculate the temporal
+- Could we be sure to find _exactly_ the same data?
+- Are those _weighted or arithmetic_ spatial averages?
+- How exactly and _in which order_ did the authors calculate the temporal
   means / spatial means / temporal anomalies?
 - …
 
@@ -137,17 +127,21 @@ But still:
 
 class: middle
 
-## Towards Full Repeatability
+### Towards Full Repeatability
 
-**Figure 01.** *Global-mean and annual-mean HadISST anomalies relative to the
-full period from 1900 to 2010.  There are a Jupyter notebook and a data file
-with all the details in the **supplementary materials**. *
+> _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
+> the full period from 1900 to 2010.  There are a Jupyter notebook and a data
+> file with all the details in the _supplementary materials_.
 
 ---
 
 class: middle
 
-## The Supplementary Material
+### The Supplementary Materials
+
+> _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
+> the full period from 1900 to 2010.  There are a Jupyter notebook and a data
+> file with all the details in the _supplementary materials_.
 
 - There is a [Jupyter notebook][fig_01_notebook_on_nbviewer] that contains the full
   analysis from the initial HadISST fields to the final plot.
@@ -191,7 +185,7 @@ sst_anomalies = tmp_anom(wgt_glob_mean(ann_mean(sst)))
 sst_anomalies.plot()
 ```
 
-_ .right[This code shows the essential parts of the analysis. [The full notebook is here.][fig_01_notebook_on_nbviewer]] _
+.right[.smaller[This code shows the essential parts of the analysis. [The full notebook is here.][fig_01_notebook_on_nbviewer]]]
 
 ---
 
@@ -206,24 +200,22 @@ output_data_set.to_netcdf(file_name)
 [...]
 ```
 
-_ .right[[Click here for the full notebook][fig_01_notebook_on_nbviewer] and [here for the data file.][fig_01_data_file_on_pages]] _
+.smaller[.right[[Click here for the full notebook][fig_01_notebook_on_nbviewer] and [here for the data file.][fig_01_data_file_on_pages]]]
 
 ---
 
 class: left, middle
 
-## Raw Data
+### Raw Data
 
 We use the [HadISST data set][HadISST_on_git] from a
-[repository][git_geomar_de_data_docs] of fully version-controlled data sets:
+[repository][git_geomar_de_data_docs] of fully _version-controlled_ data sets:
 
 ```python
 [...]
 data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc")
 [...]
 ```
-
---------
 
 From within the notebook, we find out that at the time of the analysis,
 `HadISST` `v1.3.0` was the latest of the `v1.x.x` versions:
@@ -238,13 +230,12 @@ v1.3.0
 
 class: left, middle
 
-## Raw Data
+### Raw Data
 
-_ "We used v1.3.0 of the HadISST data set from our [internal mirror][git_geomar_de_data]." _
+> _"We used v1.3.0 of the HadISST data set from our
+> [internal mirror][git_geomar_de_data]."_
 
---------
-
-This **completely defines** the raw data:
+This _completely defines_ the raw data:
 
 - General information: <https://git.geomar.de/data/HadISST>
 
@@ -256,10 +247,10 @@ This **completely defines** the raw data:
 
 class: middle
 
-## Tools and Libraries
+### Tools and Libraries
 
-Within the [Jupyter notebook][fig_01_notebook_on_nbviewer], we list the complete
-Python environment that was activated during the analysis:
+Within the [Jupyter notebook][fig_01_notebook_on_nbviewer], we list the
+_complete_ Python _environment_ that was activated during the analysis:
 
 ```bash
 conda list
@@ -283,7 +274,7 @@ zlib                      1.2.8                         3    conda-forge
 
 class: left, middle
 
-## Evolution of the Analysis
+### Evolution of the Analysis
 
 The development of the analysis (and of this talk) was tracked on [Gitlab.com](https://gitlab.com).
 
@@ -294,69 +285,71 @@ To see how it developed in time, check:<br>
 
 Suppose, this was a multi-author paper.  Then, it would be easy to
 
-- **return to any earlier version** of the scripts at any later point,
+- _return_ to any _earlier version_ of the scripts at any later point,
 
-- **compare** scripts between **revisions** sent to the journal, or
+- _compare_ scripts between _revisions_ sent to the journal, or
 
-- **roll back** any **changes** that are perhaps later found to be wrong.
+- _roll back_ any _changes_ that are perhaps later found to be wrong.
 
 ---
 
 class: middle
 
-# The Essence of Part One
+## The Essence of Part One
 
-Break repeatability by skipping at least one of:
+_ How to break repeatability? _ — Skip at least one of the following:
 
-1. a data set containing **all the numbers** necessary to re-plot and compare
-   the data **presented in the analysis**
+1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
+   compare the data _**presented in the analysis**_.
 
-2. fully **documented steps** from the original data to the final presentation
+2. Provide fully _**documented steps**_ from the original data to the final
+   presentation.
 
-3. an overview of all the **tools** and **libraries** used in the analysis and
-   of their exact versions
+3. Provide an overview of all the _**tools**_ and _**libraries**_ used in the
+   analysis and of their exact versions.
 
-4. a pointer to the full **raw data** used in the analysis
+4. Provide a pointer to the full _**raw data**_ used in the analysis.
 
-5. a full **time-line** of the development of the analysis _← that's more of a bonus_
+5. Provide a full _**time-line**_ of the development of the analysis.
+   _← that's more of a bonus_
 
 ---
 
 class: middle, left
 
-# Interlude
+## Interlude
 
-Let's compare different ways to calculate the SST anomalies.
+Let's compare different ways to calculate the SST anomalies:
 
-.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="80%">]
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="85%">]
 
-.right[.medium[*... need your notes*]]
+.right[.smaller[*... need your notes*]]
 
 ---
 
-# Interlude - Two Lines
+## Interlude - Two Lines
 
-[This notebook][fig_02_notebook_on_nbviewer] details a subtlety with the order of
+[This notebook][fig_02_notebook_on_nbviewer] details a subtlety with the _order_ of
 averaging:
 
-.center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="80%">]
+.center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">]
 
 ---
 
-# Interlude - Twelve Lines
+## Interlude - Twelve Lines
 
-[This notebook][fig_03_notebook_on_nbviewer] also considers arithmetic averages and
+[This notebook][fig_03_notebook_on_nbviewer] adds arithmetic averages and
 shows all 12 variants:
 
-.center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="80%">]
+.center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">]
 
-.right[.medium[*... note that we're still weighting all months equally.*]]
+.right[.smaller[*... note that we're still weighting all months equally.*]]
 
 ---
 
 class: middle, center
 
-# Part Two
+## Part Two
 
 ---
 
@@ -364,37 +357,62 @@ class: middle, left
 
 ## Repeatable Workflows at Geomar
 
-1. **all the numbers**
+1. _all the numbers_
 
-2. **documented steps**
+2. _documented steps_
 
-3. **tools** and **libraries**
+3. _tools & libraries_
 
-4. **raw data** and **data provenance**
+4. _raw data_
 
-5. **time-line**
+5. _time-line_
 
---------
+---
 
-Currently, many journals are requiring authors to provide some form of **steps 1**
-and **2**.
+class: middle, left
 
-But be prepared to see requests for **step 3** through **5**!
+## Repeatable Workflows at Geomar
+
+1. _all the numbers_ ← already required by many journals
+
+2. _documented steps_ ← already required by many journals
+
+3. _tools & libraries_
+
+4. _raw data_
+
+5. _time-line_
+
+---
+
+class: middle, left
+
+## Repeatable Workflows at Geomar
+
+1. _all the numbers_ ← already required by many journals
+
+2. _documented steps_ ← already required by many journals
+
+3. _tools & libraries_ ← be prepared for those !
+
+4. _raw data_ ← be prepared for those !
+
+5. _time-line_ ← be prepared for those !
 
 ---
 
 class: left, middle
 
-## "All the Numbers" ← [data.geomar.de][data_geomar_de]
+### _"all the numbers"_ ← [data.geomar.de][data_geomar_de]
 
-_ To publish your data and supplementaries, contact [datamanagement(at)geomar.de](mailto:datamanagement-AT-geomar.de). _
-
-- **Stable** point of **first contact** for anybody looking for a dataset from
+- _Stable_ point of _first contact_ for anybody looking for a dataset from
   Geomar
 
-- Today: **collection of links** to data for papers etc.
+- Today: _Collection of links_ to data sets, software, …
 
---------
+.smaller[.right[...contact [datamanagement(at)geomar.de](mailto:datamanagement-AT-geomar.de)]]
+
+Alernatives:
 
 - At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de) which is forwarded to whoever is / will be
   in charge of data management within the group.
@@ -405,215 +423,199 @@ _ To publish your data and supplementaries, contact [datamanagement(at)geomar.de
 
 class: middle
 
-## "Documented steps"
+### _"documented steps"_
 
-1. **all the numbers** ← [https://data.geomar.de][data_geomar_de]
+1. _all the numbers_ ← [https://data.geomar.de][data_geomar_de]
 
-2. **documented steps**
+2. _documented steps_
 
-3. **tools** and **libraries**
+3. _tools & libraries_
 
-4. **raw data** and **data provenance**
+4. _raw data_
 
-5. **time-line**
-
----
-
-class: middle
-
-## "Documented steps" ← [nb.geomar.de][nb_geomar_de]
-
-- [Jupyter][jupyter_github] **frontend** to virtually all
-  the **large machines** (in-house and external)
-
-- **beautifully rendered** analyses
-
-- automatic **documentation** is (almost) **for free**
-
-- **Git** servers render Jupyter notebooks
-
---------
-
-It is definitely possible (and currently done) to do *all* analyses in your PhD
-project with Jupyter and on [https://nb.geomar.de][nb_geomar_de].
+5. _time-line_
 
 ---
 
 class: middle
 
-## "Tools and Libraries"
+### _"documented steps"_ ← [nb.geomar.de][nb_geomar_de]
 
-1. **all the numbers** ← <https://data.geomar.de>
+- [Jupyter][jupyter_github] _frontend_ to virtually all
+  the _large machines_ (in-house and external)
 
-2. **documented steps** ← <https://nb.geomar.de>
+- _beautifully_ rendered analyses
 
-3. **tools** and **libraries**
+- _automatic documentation_ (almost) for free
 
-4. **raw data** and **data provenance**
+- notebooks _rendered_ on Git servers
 
-5. **time-line**
+> It is definitely possible (and currently done) to do _all_ analyses in your
+> PhD project with Jupyter and on [https://nb.geomar.de][nb_geomar_de].
 
 ---
 
 class: middle
 
-## "Tools and Libraries" ← [Conda Envs][git_geomar_de_python_conda_environments]
+### _"tools & libraries"_
 
-- use [Anaconda][anaconda] (**Python** and **R**)
-  and [Conda-Forge][conda_forge] (far beyond)
+1. _all the numbers_ ← <https://data.geomar.de>
 
-- explicitly **manage** and **document** full working **environments**
+2. _documented steps_ ← <https://nb.geomar.de>
 
-- across **different machines**
+3. _tools & libraries_
+
+4. _raw data_
+
+5. _time-line_
+
+---
+
+class: middle
+
+### _"tools & libraries"_ ← [Conda Environments][git_geomar_de_python_conda_environments]
+
+- [Anaconda][anaconda] (_Python_ and _R_) and [Conda-Forge][conda_forge] (far
+  beyond)
+
+- _identical_ working environments _across different machines_
 
 - standard environments at Geomar:
 
   - <https://git.geomar.de/python/conda_environments/>
 
-  - **already installed** on our analysis machines ←<https://nb.geomar.de>
+  - _already installed_ on our analysis machines ←<https://nb.geomar.de>
 
 ---
 
 class: middle
 
-## "Raw Data"
+### _"raw data"_
 
-1. **all the numbers** ← <https://data.geomar.de>
+1. _all the numbers_ ← <https://data.geomar.de>
 
-2. **documented steps** ← <https://nb.geomar.de>
+2. _documented steps_ ← <https://nb.geomar.de>
 
-3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
+3. _tools & libraries_ ← <https://git.geomar.de/python/conda_environments/>
 
-4. **raw data** and **data provenance**
+4. _raw data_
 
-5. **time-line**
+5. _time-line_
 
 ---
 
 class: middle, left
 
-## "Raw Data" ← [git.geomar.de/data/][git_geomar_de_data_docs]
+### _"raw data"_ ← [git.geomar.de/data/][git_geomar_de_data_docs]
 
-- fully **version controlled** external **data** Git LFS
+- fully _version controlled_ data sets ← [Git LFS](https://git-lfs.github.com/)
 
-- for now, tracking tens / hundreds of Terabytes of model output is beyond reach
+- _growing_ collection of external data sets.
 
---------
+- also available on [Geomar _thredds server_][git_data_on_thredds]
 
-To learn more, check: <https://git.geomar.de/data/docs/>
+- _today_ ≃ 1 TB ← adding resources ⇒ significant increase
 
-- **Growing** collection of external data sets.
-
-- [Also available on the thredds
-  server][git_data_on_thredds]
-  .small[← If you only klick on one link.  This is the one!]
+  .right[.smaller[… to learn more, check: <https://git.geomar.de/data/docs/>]]
 
 ---
 
 class: middle
 
-## Thoughts on Very Large Data Sets
+### _"raw data"_ — What about very large data sets?
 
-- Work towards a **"single source of truth"**!
+- Work towards a _"single source of truth"_ .
 
-- Make sure to have **clear** (central?!) storage **structure**!
+- Have a _clear_ (central) storage _structure_ .
 
-- **Plan for evolution** of each data set right from the start!
+- _Plan for evolution_ of each data set right from the start!
 
-- Think about how number versions.  [This might be a good starting point.][semver_for_data_on_git]
-
-- ...
-
----
-
-class: middle
-
-## "Time Line"
-
-1. **all the numbers** ← <https://data.geomar.de>
-
-2. **documented steps** ← <https://nb.geomar.de>
-
-3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
-
-4. **raw data** and **data provenance** ← <https://git.geomar.de/data/docs>
-
-5. **time-line**
-
----
-
-class: middle
-
-## "Time Line" ← [git.geomar.de][git_geomar_de]
-
-
-- **full-blown** version control environment
-
-- for **Geomar members** and for **external collaborators**.
-
-- **hosted here** (at Geomar)
-
-- **easy** project management and **collaboration**
-
-- continuous integration
-
-- unlimited number of projects
+- Think about how _number versions_ ← [_Semantic Versioning_ for data?][semver_for_data_on_git]
 
 - …
 
-Introductory materials: <https://git.geomar.de/edu/git-intro>
+---
+
+class: middle
+
+### _"time line"_
+
+1. _all the numbers_ ← <https://data.geomar.de>
+
+2. _documented steps_ ← <https://nb.geomar.de>
+
+3. _tools & libraries_ ← <https://git.geomar.de/python/conda_environments/>
+
+4. _raw data_ ← <https://git.geomar.de/data/docs>
+
+5. _time-line_
 
 ---
 
 class: middle
 
-## Repeatable Workflows at Geomar
+### _"time line"_ ← [git.geomar.de][git_geomar_de]
 
-1. **all the numbers** ← <https://data.geomar.de>
 
-2. **documented steps** ← <https://nb.geomar.de>
+- _full-blown_ version control environment
 
-3. **tools** and **libraries** ← <https://git.geomar.de/python/conda_environments/>
+- for _Geomar members_ and for _external collaborators_.
 
-4. **raw data** and **data provenance** ← <https://git.geomar.de/data/docs>
+- _hosted here_ (at Geomar)
 
-5. **time-line** ← <https://git.geomar.de>
+- easy _project management_ and _collaboration_
+
+.right[… introductory materials: <https://git.geomar.de/edu/git-intro>]
+
+---
+
+class: middle
+
+### Repeatable Workflows at Geomar
+
+1. _all the numbers_ ← <https://data.geomar.de>
+
+2. _documented steps_ ← <https://nb.geomar.de>
+
+3. _tools & libraries_ ← <https://git.geomar.de/python/conda_environments/>
+
+4. _raw data_ ← <https://git.geomar.de/data/docs>
+
+5. _time-line_ ← <https://git.geomar.de>
 
 ---
 
 class: middle, left
 
-## The (in my opinion) Best Part
+### Modularity
 
-- **only weak links** between components
-- "plumbing" relies on **standard** sysadmin **skills**
+- only _weak links_ between components
+
+- "plumbing" relies on _standard_ sysadmin _skills_
+
+- ⇒ _limited effects_ of failure / unavailability of a component
+
+- ⇒ profit _only_ from what you _need_
+
+- ⇒ _remain_ fully _independent_ from all other components
 
 --
 
---------
+If you _leave_ Geomar, just _take_:
 
-- ⇒ **limited effects** of failure / unavailability of a component
-- ⇒ profit **only** from what you **need**
-- ⇒ **remain** fully **independent** from all other components
-
---------
-
-If you **leave** Geomar, it is very easy to **take**
-
-- all your **projects** from <https://git.geomar.de>,
-- all your **data**,
-- all your **notebooks**,
-- setup scripts for conda **environments identical** to those available at
-  Geomar,
-- ...
+- all your _projects_ from <https://git.geomar.de>
+- all your _data_
+- all your _notebooks_
+- setup scripts for Conda _environments_,
+- …
 
 ---
 
 class: middle
 
-# But Do You Need This?
+## But Do You Need This?
 
-The **public debate** is often focused on **fraud prevention** in the medical
+_Public debate_ mostly focused on _fraud prevention_ in the medical
 sciences.
 
 .right[ So we're fine! _ ... but are we? _ ]
@@ -622,7 +624,7 @@ sciences.
 
 class: left, middle
 
-# But Do You Need This?
+## But Do You Need This?
 
 .center[<img src="images/sms_your_boss_airport.png" width="80%">]
 
@@ -630,76 +632,87 @@ class: left, middle
 
 class: left, middle
 
-# But Do You Need This?
+## But Do You Need This?
 
-**You:** *"Can you check this sea-level trend against satellite data?"*
-
-**Student:** *"... sure ..."* (about to leave for two weeks of googling for data)
-
-**You:** *"Hey wait, [here's a
-script](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
-where I did a similar thing with the [old AVISO
-data](https://git.geomar.de/data/AVISO). Maybe it's good to start there.
-When you're familiar with this one, adapt it to the new [SLTAC
-product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP)."*
-
----
-
-class: middle, center
-
-# ~~But Do~~ You Need This !
----
-
-
-class: middle, left
-
-## What Do **You** Do Now?
-
-- Have a **mental framework** to think about repeatability. ← this talk
-
-- **Script** all your analyses.  **Avoid interactive** work whenever possible.
-
-- Keep **track** of **your data**.
-
-----
-
-- Learn to use **Git** or any other version-control system.
-
-- And use it in your **daily routine** work.
+> _**You:**_
+> "Can you check this sea-level trend against satellite data?"
+>
+> _**Student:**_
+> "... sure ..."
+>
+> _(student about to leave for two weeks of googling for data)_
+>
+> _**You:**_
+> "Hey wait, [here's a script
+> ](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
+> where I did a similar thing with the [old AVISO
+> data](https://git.geomar.de/data/AVISO). Maybe it's good to start there? When
+> you're familiar with this one, adapt it to the new [SLTAC
+> product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP)."
 
 ---
 
 class: middle
 
-## What Do **We** Do Now?
+## ~~But Do~~ You Need This !
 
-Develop our **Culture:**
+Adapting repeatable workflows is not about fulfilling author guidelines for
+journals.
 
-- Be **confident to publish** your code and data.
+The _primary_ benefits are yours!
 
-- Develop **ethics** of using code and data published by others.
+---
 
-- ...
 
-Develop **Best Practices:**
+class: middle, left
 
-- **How much** to document?
+## What Can _You_ Do Now?
 
-- **Where** to document?
+- Have a _mental framework_ for repeatability. ← this talk
+
+- _Script_ all your analyses.  _Avoid undocumented interactive_ work whenever possible.
+
+- Keep _track_ of _your data_.
+
+----
+
+- _Learn_ to use Git or any other _version-control system_.
+
+- And use it in your _daily routine_ work.
+
+---
+
+class: middle
+
+## What Can _We_ Do Now?
+
+Develop our _**Culture:**_
+
+- Be _confident to publish_ your code and data.
+
+- Develop _ethics_ of using code and data published by others.
+
+- …
+
+Develop _**Best Practices:**_
+
+- _How much_ to document?
+
+- _Where_ to document?
 
 - ...
 
 ---
 
-class: medium, middle
+class: middle, smaller
 
-### Resources for repeatable work flows
+### Resources for Repeatable Work Flows
 
 Cheat Sheets:
 
-- [Sandve (2013)][Sandve2013] has the **"10 Repeatability Commandments"**.
-- [Wilson (2012)][Wilson2012] has a reference sheet to **be prepared for
-  coding**.
+- [Sandve (2013)][Sandve2013] has the _"10 Repeatability Commandments"_.
+- [Wilson (2012)][Wilson2012] has a reference sheet to _be prepared for
+  coding_.
 
 Resources at Geomar:
 
@@ -727,9 +740,9 @@ Nice tools and software:
 
 ---
 
-class: medium
+class: smaller, middle
 
-### Figures from this talk
+### Supplementaries from this Talk
 
 - Notebook for the Google-Trends Figure 00: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb][fig_00_notebook_on_nbviewer]
 - Data for the Google-Trends Figure 00: [https://willirath.gitlab.io/towards_reproducible_science/data/fig_00_google_trends.csv][fig_00_data_file_one_pages]
@@ -741,7 +754,11 @@ class: medium
 - Data for Figure 03:<br> <https://willirath.gitlab.io/towards_reproducible_science/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
 - HadISST data set: [https://git.geomar.de/data/HadISST/][HadISST_on_git]
 
-### Reading list
+---
+
+class: smaller, middle
+
+### Reading List
 
 - _"1,500 scientists lift the lid on reproducibility"_: [https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970][Baker2016]
 - _"Publish your computer code: it is good enough"_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]

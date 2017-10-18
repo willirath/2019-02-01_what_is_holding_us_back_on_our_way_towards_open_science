@@ -5,10 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Vollkorn);
-      @import url(https://fonts.googleapis.com/css?family=Gill+Sans);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,600i,700,700i,900,900i');
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
       @page {
           size: 908px 681px;
           margin: 0;
@@ -22,17 +20,34 @@
               left: 0 !important;
           }
       }
-
-      body { font-family: 'Gill Sans'; }
+      body {
+          font-family: 'Vollkorn', serif;
+          font-weight: 400; }
       h1, h2, h3, h4 {
-        font-family: 'Vollkorn';
-        font-weight: normal;
+        font-weight: 500;
       }
-      .small { font-size: 0.5em; }
-      .medium { font-size: 0.65em; }
+      blockquote {
+          background: #f9f9f9;
+          border-left: 10px solid #ccc;
+          margin: 2px 0.5em;
+          padding: 2px 1.5em;
+      }
+      strong {
+          font-weight: 600;
+      }
+      em {
+          font-style: italic;
+      }
+      a {
+          color: #778;
+      }
+
+      .smaller { font-size: 0.75em; }
       .remark-code, .remark-inline-code {
           font-family: 'Ubuntu Mono';
-          font-size: 0.8em}
+          font-size: 0.8em
+      }
+
     </style>
   </head>
   <body>
