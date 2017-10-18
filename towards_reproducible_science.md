@@ -349,6 +349,14 @@ shows all 12 variants:
 
 class: middle, center
 
+.center[<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="100%">]
+
+.right[.smaller[© [Fabien Perissinotto](https://commons.wikimedia.org/wiki/User:Fabienp)]]
+
+---
+
+class: middle, center
+
 ## Part Two
 
 ---
