@@ -409,6 +409,14 @@ class: middle, left
 
 ---
 
+class: center, middle
+
+.center[<img src="images/all-the-numbers-checkout-590358_1280.jpg" width="100%">]
+
+.right[.smaller[[CC0-licenced](https://pixabay.com/en/checkout-retro-antique-590358/)]]
+
+---
+
 class: left, middle
 
 ### _"all the numbers"_ ← [data.geomar.de][data_geomar_de]
@@ -431,8 +439,6 @@ Alernatives:
 
 class: middle
 
-### _"documented steps"_
-
 1. _all the numbers_ ← [https://data.geomar.de][data_geomar_de]
 
 2. _documented steps_
@@ -442,6 +448,12 @@ class: middle
 4. _raw data_
 
 5. _time line_
+
+---
+
+class: center, middle
+
+.center[<img src="images/stepping_stones_geograph-5134739-by-David-Purchase.jpg" width="100%">]
 
 ---
 
@@ -465,8 +477,6 @@ class: middle
 
 class: middle
 
-### _"tools & libraries"_
-
 1. _all the numbers_ ← <https://data.geomar.de>
 
 2. _documented steps_ ← <https://nb.geomar.de>
@@ -476,6 +486,14 @@ class: middle
 4. _raw data_
 
 5. _time line_
+
+---
+
+class: center, middle
+
+.center[<img src="images/tools-blacksmith-tools-shop-rustic-162631.jpeg" width="100%">]
+
+.right[.smaller[[CC0-licenced](https://www.pexels.com/photo/black-metal-tools-hanged-on-a-rack-near-table-162631/)]]
 
 ---
 
@@ -498,8 +516,6 @@ class: middle
 
 class: middle
 
-### _"raw data"_
-
 1. _all the numbers_ ← <https://data.geomar.de>
 
 2. _documented steps_ ← <https://nb.geomar.de>
@@ -509,6 +525,14 @@ class: middle
 4. _raw data_
 
 5. _time line_
+
+---
+
+class: center, middle
+
+.center[<img src="images/raw-data-cooking-1013455_1280.jpg" width="100%">]
+
+.right[.smaller[[CC0-licenced](https://pixabay.com/en/cooking-ingredient-cuisine-kitchen-1013455/)]]
 
 ---
 
@@ -546,8 +570,6 @@ class: middle
 
 class: middle
 
-### _"time line"_
-
 1. _all the numbers_ ← <https://data.geomar.de>
 
 2. _documented steps_ ← <https://nb.geomar.de>
@@ -560,10 +582,17 @@ class: middle
 
 ---
 
+class: center, middle
+
+.center[<img src="images/time-line-wintry-2068298_1280.jpg" width="100%">]
+
+.right[.smaller[[CC0-licenced](https://pixabay.com/en/wintry-mountain-snow-snow-landscape-2068298/)]]
+
+---
+
 class: middle
 
 ### _"time line"_ ← [git.geomar.de][git_geomar_de]
-
 
 - _full-blown_ version control environment
 
@@ -747,6 +776,23 @@ Nice tools and software:
 - Anaconda's Python distribution: [https://www.anaconda.com/distribution/][anaconda]
 - Conda Forge: [https://conda-forge.org/][conda_forge]
 - Jupyter notebooks: [https://github.com/jupyter/jupyter][jupyter_github]
+
+---
+
+class: middle, center
+
+<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="27%">
+<img src="images/fig_00_google_trends.svg" width="27%">
+<img src="images/all-the-numbers-checkout-590358_1280.jpg" width="27%">
+<img src="images/Baker2016_doi_10.1038_533452a_fig_01.jpeg" width="27%">
+<img src="images/stepping_stones_geograph-5134739-by-David-Purchase.jpg" width="27%">
+<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="27%">
+<img src="images/tools-blacksmith-tools-shop-rustic-162631.jpeg" width="27%">
+<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="27%">
+<img src="images/raw-data-cooking-1013455_1280.jpg" width="27%">
+<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="27%">
+<img src="images/time-line-wintry-2068298_1280.jpg" width="27%">
+<img src="images/sms_your_boss_airport.png" width="27%">
 
 ---
 
