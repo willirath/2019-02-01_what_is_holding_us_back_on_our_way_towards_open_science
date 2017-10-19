@@ -33,6 +33,48 @@ class: middle, center
 
 class: middle, center
 
+## Not _my_ department
+
+---
+
+class: middle, center
+
+.center[<img src="images/sms_your_boss_airport.png" width="80%">]
+
+???
+
+_**your**_ benefits ←→ requirements by journals / funding agencies
+
+---
+
+class: left, middle
+
+> _**You:**_
+> “Can you check this sea-level trend against satellite data?”
+>
+> _**Student:**_
+> “... sure ...”
+>
+> _(student about to leave for two weeks of googling for data)_
+>
+> _**You:**_
+> “Hey wait, [here's a script
+> ](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
+> where I did a similar thing with the [old AVISO
+> data](https://git.geomar.de/data/AVISO). Maybe it's good to start there? When
+> you're familiar with this one, adapt it to the new [SLTAC
+> product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP).”
+
+---
+
+class: middle, left
+
+## I'll argue that it's _you_ who benefits the most from reproducibility.
+
+---
+
+class: middle, center
+
 ## _~~Reproducibility~~_ _Repeatability_
 
 <img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
@@ -72,6 +114,10 @@ class: middle, left
 > Try to be _specific_ about _when_ and _how_ you select regions, calculate
 > averages, and modify the data otherwise.
 
+???
+
+"Hockey stick" (often longer time series)
+
 ---
 
 ## Part One:  A Simple Time Series
@@ -88,6 +134,8 @@ class: middle
 
 > _**Figure 01.**_ Annual-mean HadISST anomalies.
 
+???
+
 **Problems**:
 
 - Which _locations_ / _times_ / _regions_ were included / excluded?
@@ -98,17 +146,19 @@ class: middle
 
 ---
 
+class: middle, left
+
 ### Giving More Details
 
 > _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
 > the full period from 1900 to 2010.
 
+???
+
 We now know that:
 
 - the time series represents _global_ and _annual means_,
 - the anomalies were calculated _relative to_ the _complete time series_.
-
---
 
 But still:
 
@@ -132,11 +182,15 @@ class: middle
 
 class: middle
 
-### The Supplementary Materials
+### Towards Full Repeatability
 
 > _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
-> the full period from 1900 to 2010.  There are a Jupyter notebook and a data
-> file with all the details in the _supplementary materials_.
+> the full period from 1900 to 2010.  There are a
+> [Jupyter notebook][fig_01_notebook_on_nbviewer] and a
+> [data file][fig_01_data_file_on_pages] with all the details in the
+> _supplementary materials_.
+
+???
 
 - There is a [Jupyter notebook][fig_01_notebook_on_nbviewer] that contains the full
   analysis from the initial HadISST fields to the final plot.
@@ -155,27 +209,25 @@ import xarray as xr
 
 data_file = "/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST_sst.nc"
 
-sst = xr.open_dataset(data_file).sst.sel(time=slice("1900-01-01", "2011-01-01"))
+sst = xr.open_dataset(data_file).sst
+sst = sst.sel(time=slice("1900-01-01", "2011-01-01"))
 sst = sst.where(sst != -1000.0)
 
-
-def wgt_glob_mean(data):
+def weighted_global_mean(data):
     cosine_latitude = np.cos(np.pi / 180.0 * data.coords["latitude"])
     data = ((cosine_latitude * data).sum(dim=["latitude", "longitude"])
             / (cosine_latitude + 0 * data).sum(dim=["latitude", "longitude"]))
     return data
 
-
-def ann_mean(data):
+def annual_mean(data):
     data = data.resample(time="12M").mean(dim="time")
     return data
 
-
-def tmp_anom(data):
+def temporal_anomaly(data):
    data = data - data.mean("time")
    return data
 
-sst_anomalies = tmp_anom(wgt_glob_mean(ann_mean(sst)))
+sst_anomalies = temporal_anomaly( weighted_global_mean( annual_mean( sst )))
 
 sst_anomalies.plot()
 ```
@@ -281,13 +333,11 @@ To see how it developed in time, check:<br>
 
 --------
 
-Suppose, this was a multi-author paper.  Then, it would be easy to
+Suppose, this was a multi-author paper.  Then, it would be easy
 
-- _return_ to any _earlier version_ of the scripts at any later point,
+- to _return_ to any _earlier version_ of the scripts at any later point, ot
 
-- _compare_ scripts between _revisions_ sent to the journal, or
-
-- _roll back_ any _changes_ that are perhaps later found to be wrong.
+- to _compare_ scripts between _revisions_ sent to the journal.
 
 ---
 
@@ -333,9 +383,9 @@ class: middle, center
 
 class: middle
 
-## The Essence of Part One
+## How to break repeatability?
 
-_ How to break repeatability? _ — Skip at least one of the following:
+— Skip at least one of the following:
 
 1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
    compare the data _**presented in the analysis**_.
@@ -598,14 +648,6 @@ _Public debate_ mostly focused on _fraud prevention_ in the medical
 sciences.
 
 .right[ So we're fine! _ ... but are we? _ ]
-
----
-
-class: left, middle
-
-## But Do You Need This?
-
-.center[<img src="images/sms_your_boss_airport.png" width="80%">]
 
 ---
 
