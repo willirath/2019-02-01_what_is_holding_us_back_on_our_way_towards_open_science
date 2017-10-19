@@ -4,14 +4,21 @@ class: middle, left
 
 Willi Rath | <wrath@geomar.de>
 
-Thanks to _ Martin Claus, Claus Böning, Torge Martin, Markus
-Scheinert, Klaus Getzlaff, Franziska Schwarzkopf, Christina Roth, Julia
-Getzlaff, Geomar Data Management Team, Geomar IT Department, … _
+<p>&nbsp;</p>
 
-.right[... there’s a [Git repository for this talk][talk_git_repo].]
+.smaller[Thanks for input and help: _ Martin Claus, Claus Böning, Torge Martin,
+Markus Scheinert, Klaus Getzlaff, Franziska Schwarzkopf, Christina Roth, Rafael
+Abel, Arne Biastoch, Kristin Burmeister, Julia Getzlaff, Carsten Schirnick,
+Claas Faber, Kai Grunau, Stefan Jöhnke, Lutz Griesbach, Thomas Grunert,
+Friedrich Althausen, Geomar IT Department, Geomar Data-Management Team, … _]
 
-.right[... slides: [https://willirath.gitlab.io/towards_reproducible_science/
-](https://willirath.gitlab.io/towards_reproducible_science/)]
+<p>&nbsp;</p>
+
+.smaller[.right[
+slides —
+<https://willirath.gitlab.io/towards_reproducible_science/><br>
+Git repo —
+<https://gitlab.com/willirath/towards_reproducible_science/>]]
 
 ---
 
@@ -31,19 +38,24 @@ class: middle, center
 
 ---
 
-class: middle, center
+class: middle
 
-## Not _my_ department
+## ... not my department?
+
+_Public debate_ mostly focused on _fraud prevention_ in the medical
+sciences.
+
+.right[— I’ll argue that it’s _**you**_ who’d benefit from reproducibility.]
+
+???
+
+_**your**_ benefits ←→ requirements by journals / funding agencies
 
 ---
 
 class: middle, center
 
 .center[<img src="images/sms_your_boss_airport.png" width="80%">]
-
-???
-
-_**your**_ benefits ←→ requirements by journals / funding agencies
 
 ---
 
@@ -69,23 +81,19 @@ class: left, middle
 
 class: middle, left
 
-## I’ll argue that it’s _you_ who benefits the most from reproducibility.
-
----
-
-class: middle, center
-
-## ~~Reproducibility~~ _Repeatability_
-
 <img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
 
 .smaller[.right[From [Easterbrook (2014)][Easterbrook2014]]]
+
+???
+
+## Semantics
 
 ---
 
 class: middle, left
 
-## Repeatability
+## Repeatability _~~Reproducibility~~_
 
 > Let’s say an analysis is _repeatable_, if for any _sufficiently skilled_
 > reader it is _in principle_ possible to _completely understand_ and
@@ -96,17 +104,29 @@ class: middle, left
 
 class: middle, left
 
-## Part One — An Example
+## Part One — A Simple Time Series?
 
-Examine a time series of global-mean sea-surface-temperature anomalies.
+Examine a time series of global-mean sea-surface-temperature anomalies
 
 ## Part Two — Repeatable Workflows
 
-We _**do**_ have all the building blocks for a repeatable work flow at Geomar.
+Discuss _building blocks_ for repeatable work flows (at Geomar)
 
 ---
 
-class: middle, left
+class: center, middle
+
+## Part One — A Simple Time Series?
+
+---
+
+class: center, middle
+
+<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="99%">
+
+_**Figure 01.**_ Annual-mean HadISST anomalies.
+
+???
 
 ### Challenge
 
@@ -114,25 +134,18 @@ class: middle, left
 > Try to be _specific_ about _when_ and _how_ you select regions, calculate
 > averages, and modify the data otherwise.
 
-???
 
 “Hockey stick” (often longer time series)
 
 ---
 
-## Part One:  A Simple Time Series
-
-.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="95%">]
-
-.center[_**Figure 01.**_ Annual-mean HadISST anomalies.]
-
----
-
-class: middle
+class: top, left
 
 ### The Sloppy Way
 
-> _**Figure 01.**_ Annual-mean HadISST anomalies.
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="75%">]
+
+> .center[_**Figure 01.**_ Annual-mean HadISST anomalies.]
 
 ???
 
@@ -146,9 +159,11 @@ class: middle
 
 ---
 
-class: middle, left
+class: top, left
 
 ### Giving More Details
+
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="75%">]
 
 > _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
 > the full period from 1900 to 2010.
@@ -170,9 +185,11 @@ But still:
 
 ---
 
-class: middle
+class: top, left
 
 ### Towards Full Repeatability
+
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="75%">]
 
 > _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
 > the full period from 1900 to 2010.  There are a Jupyter notebook and a data
@@ -180,9 +197,11 @@ class: middle
 
 ---
 
-class: middle
+class: top, left
 
 ### Towards Full Repeatability
+
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="75%">]
 
 > _**Figure 01.**_ Global-mean and annual-mean HadISST anomalies relative to
 > the full period from 1900 to 2010.  There are a
@@ -264,6 +283,8 @@ data_file = Path("/data/c2/TMdata/git_geomar_de_data/HadISST/v1.x.x/data/HadISST
 [...]
 ```
 
+<p>&nbsp;</p>
+
 From within the notebook, we find out that at the time of the analysis,
 `HadISST` `v1.3.0` was the latest of the `v1.x.x` versions:
 ```bash
@@ -331,11 +352,11 @@ The development of the analysis (and of this talk) was tracked on [Gitlab.com](h
 To see how it developed in time, check:<br>
 <https://gitlab.com/willirath/towards_reproducible_science/commits/master>
 
---------
+<p>&nbsp;</p>
 
 Suppose, this was a multi-author paper.  Then, it would be easy
 
-- to _return_ to any _earlier version_ of the scripts at any later point, ot
+- to _return_ to any _earlier version_ of the scripts at any later point, or
 
 - to _compare_ scripts between _revisions_ sent to the journal.
 
@@ -383,10 +404,10 @@ class: middle, center
 
 class: middle
 
-## How to break repeatability?<br>.right[— Skip at one of the following:]
+## Breaking repeatability is easy!<br>.right[— _Just skip one of the following._]
 
 1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
-   compare the data _**presented in the analysis**_.
+   compare the data presented in the analysis.
 
 2. Provide fully _**documented steps**_ from the original data to the final
    presentation.
@@ -470,16 +491,20 @@ class: left, middle
 - _Stable_ point of _first contact_ for anybody looking for a dataset from
   Geomar
 
-- Today: _Collection of links_ to data sets, software, …
+- _Collection of links_ to data sets, software, …
 
 .smaller[.right[...contact [datamanagement(at)geomar.de](mailto:datamanagement-AT-geomar.de)]]
 
-Alernatives:
+Alternatives:
 
 - At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de) which is forwarded to whoever is / will be
   in charge of data management within the group.
 
 - https://zenodo.org provides storage and a DOI for data.
+
+- https://www.pangaea.de/ provides storage and a DOI for geo-referenced data.
+
+- https://figshare.com/ serves as a general supplementary-materials storage.
 
 ---
 
@@ -496,11 +521,20 @@ class: middle
 - [Jupyter][jupyter_github] _frontend_ to virtually all
   the _large machines_ (in-house and external)
 
-- _beautifully_ rendered analyses
+- very convenient way of sharing an analysis
 
-- _automatic documentation_ (almost) for free
+<p>&nbsp;<p/>
 
-- notebooks _rendered_ on Git servers
+_Alternative_ approaches:
+
+- _script_ your analyses / _avoid_ un-documented _interactive_ work
+
+- use _consistent naming_ ← think: `figure_01.m`, `figure_01.mat`,
+  `figure_01.png`
+
+- …
+
+???
 
 > It is definitely possible (and currently done) to do _all_ analyses in your
 > PhD project with Jupyter and on [https://nb.geomar.de][nb_geomar_de].
@@ -524,11 +558,22 @@ class: middle
 
 - _identical_ working environments _across different machines_
 
-- standard environments at Geomar:
+<p>&nbsp;<p/>
 
-  - <https://git.geomar.de/python/conda_environments/>
+_Generally_ speaking:
 
-  - _already installed_ on our analysis machines ←<https://nb.geomar.de>
+- keep track of versions of software
+
+- actively _decide_ which version to use
+
+- prefer _stable_ environments
+
+???
+
+- [standard environments at Geomar
+  ](https://git.geomar.de/python/conda_environments/):
+  - _already installed_ on our analysis machines
+  - <https://nb.geomar.de>
 
 ---
 
@@ -585,15 +630,23 @@ class: middle
 
 ### _“time line”_ ← [git.geomar.de][git_geomar_de]
 
-- _full-blown_ version control environment
+- _full-blown_ version-control environment
 
 - for _Geomar members_ and for _external collaborators_.
 
-- _hosted here_ (at Geomar)
-
 - easy _project management_ and _collaboration_
 
-.right[… introductory materials: <https://git.geomar.de/edu/git-intro>]
+Alternatives:
+
+- <https://github.com> ← _the_ industry standard
+
+- <https://Gitlab.com> ← evolving competitor
+
+- SVN ← if joining an existing work flow
+
+???
+
+Gitlab’s free schemes are currently better for scientists.
 
 ---
 
@@ -613,40 +666,46 @@ class: middle
 
 ---
 
-class: middle, left
+class: middle, center
 
-### Modularity
+<img src="images/modularity-building-blocks-1563961_1280.jpg" width="100%">
 
-- only _weak links_ between components
+.right[.smaller[[CC0-licenced](https://pixabay.com/en/building-blocks-stones-colorful-1563961/)]]
 
-- “plumbing” relies on _standard_ sysadmin _skills_
+???
+
+### Prefer Modularity ?
+
+PRO
 
 - ⇒ _limited effects_ of failure / unavailability of a component
 
 - ⇒ profit _only_ from what you _need_
 
-- ⇒ _remain_ fully _independent_ from all other components
+- ⇒ _remain_ fully _independent_ from other components
 
---
+CON (?):
 
-If you _leave_ Geomar, just _take_:
+- ⇒ possible initial _confusion_
 
-- all your _projects_ from <https://git.geomar.de>
-- all your _data_
-- all your _notebooks_
+- often _steeper_ learning curve
+
+- have to think about _processes_ ← _really a con?_
+
+
+If you _leave_ Geomar, just _take_
+
+- all your Git _projects_,
+
+- all your _data_,
+
+- all your _notebooks_,
+
 - setup scripts for Conda _environments_,
+
 - …
 
----
-
-class: middle
-
-## But Do You Need This?
-
-_Public debate_ mostly focused on _fraud prevention_ in the medical
-sciences.
-
-.right[ So we’re fine! _ ... but are we? _ ]
+IT department ← people w/ sys-admin skills can help quickly
 
 ---
 
@@ -767,6 +826,8 @@ class: smaller, middle
   <https://willirath.gitlab.io/towards_reproducible_science/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
 - HadISST data set:<br>
   [https://git.geomar.de/data/HadISST/][HadISST_on_git]
+- Vollkorn typeface:<br>
+  [http://vollkorn-typeface.com/][vollkorn]
 
 ---
 
@@ -878,3 +939,5 @@ class: smaller, middle
 [Melsen2017]: http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208/full
 
 [Hutton2017b]: http://onlinelibrary.wiley.com/doi/10.1002/2017WR020476/full
+
+[vollkorn]: http://vollkorn-typeface.com/
