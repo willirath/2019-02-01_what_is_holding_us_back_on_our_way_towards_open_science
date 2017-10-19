@@ -8,7 +8,7 @@ Thanks to _ Martin Claus, Claus Böning, Torge Martin, Markus
 Scheinert, Klaus Getzlaff, Franziska Schwarzkopf, Christina Roth, Julia
 Getzlaff, Geomar Data Management Team, Geomar IT Department, … _
 
-.right[... there's a [Git repository for this talk][talk_git_repo].]
+.right[... there’s a [Git repository for this talk][talk_git_repo].]
 
 .right[... slides: [https://willirath.gitlab.io/towards_reproducible_science/
 ](https://willirath.gitlab.io/towards_reproducible_science/)]
@@ -58,24 +58,24 @@ class: left, middle
 > _(student about to leave for two weeks of googling for data)_
 >
 > _**You:**_
-> “Hey wait, [here's a script
+> “Hey wait, [here’s a script
 > ](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
 > where I did a similar thing with the [old AVISO
-> data](https://git.geomar.de/data/AVISO). Maybe it's good to start there? When
-> you're familiar with this one, adapt it to the new [SLTAC
+> data](https://git.geomar.de/data/AVISO). Maybe it’s good to start there? When
+> you’re familiar with this one, adapt it to the new [SLTAC
 > product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP).”
 
 ---
 
 class: middle, left
 
-## I'll argue that it's _you_ who benefits the most from reproducibility.
+## I’ll argue that it’s _you_ who benefits the most from reproducibility.
 
 ---
 
 class: middle, center
 
-## _~~Reproducibility~~_ _Repeatability_
+## ~~Reproducibility~~ _Repeatability_
 
 <img src="images/Easterbrook2014_ngeo2283-f1.jpg" width="99%">
 
@@ -87,7 +87,7 @@ class: middle, left
 
 ## Repeatability
 
-> Let's say an analysis is _repeatable_, if for any _sufficiently skilled_
+> Let’s say an analysis is _repeatable_, if for any _sufficiently skilled_
 > reader it is _in principle_ possible to _completely understand_ and
 > _repeat all steps_ the authors took from their initial idea to the final
 > conclusions.
@@ -98,11 +98,11 @@ class: middle, left
 
 ## Part One — An Example
 
-A time series of global-mean sea-surface-temperature anomalies
+Examine a time series of global-mean sea-surface-temperature anomalies.
 
 ## Part Two — Repeatable Workflows
 
-We _**do**_ have all the building blocks for a repeatable work flow at Geomar !
+We _**do**_ have all the building blocks for a repeatable work flow at Geomar.
 
 ---
 
@@ -110,13 +110,13 @@ class: middle, left
 
 ### Challenge
 
-> Please  _take a note_ (in pseudo-code or code) on how you'd produce the following plot.
+> Please  _take a note_ (in pseudo-code or code) on how you’d produce the following plot.
 > Try to be _specific_ about _when_ and _how_ you select regions, calculate
 > averages, and modify the data otherwise.
 
 ???
 
-"Hockey stick" (often longer time series)
+“Hockey stick” (often longer time series)
 
 ---
 
@@ -279,8 +279,8 @@ class: left, middle
 
 ### Raw Data
 
-> _"We used v1.3.0 of the HadISST data set from our
-> [internal mirror][git_geomar_de_data]."_
+> _“We used v1.3.0 of the HadISST data set from our
+> [internal mirror][git_geomar_de_data].”_
 
 This _completely defines_ the raw data:
 
@@ -345,7 +345,7 @@ class: middle, left
 
 ## Interlude
 
-Let's compare different ways to calculate the SST anomalies:
+Let’s compare different ways to calculate the SST anomalies:
 
 .center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="85%">]
 
@@ -369,7 +369,7 @@ shows all 12 variants:
 
 .center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">]
 
-.right[.smaller[*... note that we're still weighting all months equally.*]]
+.right[.smaller[*... note that we’re still weighting all months equally.*]]
 
 ---
 
@@ -383,9 +383,7 @@ class: middle, center
 
 class: middle
 
-## How to break repeatability?
-
-— Skip at least one of the following:
+## How to break repeatability?<br>.right[— Skip at one of the following:]
 
 1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
    compare the data _**presented in the analysis**_.
@@ -399,7 +397,7 @@ class: middle
 4. Provide a pointer to the full _**raw data**_ used in the analysis.
 
 5. Provide a full _**time line**_ of the development of the analysis.
-   _← that's more of a bonus_
+   _← That’s more of a bonus._
 
 ---
 
@@ -449,11 +447,11 @@ class: middle, left
 
 2. _documented steps_ ← already required by many journals
 
-3. _tools & libraries_ ← be prepared for those !
+3. _tools & libraries_ ← be prepared for those!
 
-4. _raw data_ ← be prepared for those !
+4. _raw data_ ← be prepared for those!
 
-5. _time line_ ← be prepared for those !
+5. _time line_ ← be prepared for those!
 
 ---
 
@@ -467,7 +465,7 @@ class: center, middle
 
 class: left, middle
 
-### _"all the numbers"_ ← [data.geomar.de][data_geomar_de]
+### _“all the numbers”_ ← [data.geomar.de][data_geomar_de]
 
 - _Stable_ point of _first contact_ for anybody looking for a dataset from
   Geomar
@@ -493,7 +491,7 @@ class: center, middle
 
 class: middle
 
-### _"documented steps"_ ← [nb.geomar.de][nb_geomar_de]
+### _“documented steps”_ ← [nb.geomar.de][nb_geomar_de]
 
 - [Jupyter][jupyter_github] _frontend_ to virtually all
   the _large machines_ (in-house and external)
@@ -519,7 +517,7 @@ class: center, middle
 
 class: middle
 
-### _"tools & libraries"_ ← [Conda Environments][git_geomar_de_python_conda_environments]
+### _“tools & libraries”_ ← [Conda Environments][git_geomar_de_python_conda_environments]
 
 - [Anaconda][anaconda] (_Python_ and _R_) and [Conda-Forge][conda_forge] (far
   beyond)
@@ -544,7 +542,7 @@ class: center, middle
 
 class: middle, left
 
-### _"raw data"_ ← [git.geomar.de/data/][git_geomar_de_data_docs]
+### _“raw data”_ ← [git.geomar.de/data/][git_geomar_de_data_docs]
 
 - fully _version controlled_ data sets ← [Git LFS](https://git-lfs.github.com/)
 
@@ -560,15 +558,16 @@ class: middle, left
 
 class: middle
 
-### _"raw data"_ — What about very large data sets?
+### _“raw data”_ — What about very large data sets?
 
-- Work towards a _"single source of truth"_ .
+- Work towards a _“single source of truth”_ .
 
 - Have a _clear_ (central) storage _structure_ .
 
 - _Plan for evolution_ of each data set right from the start!
 
-- Think about how to _number versions_ ← [_Semantic Versioning_ for data?][semver_for_data_on_git]
+- Think about how to _number versions_ ← [_Semantic Versioning_
+  for data?][semver_for_data_on_git]
 
 - …
 
@@ -584,7 +583,7 @@ class: center, middle
 
 class: middle
 
-### _"time line"_ ← [git.geomar.de][git_geomar_de]
+### _“time line”_ ← [git.geomar.de][git_geomar_de]
 
 - _full-blown_ version control environment
 
@@ -620,7 +619,7 @@ class: middle, left
 
 - only _weak links_ between components
 
-- "plumbing" relies on _standard_ sysadmin _skills_
+- “plumbing” relies on _standard_ sysadmin _skills_
 
 - ⇒ _limited effects_ of failure / unavailability of a component
 
@@ -647,40 +646,7 @@ class: middle
 _Public debate_ mostly focused on _fraud prevention_ in the medical
 sciences.
 
-.right[ So we're fine! _ ... but are we? _ ]
-
----
-
-class: left, middle
-
-## But Do You Need This?
-
-> _**You:**_
-> "Can you check this sea-level trend against satellite data?"
->
-> _**Student:**_
-> "... sure ..."
->
-> _(student about to leave for two weeks of googling for data)_
->
-> _**You:**_
-> "Hey wait, [here's a script
-> ](https://git.geomar.de/edu/python-intro/blob/master/Session_04/Session_04_02_xarray.ipynb)
-> where I did a similar thing with the [old AVISO
-> data](https://git.geomar.de/data/AVISO). Maybe it's good to start there? When
-> you're familiar with this one, adapt it to the new [SLTAC
-> product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP)."
-
----
-
-class: middle
-
-## ~~But Do~~ _You_ Need This
-
-Adapting repeatable workflows is _not_ about fulfilling author guidelines for
-journals.
-
-.right[It's _you_ who benefits the most!]
+.right[ So we’re fine! _ ... but are we? _ ]
 
 ---
 
@@ -690,7 +656,7 @@ class: middle, left
 
 .center[Have a _mental framework_ for repeatability. ← this talk]
 
-Do's & Dont's:
+Do’s & Dont’s:
 
 - _Script_ all your analyses. / _Avoid undocumented interactive_ work.
 
@@ -749,7 +715,7 @@ class: middle, smaller
 
 Cheat Sheets:
 
-- [Sandve (2013)][Sandve2013] has the _"10 Repeatability Commandments"_.
+- [Sandve (2013)][Sandve2013] has the _“10 Repeatability Commandments”_.
 - [Wilson (2012)][Wilson2012] has a reference sheet to _be prepared for
   coding_.
 
@@ -773,7 +739,7 @@ Resources at Geomar:
 
 Nice tools and software:
 
-- Anaconda's Python distribution: [https://www.anaconda.com/distribution/][anaconda]
+- Anaconda’s Python distribution: [https://www.anaconda.com/distribution/][anaconda]
 - Conda Forge: [https://conda-forge.org/][conda_forge]
 - Jupyter notebooks: [https://github.com/jupyter/jupyter][jupyter_github]
 
@@ -783,15 +749,24 @@ class: smaller, middle
 
 ### Supplementaries from this Talk
 
-- Notebook for the Google-Trends Figure 00: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb][fig_00_notebook_on_nbviewer]
-- Data for the Google-Trends Figure 00: [https://willirath.gitlab.io/towards_reproducible_science/data/fig_00_google_trends.csv][fig_00_data_file_one_pages]
-- Notebook for Figure 01: [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_nbviewer]
-- Data for Figure 01: [https://willirath.gitlab.io/towards_reproducible_science/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_pages]
-- Notebook for Figure 02:<br> [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_nbviewer]
-- Data for Figure 02:<br> <https://willirath.gitlab.io/towards_reproducible_science/data/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.nc>
-- Notebook for Figure 03:<br> [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb][fig_03_notebook_on_nbviewer]
-- Data for Figure 03:<br> <https://willirath.gitlab.io/towards_reproducible_science/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
-- HadISST data set: [https://git.geomar.de/data/HadISST/][HadISST_on_git]
+- Notebook for the Google-Trends Figure 00:<br>
+  [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_00_google_trends.ipynb][fig_00_notebook_on_nbviewer]
+- Data for the Google-Trends Figure 00:<br>
+  [https://willirath.gitlab.io/towards_reproducible_science/data/fig_00_google_trends.csv][fig_00_data_file_one_pages]
+- Notebook for Figure 01:<br>
+  [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_01_HadISST_global_and_annual_mean_SST_anomalies.ipynb][fig_01_notebook_on_nbviewer]
+- Data for Figure 01:<br>
+  [https://willirath.gitlab.io/towards_reproducible_science/data/fig_01_HadISST_global_and_annual_mean_SST_anomalies.nc][fig_01_data_file_on_pages]
+- Notebook for Figure 02:<br>
+  [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.ipynb][fig_02_notebook_on_nbviewer]
+- Data for Figure 02:<br>
+  <https://willirath.gitlab.io/towards_reproducible_science/data/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.nc>
+- Notebook for Figure 03:<br>
+  [https://nbviewer.jupyter.org/url/willirath.gitlab.io/towards_reproducible_science/notebooks/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.ipynb][fig_03_notebook_on_nbviewer]
+- Data for Figure 03:<br>
+  <https://willirath.gitlab.io/towards_reproducible_science/data/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.nc>
+- HadISST data set:<br>
+  [https://git.geomar.de/data/HadISST/][HadISST_on_git]
 
 ---
 
@@ -799,18 +774,20 @@ class: smaller, middle
 
 ### Reading List
 
-- _"1,500 scientists lift the lid on reproducibility"_: [https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970][Baker2016]
-- _"Publish your computer code: it is good enough"_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]
-- _"Open code for open science?"_ : [http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html][Easterbrook2014]
-- _"Why bitwise reproducibility matters"_ : [https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/][Hinsen2015]
-- _"Which mistakes do we actually make in scientific code?"_ : [http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/][Hinsen2017]
-- _"A Minimum Standard for Publishing Computational Results in the
-Weather and Climate Sciences"_ : [http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1][Irving2015]
-- _"Good Scientific Practice at MPI-M"_ : [http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html][MPI_good_scientific_practice]
-- _"Nature - Code share"_ : [https://www.nature.com/news/code-share-1.16232][Nature_CodeShare]
-- _"Ten Simple Rules for Reproducible Computational Research"_ : [http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285][Sandve2013]
-- _"Best Practices for Scientific Computing"_ : [https://arxiv.org/abs/1210.0530][Wilson2012]
-- _"Most computational hydrology is not reproducible, so is it really science?"_: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285/full][Hutton2016]
+- _“1,500 scientists lift the lid on reproducibility”_: [https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970][Baker2016]
+- _“Publish your computer code: it is good enough”_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]
+- _“Open code for open science?”_ : [http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html][Easterbrook2014]
+- _“Why bitwise reproducibility matters”_ : [https://khinsen.wordpress.com/2015/01/07/why-bitwise-reproducibility-matters/][Hinsen2015]
+- _“Which mistakes do we actually make in scientific code?”_ :<br>
+  [http://blog.khinsen.net/posts/2017/05/04/which-mistakes-do-we-actually-make-in-scientific-code/][Hinsen2017]
+- _“A Minimum Standard for Publishing Computational Results in the
+  Weather and Climate Sciences”_ :<br>
+  [http://journals.ametsoc.org/doi/full/10.1175/BAMS-D-15-00010.1][Irving2015]
+- _“Good Scientific Practice at MPI-M”_ : [http://www.mpimet.mpg.de/en/science/publications/good-scientific-practice.html][MPI_good_scientific_practice]
+- _“Nature - Code share”_ : [https://www.nature.com/news/code-share-1.16232][Nature_CodeShare]
+- _“Ten Simple Rules for Reproducible Computational Research”_ : [http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285][Sandve2013]
+- _“Best Practices for Scientific Computing”_ : [https://arxiv.org/abs/1210.0530][Wilson2012]
+- _“Most computational hydrology is not reproducible, so is it really science?”_: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR019285/full][Hutton2016]
     - first comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020190/full][Anel2016]
     - first reply: [http://onlinelibrary.wiley.com/doi/10.1002/2017WR020480/full][Hutton2017a]
     - second comment: [http://onlinelibrary.wiley.com/doi/10.1002/2016WR020208/full][Melsen2017]
