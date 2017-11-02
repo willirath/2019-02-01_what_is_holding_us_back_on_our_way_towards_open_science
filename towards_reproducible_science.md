@@ -1,16 +1,19 @@
 class: middle, left
+count: false
 
-# How to do<br>_Efficient & Reproducible_ Science?
+# How to build<br>_Efficient & Reproducibe_<br>work flows?
 
 Willi Rath | <wrath@geomar.de>
 
 <p>&nbsp;</p>
 
-.smaller[Thanks for input and help: _ Martin Claus, Claus Böning, Torge Martin,
-Markus Scheinert, Klaus Getzlaff, Franziska Schwarzkopf, Christina Roth, Rafael
-Abel, Arne Biastoch, Kristin Burmeister, Julia Getzlaff, Carsten Schirnick,
-Claas Faber, Kai Grunau, Stefan Jöhnke, Lutz Griesbach, Thomas Grunert,
-Friedrich Althausen, Geomar IT Department, Geomar Data-Management Team, … _]
+.smaller[Thanks: _ Martin&nbsp;Claus, Claus&nbsp;Böning, Torge&nbsp;Martin,
+Markus&nbsp;Scheinert, Klaus&nbsp;Getzlaff, Franziska&nbsp;Schwarzkopf,
+Christina&nbsp;Roth, Rafael&nbsp;Abel, Arne&nbsp;Biastoch,
+Kristin&nbsp;Burmeister, Julia&nbsp;Getzlaff, Carsten&nbsp;Schirnick,
+Claas&nbsp;Faber, Kai&nbsp;Grunau, Stefan&nbsp;Jöhnke, Lutz&nbsp;Griesbach,
+Thomas&nbsp;Grunert, Knut&nbsp;Günther, Friedrich&nbsp;Althausen, GEOMAR
+Data-Management&nbsp;Team, GEOMAR IT-Department, … _]
 
 <p>&nbsp;</p>
 
@@ -28,6 +31,11 @@ class: middle, center
 
 .smaller[.right[ [This notebook][fig_00_notebook_on_nbviewer] has details.]]
 
+???
+
+_**External**_ motivation: growing public debate about the
+“reproducibility crisis”
+
 ---
 
 class: middle, center
@@ -35,6 +43,10 @@ class: middle, center
 <img src="images/Baker2016_doi_10.1038_533452a_fig_01.jpeg" width="90%">
 
 .smaller[.right[From [Baker (2016)][Baker2016]]]
+
+???
+
+Study: Researchers from all branches of the sciences see a crisis.
 
 ---
 
@@ -49,7 +61,7 @@ sciences.
 
 ???
 
-_**your**_ benefits ←→ requirements by journals / funding agencies
+_**your**_ benefits > requirements by journals / funding agencies
 
 ---
 
@@ -87,7 +99,10 @@ class: middle, left
 
 ???
 
-## Semantics
+## Semantics:
+
+Avoid philosophical subtleties by reducing objective to simplest
+of the possible tasks:  Repeatability.
 
 ---
 
@@ -102,21 +117,10 @@ class: middle, left
 
 ---
 
-class: middle, left
-
-## Part One — A Simple Time Series?
-
-Examine a time series of global-mean sea-surface-temperature anomalies
-
-## Part Two — Repeatable Workflows
-
-Discuss _building blocks_ for repeatable work flows (at Geomar)
-
----
-
 class: center, middle
+count: false
 
-## Part One — A Simple Time Series?
+## Example — A Simple Time Series?
 
 ---
 
@@ -128,14 +132,7 @@ _**Figure 01.**_ Annual-mean HadISST anomalies.
 
 ???
 
-### Challenge
-
-> Please  _take a note_ (in pseudo-code or code) on how you’d produce the following plot.
-> Try to be _specific_ about _when_ and _how_ you select regions, calculate
-> averages, and modify the data otherwise.
-
-
-“Hockey stick” (often longer time series)
+This is a variant of the “hockey stick” (often longer time series).
 
 ---
 
@@ -243,8 +240,8 @@ def annual_mean(data):
     return data
 
 def temporal_anomaly(data):
-   data = data - data.mean("time")
-   return data
+    data = data - data.mean("time")
+    return data
 
 sst_anomalies = temporal_anomaly( weighted_global_mean( annual_mean( sst )))
 
@@ -252,6 +249,12 @@ sst_anomalies.plot()
 ```
 
 .right[.smaller[This code shows the essential parts of the analysis. [The full notebook is here.][fig_01_notebook_on_nbviewer]]]
+
+???
+
+# First: discuss this code snippet
+
+# Then: switch to the Notebook
 
 ---
 
@@ -372,7 +375,13 @@ Let’s compare different ways to calculate the SST anomalies:
 
 .right[.smaller[*... need your notes*]]
 
+???
+
+## How many hockey sticks?
+
 ---
+
+count: false
 
 ## Interlude - Two Lines
 
@@ -383,6 +392,8 @@ averaging:
 
 ---
 
+count: false
+
 ## Interlude - Twelve Lines
 
 [This notebook][fig_03_notebook_on_nbviewer] adds arithmetic averages and
@@ -392,9 +403,14 @@ shows all 12 variants:
 
 .right[.smaller[*... note that we’re still weighting all months equally.*]]
 
+???
+
+With correctly weighted months, we have 24 curves.
+
 ---
 
 class: middle, center
+count: false
 
 .center[<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="100%">]
 
@@ -404,7 +420,7 @@ class: middle, center
 
 class: middle
 
-## Breaking repeatability is easy!<br>.right[— _Just skip one of the following._]
+## How to break repeatability?<br>.right[— _Skip any of the following._]
 
 1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
    compare the data presented in the analysis.
@@ -420,17 +436,24 @@ class: middle
 5. Provide a full _**time line**_ of the development of the analysis.
    _← That’s more of a bonus._
 
+???
+
+## Reminder:
+
+Repeatability = sufficiently skilled reader is able to understand and repeat
+
 ---
 
 class: middle, center
 
-## Part Two
+## Building Repeatable Work Flows
 
 ---
 
 class: middle, left
+count: false
 
-## Repeatable Workflows
+## Repeatable Work Flows
 
 1. _all the numbers_
 
@@ -445,8 +468,9 @@ class: middle, left
 ---
 
 class: middle, left
+count: false
 
-## Repeatable Workflows
+## Repeatable Work Flows
 
 1. _all the numbers_ ← already required by many journals
 
@@ -461,8 +485,9 @@ class: middle, left
 ---
 
 class: middle, left
+count: false
 
-## Repeatable Workflows
+## Repeatable Work Flows
 
 1. _all the numbers_ ← already required by many journals
 
@@ -473,6 +498,12 @@ class: middle, left
 4. _raw data_ ← be prepared for those!
 
 5. _time line_ ← be prepared for those!
+
+???
+
+## Acutally...
+
+No 4. already required in many disciplines
 
 ---
 
@@ -485,6 +516,7 @@ class: center, middle
 ---
 
 class: left, middle
+count: false
 
 ### _“all the numbers”_ ← [data.geomar.de][data_geomar_de]
 
@@ -515,24 +547,26 @@ class: center, middle
 ---
 
 class: middle
+count: false
 
-### _“documented steps”_ ← [nb.geomar.de][nb_geomar_de]
+### _“documented steps”_
 
-- [Jupyter][jupyter_github] _frontend_ to virtually all
-  the _large machines_ (in-house and external)
-
-- very convenient way of sharing an analysis
-
-<p>&nbsp;<p/>
-
-_Alternative_ approaches:
+_Generally_ speaking:
 
 - _script_ your analyses / _avoid_ un-documented _interactive_ work
 
 - use _consistent naming_ ← think: `figure_01.m`, `figure_01.mat`,
-  `figure_01.png`
+  `figure_01.png`, `figure_01.log`
 
-- …
+<p>&nbsp;<p/>
+
+Consider [Jupyter Notebooks][jupyter_github].
+
+- keep documentation, discussion, code and figures in one place
+
+- very convenient to share an analysis
+
+- available on all “our” _large machines_ ← [nb.geomar.de][nb_geomar_de]
 
 ???
 
@@ -550,15 +584,9 @@ class: center, middle
 ---
 
 class: middle
+count: false
 
-### _“tools & libraries”_ ← [Conda Environments][git_geomar_de_python_conda_environments]
-
-- [Anaconda][anaconda] (_Python_ and _R_) and [Conda-Forge][conda_forge] (far
-  beyond)
-
-- _identical_ working environments _across different machines_
-
-<p>&nbsp;<p/>
+### _“tools & libraries”_
 
 _Generally_ speaking:
 
@@ -568,12 +596,25 @@ _Generally_ speaking:
 
 - prefer _stable_ environments
 
+<p>&nbsp;<p/>
+
+[Conda Environments][git_geomar_de_python_conda_environments]
+
+- [Anaconda][anaconda] (_Python_ and _R_) and [Conda-Forge][conda_forge] (far
+  beyond)
+
+- _identical_ working environments _across different machines_
+
 ???
 
-- [standard environments at Geomar
+[standard environments at Geomar
   ](https://git.geomar.de/python/conda_environments/):
+
   - _already installed_ on our analysis machines
+
   - <https://nb.geomar.de>
+
+Conda-Forge example: Who has compiled / installed CDO before?
 
 ---
 
@@ -585,36 +626,41 @@ class: center, middle
 
 ---
 
-class: middle, left
+class: middle
+count: false
 
-### _“raw data”_ ← [git.geomar.de/data/][git_geomar_de_data_docs]
+### _“raw data”_
 
-- fully _version controlled_ data sets ← [Git LFS](https://git-lfs.github.com/)
+- Work towards a _“single source of truth”_ .
 
-- _growing_ collection of external data sets.
+- Have a _clear_ (central?) storage _structure_ .
 
-- also available on [Geomar _thredds server_][git_data_on_thredds]
+- _Plan for evolution_ of each data set right from the start!
 
-- _today_ ≃ 1 TB ← adding resources ⇒ significant increase
+- …
 
-  .right[.smaller[… to learn more, check: <https://git.geomar.de/data/docs/>]]
+???
+
+- There shoudl never ever be a file called `….old.txt`!
+
+- Think about how to _number versions_ ← [_Semantic Versioning_
+  for data?][semver_for_data_on_git]
 
 ---
 
 class: middle
 
-### _“raw data”_ — What about very large data sets?
+### _“raw data”_ ← [git.geomar.de/data/][git_geomar_de_data_docs]
 
-- Work towards a _“single source of truth”_ .
+- fully _version controlled_ data sets ← [Git LFS](https://git-lfs.github.com/)
 
-- Have a _clear_ (central) storage _structure_ .
+- _growing_ collection of external data sets (_today_ ≃ 1 TB)
 
-- _Plan for evolution_ of each data set right from the start!
+- available on [Geomar _thredds server_][git_data_on_thredds]
 
-- Think about how to _number versions_ ← [_Semantic Versioning_
-  for data?][semver_for_data_on_git]
+<p>&nbsp;</p>
 
-- …
+.right[… to learn more, check: <https://git.geomar.de/data/docs/>]
 
 ---
 
@@ -627,6 +673,7 @@ class: center, middle
 ---
 
 class: middle
+count: false
 
 ### _“time line”_ ← [git.geomar.de][git_geomar_de]
 
@@ -635,6 +682,8 @@ class: middle
 - for _Geomar members_ and for _external collaborators_.
 
 - easy _project management_ and _collaboration_
+
+<p>&nbsp;</p>
 
 Alternatives:
 
@@ -646,7 +695,8 @@ Alternatives:
 
 ???
 
-Gitlab’s free schemes are currently better for scientists.
+Gitlab’s free schemes are currently better for scientists (more storage,
+private repos, ...)
 
 ---
 
@@ -713,19 +763,17 @@ class: middle, left
 
 ## What Can _You_ Do Now?
 
-.center[Have a _mental framework_ for repeatability. ← this talk]
-
-Do’s & Dont’s:
+- Have a _mental framework_ for repeatability. ← this talk
 
 - _Script_ all your analyses. / _Avoid undocumented interactive_ work.
 
 - Keep _track_ of _your data_.
 
-- _Learn_ to use Git or any other _version-control system_.
+- _Learn_ to use a _version-control system_, and use it in your _daily routine_
+  work. ← Git.
 
-- And use it in your _daily routine_ work.
+- Talk to me, to the data-management team, …
 
-- …
 
 ---
 
@@ -733,7 +781,7 @@ class: middle
 
 ## What Can _We_ Do Now?
 
-Develop our _**Culture:**_
+Develop _**Culture:**_
 
 - Be _confident to publish_ our code and data.
 
@@ -747,7 +795,12 @@ Develop _**Best Practices:**_
 
 - _Where_ to document?
 
-- ...
+- What to _expect_ from others?
+
+???
+
+The change towards reproducibility will be driven by a change in culture.
+Tools may help, but there won't be a technical solution.
 
 ---
 
@@ -765,6 +818,10 @@ class: middle, center
 <img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="27%">
 <img src="images/time-line-wintry-2068298_1280.jpg" width="27%">
 <img src="images/sms_your_boss_airport.png" width="27%">
+
+???
+
+## Set Triggers for a Discussion!
 
 ---
 
