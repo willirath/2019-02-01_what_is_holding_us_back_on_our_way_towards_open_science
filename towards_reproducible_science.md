@@ -735,7 +735,7 @@ class: middle
 
 Develop our _**Culture:**_
 
-- Be _confident to publish_ your code and data.
+- Be _confident to publish_ our code and data.
 
 - Develop _ethics_ of using code and data published by others.
 
