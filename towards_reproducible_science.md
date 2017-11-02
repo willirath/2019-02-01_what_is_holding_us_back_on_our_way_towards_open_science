@@ -1,7 +1,7 @@
 class: middle, left
 count: false
 
-# How to build<br>_Efficient & Reproducibe_<br>work flows?
+# How to build<br>_Efficient & Reproducible_<br>work flows?
 
 Willi Rath | <wrath@geomar.de>
 
@@ -13,7 +13,7 @@ Christina&nbsp;Roth, Rafael&nbsp;Abel, Arne&nbsp;Biastoch,
 Kristin&nbsp;Burmeister, Julia&nbsp;Getzlaff, Carsten&nbsp;Schirnick,
 Claas&nbsp;Faber, Kai&nbsp;Grunau, Stefan&nbsp;Jöhnke, Lutz&nbsp;Griesbach,
 Thomas&nbsp;Grunert, Knut&nbsp;Günther, Friedrich&nbsp;Althausen, GEOMAR
-Data-Management&nbsp;Team, GEOMAR IT-Department, … _]
+Data-Management&nbsp;Team, GEOMAR IT&nbsp;Department, … _]
 
 <p>&nbsp;</p>
 
