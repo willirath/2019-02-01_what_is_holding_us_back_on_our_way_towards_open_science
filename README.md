@@ -7,9 +7,9 @@ latest version of the slides.
 
 > ## Abstract
 >
-> There is a growing public debate of a “reproducibilty crisis”, journals are
-> expectinh the publication of data associated with a paper, and funding
-> agencies are enforcing open-data policies more and more vigorously.  It is,
+> There is a growing public debate around a “reproducibilty crisis”, journals
+> expect the publication of data associated with a paper, and funding
+> agencies enforce open-data policies more and more vigorously.  It is,
 > however, often overlooked that the main benefits of reproducible scientific
 > work are not in fulfilling these rather abstract requirements but in making
 > ones own everyday work easier.  This talk will work out the specifics of how
