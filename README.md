@@ -5,20 +5,18 @@ Latest version of the slides: <https://willirath.gitlab.io/towards_reproducible_
 
 > ## Abstract
 >
-> With a growing public debate around a “reproducibilty crisis”, with journals
-> expecting the publication of data associated with a paper, and with funding
-> agencies more vigorously enforcing open-data policies, it is often
-> overlooked, that the main benefits of reproducible scientific work do not lie
-> in fulfilling these rather abstract requirements, but in making scientific
-> work more efficient and in greatly facilitating communication and
-> collaboration between individual scientists or among small groups.
+> This presentation is about the every-day benefits of reproducible science:
+> making the scientific workflow more efficient by facilitating communication
+> and collaboration between individual scientists or among small groups.  This
+> is often overlooked as scientists are more and more forced to enact
+> reproducibility by a growing public debate on the “reproducibilty crisis”, by
+> journals demanding data published along with the manuscript, by funding
+> agencies more vigorously enforcing open-data policies.
 >
-> After working out how reproducibility is usually broken, this talk seeks to
-> provide a simple framework for assessing the reproducibility of scientific
-> work flows, and to give an overview of existing building blocks for
-> reproducible science at Geomar and beyond.
+> After demonstrating how reproducibility is often undermined, this talk seeks
+> to provide a simple framework for assessing the reproducibility of scientific
+> workflows and to give an overview of existing building blocks for
+> reproducible science at GEOMAR and beyond.
 >
-> This talk is meant for an audience of scientists at any stage in their career
-> and in any organisational role, for students, and for technical support
-> staff.
-> 
+> The slides address scientists at any stage in their career and in any
+> organisational role, and also students as well as technical support staff.
