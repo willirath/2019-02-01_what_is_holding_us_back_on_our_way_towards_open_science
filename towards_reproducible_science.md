@@ -1,7 +1,7 @@
 class: middle, left
 count: false
 
-# How to build<br>_Efficient & Reproducible_<br>work flows?
+# Towards <br>_Efficient & Reproducible_<br> Science
 
 Willi Rath | <wrath@geomar.de>
 
