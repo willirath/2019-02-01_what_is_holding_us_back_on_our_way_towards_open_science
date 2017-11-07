@@ -10,7 +10,7 @@ Latest version of the slides: <https://willirath.gitlab.io/towards_reproducible_
 > and collaboration between individual scientists or among small groups.  This
 > is often overlooked as scientists are more and more forced to enact
 > reproducibility by a growing public debate on the “reproducibilty crisis”, by
-> journals demanding data published along with the manuscript, by funding
+> journals demanding data published along with the manuscript, or by funding
 > agencies more vigorously enforcing open-data policies.
 >
 > After demonstrating how reproducibility is often undermined, this talk seeks
