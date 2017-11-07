@@ -7,13 +7,20 @@ latest version of the slides.
 
 > ## Abstract
 >
-> There is a growing public debate around a “reproducibilty crisis”, journals
-> expect the publication of data associated with a paper, and funding
-> agencies enforce open-data policies more and more vigorously.  It is,
-> however, often overlooked that the main benefits of reproducible scientific
-> work are not in fulfilling these rather abstract requirements but in making
-> ones own everyday work easier.  This talk will work out the specifics of how
-> to ensure (or prevent) reproducibility, and hint at possible solutions, both,
-> in the methodological and in the technical domain.  While it is not free of
-> technical details, this talk aims at providing a foundation for a general
-> assessment and discussion of the reproducibility of scientific everyday work.
+> With a growing public debate around a “reproducibilty crisis”, with journals
+> expecting the publication of data associated with a paper, and with funding
+> agencies more vigorously enforcing open-data policies, it is often
+> overlooked, that the main benefits of reproducible scientific work do not lie
+> in fulfilling these rather abstract requirements, but in making scientific
+> work more efficient and in greatly facilitating communication and
+> collaboration between individual scientists or among small groups.
+>
+> After working out how reproducibility is usually broken, this talk seeks to
+> provide a simple framework for assessing the reproducibility of scientific
+> work flows, and to give an overview of existing building blocks for
+> reproducible science at Geomar and beyond.
+>
+> This talk is meant for an audience of scientists at any stage in their career
+> and in any organisational role, for students, and for technical support
+> staff.
+> 
