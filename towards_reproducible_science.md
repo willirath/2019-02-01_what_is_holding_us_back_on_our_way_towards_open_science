@@ -46,7 +46,7 @@ class: middle, center
 
 ???
 
-Study: Researchers from all branches of the sciences see a crisis.
+Study surveyed researchers from all branches of the sciences see a crisis.
 
 ---
 
@@ -89,6 +89,14 @@ class: left, middle
 > you’re familiar with this one, adapt it to the new [SLTAC
 > product](https://git.geomar.de/data/SLTAC_GLO_PHY_L4_REP).”
 
+???
+
+The last statement is actually a summary of almost all of this talk:
+
+- Version controlled source code ← “here’s a script”
+- Version controlled data ← data set links
+- very concise ways of (un-ambiguously!) referencing code and data
+
 ---
 
 class: middle, left
@@ -99,10 +107,8 @@ class: middle, left
 
 ???
 
-## Semantics:
-
-Avoid philosophical subtleties by reducing objective to simplest
-of the possible tasks:  Repeatability.
+Avoid _philosophic_ or _semantic_ subtleties by reducing objective to simplest
+of the possible tasks:  Being able to _**repeat**_ whatever was done.
 
 ---
 
@@ -115,16 +121,21 @@ class: middle, left
 > _repeat all steps_ the authors took from their initial idea to the final
 > conclusions.
 
+???
+
+Or worded differently:  Make sure there’s no need to know any _**secrets**_ to
+repeat what was done.
+
 ---
 
 class: center, middle
-count: false
 
 ## Example — A Simple Time Series?
 
 ---
 
 class: center, middle
+count: false
 
 <img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="99%">
 
@@ -132,7 +143,8 @@ _**Figure 01.**_ Annual-mean HadISST anomalies.
 
 ???
 
-This is a variant of the “hockey stick” (often longer time series).
+This is a variant of the “hockey stick” (often longer time series of air or
+surface temperature).
 
 ---
 
@@ -170,14 +182,18 @@ class: top, left
 We now know that:
 
 - the time series represents _global_ and _annual means_,
+
 - the anomalies were calculated _relative to_ the _complete time series_.
 
 But still:
 
 - Could we be sure to find _exactly_ the same data?
+
 - Are those _weighted or arithmetic_ spatial averages?
+
 - How exactly and _in which order_ did the authors calculate the temporal
   means / spatial means / temporal anomalies?
+
 - …
 
 ---
@@ -195,6 +211,7 @@ class: top, left
 ---
 
 class: top, left
+count: false
 
 ### Towards Full Repeatability
 
@@ -213,7 +230,6 @@ class: top, left
 
 - There is a [data file][fig_01_data_file_on_pages] that contains all numbers used
   to produce the figure.
-
 
 ---
 
@@ -259,6 +275,7 @@ sst_anomalies.plot()
 ---
 
 class: middle
+count: false
 
 ### Saving the Plotted Data for Reference
 
@@ -300,6 +317,7 @@ v1.3.0
 ---
 
 class: left, middle
+count: false
 
 ### Raw Data
 
@@ -332,7 +350,6 @@ conda list
 alabaster                 0.7.10                   py35_1    conda-forge
 anaconda-client           1.6.5                      py_0    conda-forge
 [...]
-xarray                    0.9.6                    py35_0    conda-forge
 xarray-0.9.6-51           g25d1855                  <pip>
 xz                        5.2.3                         0    conda-forge
 yaml                      0.1.6                         0    conda-forge
@@ -350,7 +367,8 @@ class: left, middle
 
 ### Evolution of the Analysis
 
-The development of the analysis (and of this talk) was tracked on [Gitlab.com](https://gitlab.com).
+The development of the analysis (and of this talk) was tracked on
+[Gitlab.com](https://gitlab.com).
 
 To see how it developed in time, check:<br>
 <https://gitlab.com/willirath/towards_reproducible_science/commits/master>
@@ -375,10 +393,6 @@ Let’s compare different ways to calculate the SST anomalies:
 
 .right[.smaller[*... need your notes*]]
 
-???
-
-## How many hockey sticks?
-
 ---
 
 count: false
@@ -389,6 +403,11 @@ count: false
 averaging:
 
 .center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">]
+
+???
+
+Difference arise from subtleties in treating missing data making sum, mean,
+etc. lose strict linearity.
 
 ---
 
@@ -405,7 +424,11 @@ shows all 12 variants:
 
 ???
 
-With correctly weighted months, we have 24 curves.
+With correctly weighted months, we have 24 curves.  (Most of which are arguably
+wrong not in no way less likely to be actually used.)
+
+There’s a very nice blog post on [_**informal descriptions**_ vs. _**executable
+implementations**_.][Hinsen2017]
 
 ---
 
@@ -415,6 +438,15 @@ count: false
 .center[<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="100%">]
 
 .right[.smaller[© [Fabien Perissinotto](https://commons.wikimedia.org/wiki/User:Fabienp)]]
+
+???
+
+Don’t make the mistake of refuting this rather artificial example:
+
+- Simple time series are often used to define indices which then feed composite analyses etc.
+
+- combining only a few indices with two or three reasonable implementations
+  each is quickly growing to `2^n` or `3^n` possible outcomes.
 
 ---
 
@@ -444,16 +476,9 @@ Repeatability = sufficiently skilled reader is able to understand and repeat
 
 ---
 
-class: middle, center
+class: middle, left
 
 ## Building Repeatable Work Flows
-
----
-
-class: middle, left
-count: false
-
-## Repeatable Work Flows
 
 1. _all the numbers_
 
@@ -470,7 +495,7 @@ count: false
 class: middle, left
 count: false
 
-## Repeatable Work Flows
+## Building Repeatable Work Flows
 
 1. _all the numbers_ ← already required by many journals
 
@@ -487,7 +512,7 @@ count: false
 class: middle, left
 count: false
 
-## Repeatable Work Flows
+## Building Repeatable Work Flows
 
 1. _all the numbers_ ← already required by many journals
 
@@ -512,6 +537,10 @@ class: center, middle
 .center[<img src="images/all-the-numbers-checkout-590358_1280.jpg" width="100%">]
 
 .right[.smaller[[CC0-licenced](https://pixabay.com/en/checkout-retro-antique-590358/)]]
+
+???
+
+# _“all the numbers”_
 
 ---
 
@@ -543,6 +572,10 @@ Alternatives:
 class: center, middle
 
 .center[<img src="images/stepping_stones_geograph-5134739-by-David-Purchase.jpg" width="100%">]
+
+???
+
+# _“documented steps”_
 
 ---
 
@@ -580,6 +613,10 @@ class: center, middle
 .center[<img src="images/tools-blacksmith-tools-shop-rustic-162631.jpeg" width="100%">]
 
 .right[.smaller[[CC0-licenced](https://www.pexels.com/photo/black-metal-tools-hanged-on-a-rack-near-table-162631/)]]
+
+???
+
+# _“tools & libraries”_
 
 ---
 
@@ -623,6 +660,10 @@ class: center, middle
 .center[<img src="images/raw-data-cooking-1013455_1280.jpg" width="100%">]
 
 .right[.smaller[[CC0-licenced](https://pixabay.com/en/cooking-ingredient-cuisine-kitchen-1013455/)]]
+
+???
+
+# _“raw data”_
 
 ---
 
@@ -669,6 +710,10 @@ class: center, middle
 .center[<img src="images/time-line-wintry-2068298_1280.jpg" width="100%">]
 
 .right[.smaller[[CC0-licenced](https://pixabay.com/en/wintry-mountain-snow-snow-landscape-2068298/)]]
+
+???
+
+# _“time line”_
 
 ---
 
@@ -774,7 +819,6 @@ class: middle, left
 
 - Talk to me, to the data-management team, …
 
-
 ---
 
 class: middle
@@ -799,7 +843,10 @@ Develop _**Best Practices:**_
 
 ???
 
+_**We**_ as a community _vs._ _**You**_ as an individual
+
 The change towards reproducibility will be driven by a change in culture.
+
 Tools may help, but there won't be a technical solution.
 
 ---
