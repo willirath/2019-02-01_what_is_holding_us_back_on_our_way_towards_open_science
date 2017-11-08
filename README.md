@@ -13,10 +13,11 @@ Latest version of the slides: <https://willirath.gitlab.io/towards_reproducible_
 > journals demanding data published along with the manuscript, or by funding
 > agencies more vigorously enforcing open-data policies.
 >
-> After demonstrating how reproducibility is often undermined, this talk seeks
+> After demonstrating how reproducibility is often undermined, the talk seeks
 > to provide a simple framework for assessing the reproducibility of scientific
 > workflows and to give an overview of existing building blocks for
 > reproducible science at GEOMAR and beyond.
 >
-> The slides address scientists at any stage in their career and in any
-> organisational role, and also students as well as technical support staff.
+> This talks addresses scientists at any stage in their career and in any
+> organisational role, and is also suited for students and technical support
+> staff.
