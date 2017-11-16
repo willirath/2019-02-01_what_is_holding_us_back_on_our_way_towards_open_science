@@ -316,24 +316,6 @@ v1.3.0
 
 ---
 
-class: left, middle
-count: false
-
-### Raw Data
-
-> _“We used v1.3.0 of the HadISST data set from our
-> [internal mirror][git_geomar_de_data].”_
-
-This _completely defines_ the raw data:
-
-- General information: <https://git.geomar.de/data/HadISST>
-
-- Full history up to version v1.3.0: <https://git.geomar.de/data/HadISST/commits/v1.3.0>
-
-- Other data sets, examples, download requests: <https://git.geomar.de/data/docs/>
-
----
-
 class: middle
 
 ### Tools and Libraries
@@ -450,9 +432,9 @@ Don’t make the mistake of refuting this rather artificial example:
 
 ---
 
-class: middle
+class: middle, left
 
-## How to break repeatability?<br>.right[— _Skip any of the following._]
+## Building Repeatable Work Flows
 
 1. Provide a data set containing _**all the numbers**_ necessary to re-plot and
    compare the data presented in the analysis.
@@ -477,6 +459,7 @@ Repeatability = sufficiently skilled reader is able to understand and repeat
 ---
 
 class: middle, left
+count: false
 
 ## Building Repeatable Work Flows
 
@@ -518,17 +501,28 @@ count: false
 
 2. _documented steps_ ← already required by many journals
 
+3. _tools & libraries_
+
+4. _raw data_ ← already required by _some_ journals
+
+5. _time line_
+
+---
+
+class: middle, left
+count: false
+
+## Building Repeatable Work Flows
+
+1. _all the numbers_ ← already required by many journals
+
+2. _documented steps_ ← already required by many journals
+
 3. _tools & libraries_ ← be prepared for those!
 
-4. _raw data_ ← be prepared for those!
+4. _raw data_ ← already required by _some_ journals
 
 5. _time line_ ← be prepared for those!
-
-???
-
-## Acutally...
-
-No 4. already required in many disciplines
 
 ---
 
@@ -547,25 +541,34 @@ class: center, middle
 class: left, middle
 count: false
 
+### _“all the numbers”_
+
+_Generally_ speaking:
+
+- _“checkpoints”_ allowing for repetition of parts of an analysis
+
+- data contained in _**figures**_ or _**tables**_ allowing for later comparison
+
+- …
+
+---
+
+class: left, middle
+
 ### _“all the numbers”_ ← [data.geomar.de][data_geomar_de]
 
 - _Stable_ point of _first contact_ for anybody looking for a dataset from
   Geomar
 
-- _Collection of links_ to data sets, software, …
-
-.smaller[.right[...contact [datamanagement(at)geomar.de](mailto:datamanagement-AT-geomar.de)]]
+- talk to [datamanagement(at)geomar.de](mailto:datamanagement-AT-geomar.de)
 
 Alternatives:
 
-- At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de) which is forwarded to whoever is / will be
-  in charge of data management within the group.
-
-- https://zenodo.org provides storage and a DOI for data.
-
-- https://www.pangaea.de/ provides storage and a DOI for geo-referenced data.
-
-- https://figshare.com/ serves as a general supplementary-materials storage.
+- https://zenodo.org — storage and a DOI for data
+- https://www.pangaea.de/ — storage and a DOI for geo-referenced data
+- https://figshare.com/ — general supplementary-materials platform
+- …
+- At TM, we have [data-tm(at)geomar.de](mailto:data-tm-AT-geomar.de)
 
 ---
 
@@ -672,17 +675,18 @@ count: false
 
 ### _“raw data”_
 
-- Work towards a _“single source of truth”_ .
+- _Referring_ to data is hard !
 
-- Have a _clear_ (central?) storage _structure_ .
+- Work towards a _“single source of truth”_ and a _clear_ (central?)
+   _structure_ .
 
-- _Plan for evolution_ of each data set right from the start!
+- Plan for _**evolution**_ of each data set right from the start !
 
 - …
 
 ???
 
-- There shoudl never ever be a file called `….old.txt`!
+- There should _never_ ever be a file called `….old.txt`!
 
 - Think about how to _number versions_ ← [_Semantic Versioning_
   for data?][semver_for_data_on_git]
@@ -691,15 +695,19 @@ count: false
 
 class: middle
 
-### _“raw data”_ ← [git.geomar.de/data/][git_geomar_de_data_docs]
+### _“raw data”_ ← [git.geomar.de/data/](https://git.geomar.de/data?sort=name_asc)
+
+> _“We used [v1.3.0](https://git.geomar.de/data/HadISST/commits/v1.3.0) of the
+> [HadISST data set](https://git.geomar.de/data/HadISST) from our [internal
+> mirror][git_geomar_de_data].”_
 
 - fully _version controlled_ data sets ← [Git LFS](https://git-lfs.github.com/)
 
 - _growing_ collection of external data sets (_today_ ≃ 1 TB)
 
-- available on [Geomar _thredds server_][git_data_on_thredds]
+- available on in-house computers and on external data centers
 
-<p>&nbsp;</p>
+- available on [Geomar _thredds server_][git_data_on_thredds]
 
 .right[… to learn more, check: <https://git.geomar.de/data/docs/>]
 
@@ -720,13 +728,27 @@ class: center, middle
 class: middle
 count: false
 
+### _“time line”_
+
+- commented overview of evolution of scripts etc.
+
+- tracking when (and _why_!) sth. was done
+
+- often solved by _“version control”_
+
+---
+
+class: middle
+
 ### _“time line”_ ← [git.geomar.de][git_geomar_de]
 
 - _full-blown_ version-control environment
 
-- for _Geomar members_ and for _external collaborators_.
+- for _Geomar members_ and for _external collaborators_
 
 - easy _project management_ and _collaboration_
+
+- Easy-to-search _archive_ comes for free !
 
 <p>&nbsp;</p>
 
@@ -734,7 +756,7 @@ Alternatives:
 
 - <https://github.com> ← _the_ industry standard
 
-- <https://Gitlab.com> ← evolving competitor
+- <https://gitlab.com> ← evolving competitor
 
 - SVN ← if joining an existing work flow
 
@@ -808,16 +830,36 @@ class: middle, left
 
 ## What Can _You_ Do Now?
 
-- Have a _mental framework_ for repeatability. ← this talk
+- Have a _mental framework_ for repeatability.
+
+- Talk to _each other_.
 
 - _Script_ all your analyses. / _Avoid undocumented interactive_ work.
 
+- Use a _version-control system_, in your _daily routine_ work.
+
 - Keep _track_ of _your data_.
 
-- _Learn_ to use a _version-control system_, and use it in your _daily routine_
-  work. ← Git.
+- Ping the data-management team, me, colleagues who might know …
 
-- Talk to me, to the data-management team, …
+---
+
+class: middle, left
+count: false
+
+## What Can _You_ Do Now?
+
+- Have a _mental framework_ for repeatability. &#09; &nbsp;&nbsp;&nbsp;&nbsp;  ← this talk
+
+- Talk to _each other_. &#09; &nbsp;&nbsp;&nbsp;&nbsp;  ← this talk ?
+
+- _Script_ all your analyses. / _Avoid undocumented interactive_ work.
+
+- Use a _version-control system_, in your _daily routine_ work. &#09; &nbsp;&nbsp;&nbsp;&nbsp;  ← Git.
+
+- Keep _track_ of _your data_.
+
+- Ping the data-management team, me, colleagues who might know …
 
 ---
 
@@ -827,11 +869,13 @@ class: middle
 
 Develop _**Culture:**_
 
-- Be _confident to publish_ our code and data.
+- Be _confident to publish_ code and data.
 
 - Develop _ethics_ of using code and data published by others.
 
-- …
+- [_“Nobody is entitled to demand technical support for freely provided code.”_][barnes2010]
+
+<p>&nbsp;</p>
 
 Develop _**Best Practices:**_
 
@@ -839,7 +883,7 @@ Develop _**Best Practices:**_
 
 - _Where_ to document?
 
-- What to _expect_ from others?
+- What to _expect_ from collaborators?
 
 ???
 
@@ -868,7 +912,7 @@ class: middle, center
 
 ???
 
-## Set Triggers for a Discussion!
+## Set Triggers for a Discussion !
 
 ---
 
