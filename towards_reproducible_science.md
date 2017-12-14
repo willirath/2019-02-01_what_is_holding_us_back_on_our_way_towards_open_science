@@ -21,7 +21,7 @@ Data-Management&nbsp;Team, GEOMAR IT&nbsp;Department, … _]
 online slides —
 <https://willirath.gitlab.io/towards_reproducible_science/><br>
 PDF slides —
-<https://gitlab.com/willirath/towards_reproducible_science/raw/master/slides.pdf><br>
+<https://willirath.gitlab.io/towards_reproducible_science/slides.pdf><br>
 Git repo —
 <https://gitlab.com/willirath/towards_reproducible_science/>]]
 

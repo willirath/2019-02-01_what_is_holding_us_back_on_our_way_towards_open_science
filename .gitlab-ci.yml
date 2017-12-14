@@ -5,6 +5,7 @@ pages:
   - cp towards_reproducible_science.html public/index.html
   - cp towards_reproducible_science_remark_included.html public/index_remark_included.html
   - cp towards_reproducible_science.md public/
+  - cp slides.pdf public/.
   - cp -r images/ public/.
   - cp -r data/ public/.
   - cp -r notebooks/ public/.
