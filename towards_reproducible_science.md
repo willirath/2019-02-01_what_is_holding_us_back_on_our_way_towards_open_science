@@ -21,7 +21,7 @@ Data-Management&nbsp;Team, GEOMAR IT&nbsp;Department, … _]
 online slides —
 <https://willirath.gitlab.io/towards_reproducible_science/><br>
 PDF slides —
-<https://gitlab.com/willirath/towards_reproducible_science/raw/master/slides.pdf><br>
+<https://willirath.gitlab.io/towards_reproducible_science/slides.pdf><br>
 Git repo —
 <https://gitlab.com/willirath/towards_reproducible_science/>]]
 
@@ -165,8 +165,6 @@ etc. lose strict linearity.
 
 class: left, bottom
 count: false
-
-.right[.smaller[*... note that we’re still weighting all months equally.*]]
 
 .center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="99%">]
 
