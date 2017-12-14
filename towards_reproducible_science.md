@@ -130,23 +130,73 @@ repeat what was done.
 
 ---
 
-class: center, middle
+class: middle, center
 
 ## Example — A Simple Time Series?
 
 ---
 
-class: center, middle
-count: false
+class: left, bottom
 
-<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="99%">
+.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="99%">]
 
-_**Figure 01.**_ Annual-mean HadISST anomalies.
+.smaller[[This notebook][fig_01_notebook_on_nbviewer] shows the full analysis.]
 
 ???
 
 This is a variant of the “hockey stick” (often longer time series of air or
 surface temperature).
+
+---
+
+class: left, bottom
+count: false
+
+.center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="99%">]
+
+.smaller[[This notebook][fig_02_notebook_on_nbviewer] details a subtlety with the _order_ of averaging.]
+
+???
+
+Difference arise from subtleties in treating missing data making sum, mean,
+etc. lose strict linearity.
+
+---
+
+class: left, bottom
+count: false
+
+.right[.smaller[*... note that we’re still weighting all months equally.*]]
+
+.center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="99%">]
+
+.smaller[[This notebook][fig_03_notebook_on_nbviewer] adds arithmetic averages and shows all 12 variants.]
+
+???
+
+With correctly weighted months, we have 24 curves.  (Most of which are arguably
+wrong not in no way less likely to be actually used.)
+
+There’s a very nice blog post on [_**informal descriptions**_ vs. _**executable
+implementations**_.][Hinsen2017]
+
+---
+
+class: middle, center
+count: false
+
+.center[<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="100%">]
+
+.right[.smaller[© [Fabien Perissinotto](https://commons.wikimedia.org/wiki/User:Fabienp)]]
+
+???
+
+Don’t make the mistake of refuting this rather artificial example:
+
+- Simple time series are often used to define indices which then feed composite analyses etc.
+
+- combining only a few indices with two or three reasonable implementations
+  each is quickly growing to `2^n` or `3^n` possible outcomes.
 
 ---
 
@@ -364,73 +414,6 @@ Suppose, this was a multi-author paper.  Then, it would be easy
 - to _return_ to any _earlier version_ of the scripts at any later point, or
 
 - to _compare_ scripts between _revisions_ sent to the journal.
-
----
-
-class: middle, left
-
-## Interlude
-
-Let’s compare different ways to calculate the SST anomalies:
-
-.center[<img src="images/fig_01_HadISST_global_and_annual_mean_SST_anomalies.png" width="85%">]
-
-.right[.smaller[*... need your notes*]]
-
----
-
-count: false
-
-## Interlude - Two Lines
-
-[This notebook][fig_02_notebook_on_nbviewer] details a subtlety with the _order_ of
-averaging:
-
-.center[<img src="images/fig_02_HadISST_global_and_annual_mean_SST_anomalies_two_variants.png" width="85%">]
-
-???
-
-Difference arise from subtleties in treating missing data making sum, mean,
-etc. lose strict linearity.
-
----
-
-count: false
-
-## Interlude - Twelve Lines
-
-[This notebook][fig_03_notebook_on_nbviewer] adds arithmetic averages and
-shows all 12 variants:
-
-.center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="85%">]
-
-.right[.smaller[*... note that we’re still weighting all months equally.*]]
-
-???
-
-With correctly weighted months, we have 24 curves.  (Most of which are arguably
-wrong not in no way less likely to be actually used.)
-
-There’s a very nice blog post on [_**informal descriptions**_ vs. _**executable
-implementations**_.][Hinsen2017]
-
----
-
-class: middle, center
-count: false
-
-.center[<img src="images/NLA,_HC_Davos_vs._EV_Zug,_19th_October_2014_46.JPG" width="100%">]
-
-.right[.smaller[© [Fabien Perissinotto](https://commons.wikimedia.org/wiki/User:Fabienp)]]
-
-???
-
-Don’t make the mistake of refuting this rather artificial example:
-
-- Simple time series are often used to define indices which then feed composite analyses etc.
-
-- combining only a few indices with two or three reasonable implementations
-  each is quickly growing to `2^n` or `3^n` possible outcomes.
 
 ---
 
