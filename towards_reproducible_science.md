@@ -166,8 +166,6 @@ etc. lose strict linearity.
 class: left, bottom
 count: false
 
-.right[.smaller[*... note that we’re still weighting all months equally.*]]
-
 .center[<img src="images/fig_03_HadISST_global_and_annual_mean_SST_anomalies_all_variants.png" width="99%">]
 
 .smaller[[This notebook][fig_03_notebook_on_nbviewer] adds arithmetic averages and shows all 12 variants.]
