@@ -9,20 +9,17 @@ Willi Rath | <wrath@geomar.de>
 
 .smaller[Based on discussions with: _ Martin&nbsp;Claus, Claus&nbsp;Böning,
 Torge&nbsp;Martin, Markus&nbsp;Scheinert, Klaus&nbsp;Getzlaff,
-Christina&nbsp;Roth, Rafael&nbsp;Abel, Arne&nbsp;Biastoch,
+Christina&nbsp;Roth, Katharina&nbsp;Höflich, Rafael&nbsp;Abel, Arne&nbsp;Biastoch,
 Kristin&nbsp;Burmeister, Julia&nbsp;Getzlaff, Inga&nbsp;Koszalka,
-Carsten&nbsp;Schirnick, Claas&nbsp;Faber, Kai&nbsp;Grunau, Stefan&nbsp;Jöhnke,
-Lutz&nbsp;Griesbach, Thomas&nbsp;Grunert, Knut&nbsp;Günther,
-Friedrich&nbsp;Althausen, GEOMAR Data-Management&nbsp;Team, GEOMAR
+Carsten&nbsp;Schirnick, Claas&nbsp;Faber, Knut&nbsp;Günther,
+GEOMAR Data-Management&nbsp;Team, GEOMAR
 IT&nbsp;Department, … _]
 
 <p>&nbsp;</p>
 
 .smaller[.right[
 online slides —
-<https://willirath.github.io/> → Talks<br>
-Git repo:
-<https://github.com/willirath/2019-02-01_what_is_holding_us_back_on_our_way_towards_open_science/>]]
+<https://willirath.github.io/> → Talks]]
 
 ---
 
@@ -393,17 +390,20 @@ class: middle, center
 
 class: middle, center
 
-<img src="images/open_not_always_open.png" width="44%">
-&nbsp;
-<img src="images/eos_code_sharing.png" width="44%">
+<img src="images/publish_your_code_good_enough.png" width="38%">
+&nbsp;&nbsp;&nbsp;
+<img src="images/open_not_always_open.png" width="38%">
 
-.smaller[.right[
-<https://www.americanscientist.org/article/open-science-isnt-always-open-to-all-scientists>
-]]
+<img src="images/eos_code_sharing.png" width="38%">
+&nbsp;&nbsp;&nbsp;
+<img src="images/sandve_10_rules.png" width="38%">
 
-.smaller[.right[
-<https://eos.org/opinions/its-time-to-shift-emphasis-away-from-code-sharing>
-]]
+.smaller[.smaller[.right[
+<https://www.nature.com/news/2010/101013/full/467753a.html><br>
+<https://www.americanscientist.org/article/open-science-isnt-always-open-to-all-scientists><br>
+<https://eos.org/opinions/its-time-to-shift-emphasis-away-from-code-sharing><br>
+<https://doi.org/10.1371/journal.pcbi.1003285>
+]]]
 
 ---
 
@@ -411,6 +411,8 @@ class: smaller, middle
 
 ### Reading List
 
+- _“Open Science Isn't Always Open to All Scientists”_: <https://www.americanscientist.org/article/open-science-isnt-always-open-to-all-scientists>
+- _“It’s Time to Shift Emphasis Away from Code Sharing”_: <https://eos.org/opinions/its-time-to-shift-emphasis-away-from-code-sharing>
 - _“1,500 scientists lift the lid on reproducibility”_: [https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970][Baker2016]
 - _“Publish your computer code: it is good enough”_ : [https://www.nature.com/news/2010/101013/full/467753a.html][Barnes2010]
 - _“Open code for open science?”_ : [http://www.nature.com/ngeo/journal/v7/n11/full/ngeo2283.html][Easterbrook2014]
