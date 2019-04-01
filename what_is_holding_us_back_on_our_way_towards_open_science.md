@@ -374,14 +374,36 @@ class: middle, center
 
 .right[.smaller[[CC0-licenced](https://pixabay.com/en/building-blocks-stones-colorful-1563961/)]]
 
----
+<!-- ---
 
 class: middle, center
 
 <img src="images/river_dyoma_suspension_bridge.jpg" width="100%">
 
-.right[.smaller[[CC-by-licenced](https://commons.wikimedia.org/wiki/File:%D0%9C%D0%BE%D1%81%D1%82_%D0%94%D1%91%D0%BC%D0%B0_%D0%91%D0%BE%D1%87%D0%BA%D0%B0%D1%80%D0%B5%D0%B2%D0%BA%D0%B0.jpg)]]
+.right[.smaller[[CC-by-licenced](https://commons.wikimedia.org/wiki/File:%D0%9C%D0%BE%D1%81%D1%82_%D0%94%D1%91%D0%BC%D0%B0_%D0%91%D0%BE%D1%87%D0%BA%D0%B0%D1%80%D0%B5%D0%B2%D0%BA%D0%B0.jpg)]] -->
 
+---
+
+class: middle, center
+
+<img src="images/modularity-building-blocks-1563961_1280.jpg" width="52%">
+<img src="images/river_dyoma_suspension_bridge.jpg" width="46%">
+
+---
+
+class: middle, center
+
+<img src="images/open_not_always_open.png" width="44%">
+&nbsp;
+<img src="images/eos_code_sharing.png" width="44%">
+
+.smaller[.right[
+<https://www.americanscientist.org/article/open-science-isnt-always-open-to-all-scientists>
+]]
+
+.smaller[.right[
+<https://eos.org/opinions/its-time-to-shift-emphasis-away-from-code-sharing>
+]]
 
 ---
 
