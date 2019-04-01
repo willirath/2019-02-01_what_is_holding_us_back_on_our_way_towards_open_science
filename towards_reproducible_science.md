@@ -1,29 +1,33 @@
 class: middle, left
 count: false
 
-# Towards <br>_Efficient & Reproducible_<br> Science
+# What's holding us back <br>on our way towards <br>_Open Science_ ?
 
 Willi Rath | <wrath@geomar.de>
 
 <p>&nbsp;</p>
 
-.smaller[Thanks: _ Martin&nbsp;Claus, Claus&nbsp;Böning, Torge&nbsp;Martin,
+<!-- .smaller[Thanks: _ Martin&nbsp;Claus, Claus&nbsp;Böning, Torge&nbsp;Martin,
 Markus&nbsp;Scheinert, Klaus&nbsp;Getzlaff, Franziska&nbsp;Schwarzkopf,
 Christina&nbsp;Roth, Rafael&nbsp;Abel, Arne&nbsp;Biastoch,
 Kristin&nbsp;Burmeister, Julia&nbsp;Getzlaff, Carsten&nbsp;Schirnick,
 Claas&nbsp;Faber, Kai&nbsp;Grunau, Stefan&nbsp;Jöhnke, Lutz&nbsp;Griesbach,
 Thomas&nbsp;Grunert, Knut&nbsp;Günther, Friedrich&nbsp;Althausen, GEOMAR
-Data-Management&nbsp;Team, GEOMAR IT&nbsp;Department, … _]
+Data-Management&nbsp;Team, GEOMAR IT&nbsp;Department, … _] -->
 
 <p>&nbsp;</p>
 
 .smaller[.right[
 online slides —
-<https://willirath.gitlab.io/towards_reproducible_science/><br>
-PDF slides —
-<https://willirath.gitlab.io/towards_reproducible_science/slides.pdf><br>
+<https://willirath.github.io/> → Talks<br>
 Git repo —
-<https://gitlab.com/willirath/towards_reproducible_science/>]]
+<https://github.com/willirath/2019-02-01_what_is_holding_us_back_on_our_way_towards_open_science/>]]
+
+---
+
+class: middle, center
+
+# This is _not_ a talk.
 
 ---
 
